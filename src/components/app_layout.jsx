@@ -7,7 +7,7 @@ function AppLayout() {
       <header>
         <Navbar />
       </header>
-      <main>
+      <main className="h-dvh">
         <Outlet />
       </main>
     </>

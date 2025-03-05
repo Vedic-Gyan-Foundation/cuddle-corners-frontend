@@ -7,8 +7,10 @@ export const theme = {
         cc: "#FEC802",
       },
       blue: {
-        cc: "#1AA1D7",
+        cc1: "#1AA1D7",
+        cc2: "#E1F1F9",
       },
+
       red: {
         cc: "#7c0001",
       },
@@ -16,7 +18,12 @@ export const theme = {
 
     fontFamily: {
       fredoka: ["Fredoka", "serif"],
+      robotoslab: ["Roboto Slab", "serif"],
+    },
+
+    screens: {
+      "custom-md": "770px", // Custom breakpoint
     },
   },
 };
-export const plugins = [];
+export const plugins = ["prettier-plugin-tailwindcss"];
