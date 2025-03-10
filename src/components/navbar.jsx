@@ -81,16 +81,16 @@ function Navbar() {
       <div
         id="navbar"
         className={`fixed left-0 top-0 z-50 hidden w-full items-center justify-between px-4 py-3 transition-all duration-300 sm:flex ${
-          hasBackground ? "bg-blue-cc2 shadow-md" : "bg-transparent"
+          hasBackground ? "bg-blue-cc2" : "bg-transparent"
         }`}
       >
         <img
           id="banner-image"
           src="./images/logos/logo-with-bg-elliptical.png"
           alt="logo-without-bg"
-          className="h-14"
+          className="h-20"
         />
-        <ul className="font-robotoslab flex gap-2 py-2.5 font-medium *:text-stone-700 md:space-x-6 *:md:text-sm lg:space-x-11 *:lg:text-lg">
+        <ul className="flex space-x-6 py-2.5 font-robotoslab font-medium *:text-stone-700 *:sm:text-xs lg:space-x-10 *:lg:text-base">
           {navListItems.map((item, index) => (
             <li key={index} className="cursor-pointer whitespace-nowrap">
               {item}

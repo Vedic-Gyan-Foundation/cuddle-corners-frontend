@@ -15,7 +15,7 @@ function EnrollNowBtn({ onClick, styles, ...props }) {
             src="./images/icons/enroll-now.svg"
             alt="enroll-now-btn-img"
             // className="h-6 lg:h-9"
-            className="sm:h-3 lg:h-9"
+            className="h-5 sm:h-3 lg:h-9"
           />
         </span>
       </p>

@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-main {
+body {
   background-image: url("./images/backgrounds/background-img.png");
   background-size: cover; /* Ensures the entire image fits within the viewport */
 }

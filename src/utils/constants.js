@@ -4,4 +4,5 @@ export const navListItems = [
   "Programmes",
   "Admission",
   "Franchise Oppurtunity",
+  "Location",
 ];
