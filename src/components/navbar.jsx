@@ -5,38 +5,24 @@ import { motion } from "framer-motion";
 
 function Navbar() {
   const [toggleHamburgerMenu, setToggleHamburgerMenu] = useState(false);
-  const [hasBackground, setHasBackground] = useState(false);
+  const [hasBackground, setHasBackground] = useState(true);
 
   useEffect(() => {
-    // Function to handle scroll event
+    // Handles navbar wavey corner image toggle on scroll
     const handleScroll = () => {
-      // Get the navbar and banner elements by their IDs
       const navbar = document.getElementById("navbar");
       const banner = document.getElementById("banner-container");
 
-      // If either navbar or banner is not found, exit the function
       if (!navbar || !banner) return;
 
-      // Get the height of the navbar (used to determine when the background should change)
       const navbarHeight = navbar.offsetHeight;
-
-      // Get the top position of the banner relative to the viewport
       const bannerTop = banner.getBoundingClientRect().top;
 
-      // If the banner's top has moved above (past) the navbar's height, add a background
-      if (bannerTop <= -navbarHeight) {
-        setHasBackground(true);
-      }
-      // If the banner is still visible near the top, keep the navbar background transparent
-      else {
-        setHasBackground(false);
-      }
+      // Add wavey corner image if the banner is scrolled past the navbar height
+      setHasBackground(bannerTop > -navbarHeight);
     };
 
-    // Attach the scroll event listener when the component mounts
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup function to remove the event listener when the component unmounts
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -78,25 +64,32 @@ function Navbar() {
       </div>
 
       {/* <!--- Desktop view navbar ----> */}
-      <div
-        id="navbar"
-        className={`fixed left-0 top-0 z-50 hidden w-full items-center justify-between px-4 py-3 transition-all duration-300 sm:flex ${
-          hasBackground ? "bg-blue-cc2" : "bg-transparent"
-        }`}
-      >
-        <img
-          id="banner-image"
-          src="./images/logos/logo-with-bg-elliptical.png"
-          alt="logo-without-bg"
-          className="h-20"
+      <div id="navbar" className="fixed z-50 w-full">
+        <div className="relative hidden items-center justify-between bg-blue-cc2 px-4 py-3 transition-all duration-300 sm:flex">
+          <img
+            id="banner-image"
+            src="./images/logos/logo-without-bg.png"
+            alt="logo-without-bg"
+            className="h-10"
+          />
+          <ul className="flex space-x-6 py-2.5 font-robotoslab font-medium *:text-stone-700 *:sm:text-xs lg:space-x-10 *:lg:text-base">
+            {navListItems.map((item, index) => (
+              <li key={index} className="cursor-pointer whitespace-nowrap">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* <!--- Wavey Corners Image ---> */}
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{
+            opacity: hasBackground ? 1 : 0,
+            height: hasBackground ? "0.75rem" : 0,
+          }}
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          className="relative hidden bg-[url(/images/backgrounds/wavey-bg.png)] bg-contain sm:block"
         />
-        <ul className="flex space-x-6 py-2.5 font-robotoslab font-medium *:text-stone-700 *:sm:text-xs lg:space-x-10 *:lg:text-base">
-          {navListItems.map((item, index) => (
-            <li key={index} className="cursor-pointer whitespace-nowrap">
-              {item}
-            </li>
-          ))}
-        </ul>
       </div>
     </nav>
   );

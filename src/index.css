@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&family=Roboto+Slab:wght@100..900&display=swap");
 
+/* Lobster Two font */
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   background-image: url("./images/backgrounds/background-img.png");
-  background-size: cover; /* Ensures the entire image fits within the viewport */
-}
+  background-size: cover;
+} */

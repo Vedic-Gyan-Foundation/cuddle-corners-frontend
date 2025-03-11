@@ -19,6 +19,7 @@ export const theme = {
     fontFamily: {
       fredoka: ["Fredoka", "serif"],
       robotoslab: ["Roboto Slab", "serif"],
+      lobsterTwo: ["Lobster Two", "sans-serif"],
     },
 
     screens: {
