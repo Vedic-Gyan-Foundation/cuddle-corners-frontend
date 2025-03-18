@@ -1,25 +1,22 @@
 import { Menu } from "lucide-react";
 import { navListItems } from "../utils/constants";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 
 function Navbar() {
   const [toggleHamburgerMenu, setToggleHamburgerMenu] = useState(false);
   const [hasBackground, setHasBackground] = useState(true);
+  const navbarRef = useRef(null);
 
   useEffect(() => {
-    // Handles navbar wavey corner image toggle on scroll
     const handleScroll = () => {
-      const navbar = document.getElementById("navbar");
       const banner = document.getElementById("banner-container");
+      if (!banner) return;
 
-      if (!navbar || !banner) return;
-
-      const navbarHeight = navbar.offsetHeight;
       const bannerTop = banner.getBoundingClientRect().top;
+      const shouldHaveBackground = bannerTop > -80; // Adjust threshold if needed
 
-      // Add wavey corner image if the banner is scrolled past the navbar height
-      setHasBackground(bannerTop > -navbarHeight);
+      setHasBackground(shouldHaveBackground);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -28,24 +25,23 @@ function Navbar() {
 
   return (
     <nav>
-      {/* <!--- Mobile view navbar ----> */}
+      {/* <!--- Mobile Navbar ----> */}
       <div className="sm:hidden">
-        {/* <!--- Bar ----> */}
-        <div className="flex items-center justify-between bg-blue-cc2 px-2.5 py-4">
-          <div
-            onClick={() => setToggleHamburgerMenu((curr) => !curr)}
-            className="relative inline-flex cursor-pointer items-center justify-center rounded-lg bg-yellow-cc p-1"
+        <div className="bg-blue-cc5 flex items-center justify-between px-2.5 py-4">
+          <button
+            onClick={() => setToggleHamburgerMenu((prev) => !prev)}
+            className="relative inline-flex items-center justify-center rounded-lg bg-yellow-cc p-1"
           >
-            <Menu size={40} absoluteStrokeWidth={true} strokeWidth={3} />
-          </div>
+            <Menu size={40} absoluteStrokeWidth strokeWidth={3} />
+          </button>
           <img
-            src="./images/logos/logo-without-bg.png"
-            alt="logo-without-bg"
+            src="/images/logos/logo-without-bg.png"
+            alt="Logo"
             className="h-14"
           />
         </div>
 
-        {/* <!--- Hamberger menu ----> */}
+        {/* <!--- Hamburger Menu ----> */}
         <motion.div
           initial={{ height: 0, opacity: 0 }}
           animate={{
@@ -53,23 +49,31 @@ function Navbar() {
             opacity: toggleHamburgerMenu ? 1 : 0,
           }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className={`overflow-hidden border bg-blue-cc2 px-4 shadow-inner ${toggleHamburgerMenu ? "border" : "border-0"}`}
+          className={`bg-blue-cc5 overflow-hidden border px-4 shadow-inner ${
+            toggleHamburgerMenu ? "border" : "border-0"
+          }`}
         >
           <ul className="flex flex-col gap-3 py-2.5 text-sm font-semibold">
             {navListItems.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index} className="cursor-pointer">
+                {item}
+              </li>
             ))}
           </ul>
         </motion.div>
       </div>
 
-      {/* <!--- Desktop view navbar ----> */}
-      <div id="navbar" className="fixed z-50 w-full">
-        <div className="relative hidden items-center justify-between bg-blue-cc2 px-4 py-3 transition-all duration-300 sm:flex">
+      {/* <!--- Desktop Navbar ----> */}
+      <div
+        ref={navbarRef}
+        className={`fixed top-0 z-50 w-full transition-shadow duration-300 ${
+          hasBackground ? "" : "shadow-md"
+        }`}
+      >
+        <div className="bg-blue-cc5 relative hidden items-center justify-between px-4 py-3 sm:flex">
           <img
-            id="banner-image"
-            src="./images/logos/logo-without-bg.png"
-            alt="logo-without-bg"
+            src="/images/logos/logo-without-bg.png"
+            alt="Logo"
             className="h-10"
           />
           <ul className="flex space-x-6 py-2.5 font-robotoslab font-medium *:text-stone-700 *:sm:text-xs lg:space-x-10 *:lg:text-base">
@@ -80,14 +84,17 @@ function Navbar() {
             ))}
           </ul>
         </div>
-        {/* <!--- Wavey Corners Image ---> */}
+        {/* <!--- Wavey Background Image ----> */}
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{
             opacity: hasBackground ? 1 : 0,
             height: hasBackground ? "0.75rem" : 0,
           }}
-          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{
+            duration: 0.7,
+            ease: [0.22, 1, 0.36, 1], // Smooth cubic-bezier easing
+          }}
           className="relative hidden bg-[url(/images/backgrounds/wavey-bg.png)] bg-contain sm:block"
         />
       </div>

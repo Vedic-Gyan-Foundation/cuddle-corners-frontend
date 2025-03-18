@@ -7,8 +7,12 @@ export const theme = {
         cc: "#FEC802",
       },
       blue: {
+        cc0: "#08AEF0",
         cc1: "#1AA1D7",
-        cc2: "#E1F1F9",
+        cc2: "#5BB7DC",
+        cc3: "#9AD0E6",
+        cc4: "#CDE5F1",
+        cc5: "#E1F1F9",
       },
 
       red: {

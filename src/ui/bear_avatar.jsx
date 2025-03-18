@@ -23,13 +23,23 @@ function BearAvatar({
         {/* <!--- Left Ear ---> */}
         <div
           className="absolute left-0 top-[-15px] aspect-square w-[30px] rounded-full transition-all duration-500 ease-in-out group-hover:scale-125"
-          style={{ backgroundColor: isHovered ? secondaryColor : primaryColor }}
+          style={{
+            backgroundColor: isHovered ? secondaryColor : primaryColor,
+            transform: isHovered
+              ? "rotate(-15deg) translate(5px, -5px) scale(1.2)"
+              : "none",
+          }}
         ></div>
 
         {/* <!--- Right Ear ---> */}
         <div
-          className="absolute right-0 top-[-15px] aspect-square w-[30px] rounded-full transition-all duration-500 ease-in-out group-hover:scale-125"
-          style={{ backgroundColor: isHovered ? secondaryColor : primaryColor }}
+          className="absolute right-0 top-[-15px] aspect-square w-[30px] rounded-full transition-all duration-500 ease-in-out group-hover:scale-150"
+          style={{
+            backgroundColor: isHovered ? secondaryColor : primaryColor,
+            transform: isHovered
+              ? "rotate(15deg) translate(-5px, -5px) scale(1.2)"
+              : "none",
+          }}
         ></div>
         {/* <!--- Icon ---> */}
         {children}

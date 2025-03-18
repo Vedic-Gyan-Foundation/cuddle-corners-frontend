@@ -1,16 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+// Updated RevealOnScroll Component
 function RevealOnScroll({
   children,
-  delay = 0.4,
-  duration = 0.7,
+  duration = 0.5,
   staggerChildren = 0.25,
+  className, // Accept className prop
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-250px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Define animation variants
   const containerVariants = {
     hidden: {},
     visible: {
@@ -23,7 +23,7 @@ function RevealOnScroll({
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration, ease: "easeOut", delay },
+      transition: { duration, ease: "easeOut" },
     },
   };
 
@@ -33,6 +33,7 @@ function RevealOnScroll({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
+      className={className} // Apply className to container
     >
       {Array.isArray(children) ? (
         children.map((child, index) => (
