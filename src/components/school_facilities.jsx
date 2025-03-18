@@ -54,7 +54,7 @@ function SchoolFacilities() {
           primaryColor="#fbedcf"
           secondaryColor="#FFC007"
           contentTitle="Healthy Canteen"
-          contentDetails="Our canteen serves fresh, nutritious meals, promoting healthy eating habits with a well-balanced menu designed for growing kids."
+          contentDetails="Our canteen serves fresh, nutritious, all-vegetarian meals, promoting healthy eating habits with a well-balanced menu designed for growing kids."
         >
           <CookingPot
             className="text-[#FFC007] transition-transform duration-500 ease-in-out group-hover:scale-125 group-hover:text-white"
@@ -66,7 +66,7 @@ function SchoolFacilities() {
           primaryColor="#cbe9f0"
           secondaryColor="#10CAF0"
           contentTitle="Positive Learning"
-          contentDetails=" We create a warm, engaging learning environment where children explore, discover, and develop essential skills with joy and confidence."
+          contentDetails="In partnership with Toondemy, we create a warm, engaging learning environment where children explore, discover, and develop essential skills with joy and confidence."
         >
           <BookOpenText
             className="text-[#10CAF0] transition-transform duration-500 ease-in-out group-hover:scale-125 group-hover:text-white"
