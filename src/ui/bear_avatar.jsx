@@ -52,7 +52,7 @@ function BearAvatar({
       >
         {contentTitle && (
           <h3
-            className="font-lobsterTwo text-3xl font-bold"
+            className="font-lobsterTwo text-xl font-bold sm:text-3xl"
             style={{
               color: isHovered ? "white" : secondaryColor,
             }}
@@ -62,7 +62,7 @@ function BearAvatar({
         )}
         {contentDetails && (
           <p
-            className={`font-robotoslab ${isHovered ? "text-white" : "text-stone-600"}`}
+            className={`font-robotoSlab text-sm sm:text-base ${isHovered ? "text-white" : "text-stone-600"}`}
           >
             {contentDetails}
           </p>

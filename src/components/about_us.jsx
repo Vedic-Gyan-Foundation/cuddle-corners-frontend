@@ -6,12 +6,12 @@ function AboutUs() {
       {/* <!----- Left Side: Text Content -----> */}
       <RevealOnScroll
         staggerChildren={0.5} // Adds a 0.5s delay between the start of each child's animation, creating a smooth sequential effect.
-        className="w-full lg:w-1/2"
+        className="w-full px-6 sm:px-12 lg:w-1/2"
       >
         <h1 className="mb-4 font-lobsterTwo text-3xl font-bold sm:text-5xl">
           Explore Our Commitment to Learning and Joyful Experiences
         </h1>
-        <div className="my-5 space-y-7 *:text-left *:font-robotoslab *:text-gray-700">
+        <div className="my-5 space-y-7 *:text-left *:font-robotoSlab *:text-gray-700">
           <p>
             At Cuddle Corners, we create a warm and nurturing space where
             children feel safe, valued, and excited to learn. Our focus is on
@@ -57,20 +57,20 @@ function AboutUs() {
         <div className="relative mx-auto flex w-fit flex-col items-center">
           {/* Top Image */}
           <img
-            className="aspect-square w-3/4 rounded-full border-8 border-blue-cc5 object-cover transition-colors duration-300 ease-in hover:border-blue-cc1"
+            className="aspect-square w-3/4 rounded-full border-8 border-primary-100 object-cover transition-colors duration-300 ease-in hover:border-primary-500"
             src="./images/placeholders/about-us-img-1.jpg"
             alt="cuddle-corners-about-us-img-1"
           />
 
           {/* Bottom Images */}
-          <div className="absolute -bottom-20 flex w-full justify-between px-6 sm:-bottom-5 sm:px-14">
+          <div className="absolute -bottom-20 flex w-full justify-between px-2 sm:-bottom-5 sm:px-14">
             <img
-              className="aspect-square w-36 rounded-full border-8 border-blue-cc5 object-cover transition-colors duration-300 ease-in hover:border-blue-cc1 sm:w-48"
+              className="aspect-square w-36 rounded-full border-8 border-primary-100 object-cover transition-colors duration-300 ease-in hover:border-primary-500 sm:w-48"
               src="./images/placeholders/about-us-img-2.jpg"
               alt="cuddle-corners-about-us-img-2"
             />
             <img
-              className="aspect-square w-36 rounded-full border-8 border-blue-cc5 object-cover transition-colors duration-300 ease-in hover:border-blue-cc1 sm:w-48"
+              className="aspect-square w-36 rounded-full border-8 border-primary-100 object-cover transition-colors duration-300 ease-in hover:border-primary-500 sm:w-48"
               src="./images/placeholders/about-us-img-3.jpg"
               alt="cuddle-corners-about-us-img-3"
             />

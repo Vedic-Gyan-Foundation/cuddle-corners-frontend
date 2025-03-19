@@ -7,11 +7,11 @@ function SchoolFacilities() {
       <RevealOnScroll
         staggerChildren={0.2} // Adds a 0.2s delay between the start of each child's animation, creating a smooth sequential effect.
       >
-        <div className="space-y-6 sm:mt-12">
+        <div className="space-y-6 px-6 sm:px-10">
           <h2 className="text-center font-lobsterTwo text-3xl font-semibold sm:text-5xl">
             School Facilities
           </h2>
-          <p className="mx-auto w-2/3 text-center font-robotoslab text-base text-stone-600 sm:text-lg">
+          <p className="mx-auto w-2/3 text-center font-robotoSlab text-base text-stone-600 sm:text-lg">
             Our preschool provides a safe and enriching environment with
             well-equipped facilities. We offer a reliable school bus service, a
             fun and secure playground, a healthy canteen with nutritious meals,

@@ -8,8 +8,8 @@ function ButtonPrimary({
   // Color variants to dynamically update the button colors
   const colors = {
     yellow: {
-      main: "bg-yellow-cc/85",
-      hover: "bg-yellow-500",
+      main: "bg-secondary-500/85",
+      hover: "bg-yellow-400",
       dot: "bg-yellow-200",
     },
     blue: {

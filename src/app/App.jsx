@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { AppLayout } from "../components";
 import ROUTES from "../config/routes";
-import Home from "../pages/home";
+import { Home, AboutUs, LocateUs, Programmes, Admission } from "../pages";
 
 const router = createBrowserRouter([
   {
@@ -13,16 +13,28 @@ const router = createBrowserRouter([
         path: ROUTES.HOME,
         element: <Home />,
       },
+      {
+        path: ROUTES.ABOUT_US.ROOT,
+        element: <AboutUs />,
+      },
+      {
+        path: ROUTES.PROGRAMMES.ROOT,
+        element: <Programmes />,
+      },
+      {
+        path: ROUTES.ADMISSION,
+        element: <Admission />,
+      },
+      {
+        path: ROUTES.LOCATE_US,
+        element: <LocateUs />,
+      },
     ],
   },
 ]);
 
 function App() {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

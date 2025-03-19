@@ -1,7 +1,11 @@
 import { Menu } from "lucide-react";
 import { navListItems } from "../utils/constants";
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { Link, NavLink } from "react-router";
+import ROUTES from "../config/routes";
+import { getRouteKey } from "../utils/getRouteKey";
+import { MoveRight } from "lucide-react";
 
 function Navbar() {
   const [toggleHamburgerMenu, setToggleHamburgerMenu] = useState(false);
@@ -27,16 +31,16 @@ function Navbar() {
     <nav>
       {/* <!--- Mobile Navbar ----> */}
       <div className="sm:hidden">
-        <div className="bg-blue-cc5 flex items-center justify-between px-2.5 py-4">
+        <div className="flex items-center justify-between bg-primary-100 px-2.5 py-4">
           <button
             onClick={() => setToggleHamburgerMenu((prev) => !prev)}
-            className="relative inline-flex items-center justify-center rounded-lg bg-yellow-cc p-1"
+            className="relative inline-flex items-center justify-center rounded-lg bg-secondary-500 p-1"
           >
             <Menu size={40} absoluteStrokeWidth strokeWidth={3} />
           </button>
           <img
             src="/images/logos/logo-without-bg.png"
-            alt="Logo"
+            alt="cuddle-corners-logo"
             className="h-14"
           />
         </div>
@@ -49,7 +53,7 @@ function Navbar() {
             opacity: toggleHamburgerMenu ? 1 : 0,
           }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className={`bg-blue-cc5 overflow-hidden border px-4 shadow-inner ${
+          className={`overflow-hidden border bg-primary-100 px-4 shadow-inner ${
             toggleHamburgerMenu ? "border" : "border-0"
           }`}
         >
@@ -70,19 +74,35 @@ function Navbar() {
           hasBackground ? "" : "shadow-md"
         }`}
       >
-        <div className="bg-blue-cc5 relative hidden items-center justify-between px-4 py-3 sm:flex">
+        <div className="relative hidden items-center justify-between bg-primary-100 px-7 py-3 sm:flex lg:px-14">
           <img
             src="/images/logos/logo-without-bg.png"
-            alt="Logo"
-            className="h-10"
+            alt="cuddle-corners-logo"
+            className="h-10 lg:h-14"
           />
-          <ul className="flex space-x-6 py-2.5 font-robotoslab font-medium *:text-stone-700 *:sm:text-xs lg:space-x-10 *:lg:text-base">
-            {navListItems.map((item, index) => (
-              <li key={index} className="cursor-pointer whitespace-nowrap">
-                {item}
-              </li>
-            ))}
+
+          <ul className="space-x-6 py-3 font-fredoka text-sm font-medium *:inline-block lg:space-x-10 lg:text-base">
+            {navListItems.map((item, index) => {
+              // Get the route path, checking for ROOT first, then falling back to the direct route or home ("/") if undefined.
+              const path =
+                ROUTES[getRouteKey(item)]?.ROOT ||
+                ROUTES[getRouteKey(item)] ||
+                "/";
+
+              return (
+                <li key={index} className="cursor-pointer">
+                  <NavLink to={path}>{item}</NavLink>
+                </li>
+              );
+            })}
           </ul>
+
+          <Link
+            to={ROUTES.FRANCHISE_OPPURTUNITY}
+            className="flex items-center gap-2 rounded-full bg-secondary-500 px-4 py-1 font-semibold text-white transition-all duration-300 ease-linear hover:bg-secondary-400 hover:text-stone-700 hover:shadow-md"
+          >
+            <span> Join Us</span> <MoveRight />
+          </Link>
         </div>
         {/* <!--- Wavey Background Image ----> */}
         <motion.div

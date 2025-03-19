@@ -4,7 +4,7 @@ const ROUTES = {
 
   // About Us
   ABOUT_US: {
-    ROOT: "/about",
+    ROOT: "/about-us",
     CHILDREN: {
       LEGACY: "/legacy",
       ADVANTAGE: "/advantage",

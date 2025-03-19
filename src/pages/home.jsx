@@ -6,7 +6,7 @@ function Home() {
       {/* <!---- Banner ----> */}
       <Banner />
 
-      <div className="flex flex-col gap-8 px-6 sm:px-10">
+      <div className="mt-12 flex flex-col gap-8">
         {/* <!---- School Facilities  -----> */}
         <SchoolFacilities />
 
