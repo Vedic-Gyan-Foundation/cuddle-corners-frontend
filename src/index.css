@@ -7,7 +7,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  background-image: url("./images/backgrounds/background-img.png");
-  background-size: cover;
-} */
+body {
+  background: linear-gradient(to left, rgb(239, 246, 255), rgb(255, 255, 255));
+}
+
+@layer components {
+  .cloud-bg {
+    @apply relative h-16 w-full overflow-hidden;
+    background: linear-gradient(to bottom, #b3e0ff 30%, #ffffff 80%);
+  }
+
+  .cloud-bg::before,
+  .cloud-bg::after {
+    content: "";
+    @apply absolute left-[-50%] top-[-30%] h-[150%] w-[250%] opacity-80;
+    background:
+      radial-gradient(circle at 20% 30%, white 30%, transparent 70%),
+      radial-gradient(circle at 60% 40%, white 25%, transparent 70%),
+      radial-gradient(circle at 80% 60%, white 20%, transparent 70%),
+      radial-gradient(circle at 40% 80%, white 15%, transparent 70%);
+    animation: moveClouds 30s linear infinite;
+  }
+
+  .cloud-bg::after {
+    @apply left-[-40%] top-[-20%] opacity-60;
+    animation-duration: 40s;
+  }
+
+  @keyframes moveClouds {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(40%);
+    }
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .rainbow-bg {
+    background: linear-gradient(
+      to right,
+      #f472b6,
+      #facc15,
+      #34d399,
+      #60a5fa,
+      #a855f7
+    );
+    background-blend-mode: soft-light;
+  }
+
+  .primary-bg {
+    background: linear-gradient(
+      to bottom,
+      rgb(239, 246, 255),
+      rgb(255, 255, 255)
+    );
+  }
+}

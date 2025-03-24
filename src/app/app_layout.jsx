@@ -6,16 +6,16 @@ import RefinedNavbar from "../components/newNav";
 
 function AppLayout() {
   return (
-    <>
+    <div className="h-dvh">
       <header>
-        {/* <Navbar /> */}
-        <RefinedNavbar />
+        <Navbar />
+        {/* <RefinedNavbar /> */}
       </header>
-      <main className="h-dvh">
+      <main id="main-container" className="pb-28 sm:py-24">
         <Outlet />
-        <Footer />
       </main>
-    </>
+      <Footer />
+    </div>
   );
 }
 

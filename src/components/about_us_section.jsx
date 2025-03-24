@@ -1,6 +1,6 @@
 import { ButtonPrimary, RevealOnScroll } from "../ui";
 
-function AboutUs() {
+function AboutUsSection() {
   return (
     <div className="flex flex-wrap items-center gap-10 lg:flex-nowrap">
       {/* <!----- Left Side: Text Content -----> */}
@@ -81,4 +81,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default AboutUsSection;

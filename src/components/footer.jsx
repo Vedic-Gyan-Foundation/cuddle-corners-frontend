@@ -1,122 +1,179 @@
-import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin   } from 'lucide-react';
+import { Link } from "react-router";
+import { MapPin } from "lucide-react";
+import { Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 
+import { navListItems } from "../utils/constants";
+import { getRouteKey } from "../utils/getRouteKey";
+import ROUTES from "../config/routes";
 
-
-const Footer = () => {
+function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 pt-10 pb-6">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full">
-        <div className="flex justify-around">
-          <div className="w-12 h-12 bg-green-400 rounded-full transform translate-y-6 animate-bounce" style={{ animationDuration: '2s' }}></div>
-          <div className="w-16 h-16 bg-blue-400 rounded-full transform translate-y-4 animate-bounce" style={{ animationDuration: '3s' }}></div>
-          <div className="w-10 h-10 bg-red-400 rounded-full transform translate-y-8 animate-bounce" style={{ animationDuration: '2.5s' }}></div>
-          <div className="w-14 h-14 bg-yellow-400 rounded-full transform translate-y-2 animate-bounce" style={{ animationDuration: '4s' }}></div>
-          <div className="w-12 h-12 bg-purple-400 rounded-full transform translate-y-6 animate-bounce" style={{ animationDuration: '3.5s' }}></div>
-        </div>
-      </div>
-
-      {/* Wavy divider */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-0">
-        <svg
-          className="relative block w-full h-12"
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            className="fill-white"
-          ></path>
-        </svg>
-      </div>
-
-      <div className="container mx-auto px-4">
+    <footer className="bg-linear-primary-soft py-12 shadow-inner *:font-robotoSlab *:text-stone-700">
+      <div className="container mx-auto px-6">
         <div className="flex flex-wrap justify-between">
-          {/* Logo and description */}
-          <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <div className="flex items-center mb-4">
-              <h2 className="text-3xl font-bold text-white tracking-wider">Cuddles Corner</h2>
-              <div className="ml-2 w-8 h-8 bg-yellow-300 rounded-full"></div>
+          <div className="mb-8 w-full md:mb-0 md:w-1/3">
+            {/* <!---- Get in touch details ---> */}
+            <div className="mb-7 space-y-7">
+              <h2 className="font-lobsterTwo text-3xl font-bold text-stone-800">
+                Get in Touch
+              </h2>
+              <div className="space-y-5 *:text-sm">
+                <p className="flex items-center gap-2">
+                  <span className="self-start">
+                    <MapPin size={20} />
+                  </span>
+                  <a
+                    href="https://maps.app.goo.gl/DpoUnPBk86P9UYDg6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-secondary-200"
+                  >
+                    Mahapurush Madhabdev Path, Near ITI, Nalapara, Sarusajai,
+                    Guwahati, Assam, 781040
+                  </a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <span>
+                    <Phone size={20} />
+                  </span>
+                  <span>
+                    <a
+                      href="tel:+917002446735"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-secondary-200"
+                    >
+                      +91-7002446735
+                    </a>
+                    <span> / </span>
+                    <a
+                      href="tel:+919856199105"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-secondary-200"
+                    >
+                      +91-9856199105
+                    </a>
+                  </span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <span>
+                    <Mail size={20} />
+                  </span>
+                  <a
+                    href="mailto:info@cuddlecorners.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-secondary-200"
+                  >
+                    info@cuddlecorners.com
+                  </a>
+                </p>
+              </div>
             </div>
-            <p className="text-white text-lg mb-6">
-              Join us on an exciting adventure of learning and fun!
-            </p>
+
+            {/* <!---- Social media link ---> */}
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
-                <span className="text-purple-500 text-xl font-bold"><Facebook /></span>
+              <a
+                href="https://www.facebook.com/people/Cuddle-Corners/61572448028455/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex aspect-square w-7 transform items-center justify-center rounded-full bg-primary-600 transition-transform duration-300 hover:scale-110"
+              >
+                <span className="text-xl font-bold text-primary-25">
+                  <img
+                    src="./images/icons/facebook-icon.svg"
+                    alt="cuddles-corner-facebook-link-img"
+                  />
+                </span>
               </a>
-              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
-                <span className="text-purple-500 text-xl font-bold"><Instagram /></span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
-                <span className="text-purple-500 text-xl font-bold"><Linkedin /></span>
+              <a
+                href="https://www.instagram.com/cuddle__corners?igsh=MWQ5NGxrcXY3a3dkbg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex aspect-square h-7 transform items-center justify-center rounded-full bg-primary-600 transition-transform duration-300 hover:scale-110"
+              >
+                <span className="text-xl font-bold text-primary-25">
+                  <img
+                    src="./images/icons/instagram-icon.svg"
+                    alt="cuddles-corner-instagram-link-img"
+                  />
+                </span>
               </a>
             </div>
           </div>
 
-          {/* Navigation links */}
-          <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <h3 className="text-2xl font-bold text-white mb-6">Explore</h3>
-            <ul className="space-y-3">
-              {['Games', 'Stories', 'Learn', 'Create', 'Videos'].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-white text-lg hover:text-yellow-300 flex items-center transform hover:translate-x-2 transition-transform duration-300">
-                    <span className="mr-2">•</span> {item}
-                  </Link>
-                </li>
-              ))}
+          {/* <!---- Pages naviagtion links ----> */}
+          <div className="mb-8 w-full md:mb-0 md:w-1/4">
+            <h3 className="mb-6 font-lobsterTwo text-3xl font-bold text-stone-800">
+              Quick Links
+            </h3>
+            <ul className="space-y-3 pl-3">
+              {navListItems.map((item, index) => {
+                // Get the route path, checking for ROOT first, then falling back to the direct route or home ("/") if undefined.
+                const path =
+                  ROUTES[getRouteKey(item)]?.ROOT ||
+                  ROUTES[getRouteKey(item)] ||
+                  "/";
+
+                return (
+                  <li key={index} className="cursor-pointer list-disc">
+                    <Link
+                      to={path}
+                      className="flex transform items-center text-lg transition-transform duration-300 hover:translate-x-2 hover:text-secondary-400"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* <!--- Newsletter ----> */}
           <div className="w-full md:w-1/3">
-            <h3 className="text-2xl font-bold text-white mb-6">Parent's Corner</h3>
-            <p className="text-white mb-4">Stay updated with our latest activities!</p>
-            <div className="flex mb-4">
+            <h3 className="mb-6 text-2xl font-bold text-stone-800">
+              Parent&apos;s Corner
+            </h3>
+            <p className="mb-4">Stay updated with our latest activities!</p>
+            <div className="mb-4 flex">
               <input
                 type="email"
                 placeholder="Your email"
-                className="px-4 py-3 rounded-l-full w-full focus:outline-none text-purple-900"
+                className="w-full rounded-l-full px-4 py-3 text-black focus:outline-none"
               />
-              <button className="bg-yellow-400 hover:bg-yellow-300 px-6 rounded-r-full font-bold transition-colors duration-300">
+              <button className="rounded-r-full bg-secondary-500 px-6 font-bold text-white transition-colors duration-300 hover:bg-secondary-400">
                 Join!
               </button>
             </div>
-            <p className="text-white text-sm">We promise fun emails only!</p>
+            <p className="text-sm">We promise fun emails only!</p>
           </div>
         </div>
 
-        {/* Cloud shapes at bottom */}
-        <div className="relative mt-12 pt-8 border-t border-white border-opacity-30">
-          <div className="absolute bottom-12 left-10">
-            <div className="w-16 h-6 bg-white rounded-full opacity-70"></div>
-            <div className="w-10 h-6 bg-white rounded-full opacity-70 -mt-4 ml-8"></div>
-            <div className="w-12 h-6 bg-white rounded-full opacity-70 -mt-2 ml-4"></div>
-          </div>
-          <div className="absolute bottom-16 right-10">
-            <div className="w-16 h-6 bg-white rounded-full opacity-70"></div>
-            <div className="w-10 h-6 bg-white rounded-full opacity-70 -mt-4 ml-8"></div>
-            <div className="w-12 h-6 bg-white rounded-full opacity-70 -mt-2 ml-4"></div>
-          </div>
-          
-          <div className="text-center text-white">
-            <p>&copy; {new Date().getFullYear()} Cuddles Corner. All rights reserved.</p>
+        {/* <!---- Privacy , Terms and Condition , Contact Us ---->*/}
+        <div className="relative mt-12 border-t border-stone-500 border-opacity-30 pt-8">
+          <div className="text-center *:text-black">
+            <p>
+              &copy; {new Date().getFullYear()} Cuddles Corner. All rights
+              reserved.
+            </p>
             <div className="mt-2 flex justify-center space-x-4 text-sm">
-              <Link href="#" className="hover:text-yellow-300">Privacy Policy</Link>
-              <Link href="#" className="hover:text-yellow-300">Terms of Use</Link>
-              <Link href="#" className="hover:text-yellow-300">Contact Us</Link>
+              <Link href="#" className="hover:text-secondary-75">
+                Privacy Policy
+              </Link>
+              <Link href="#" className="hover:text-secondary-75">
+                Terms of Use
+              </Link>
+              <Link href="#" className="hover:text-secondary-75">
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Rainbow border at bottom */}
-      <div className="h-4 w-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 mt-8"></div>
     </footer>
   );
-};
+}
 
 export default Footer;

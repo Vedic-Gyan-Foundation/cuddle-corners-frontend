@@ -55,6 +55,25 @@ export const theme = {
     screens: {
       "custom-md": "770px", // Custom breakpoint
     },
+
+    backgroundImage: {
+      // Radial Gradient (Darkest at the edges, Lightest at the center)
+      "radial-primary-mix":
+        "radial-gradient(circle, #CDE5F1 10%, #E1F1F9 50%, #ECF7FC 100%)",
+
+      // Linear Gradient (Darkest at the top, Lightest at the bottom)
+      "linear-primary-mix":
+        "linear-gradient(to bottom, #9AD0E6 10%, #CDE5F1 50%, #E1F1F9 100%)",
+
+      // Linear Gradient (Darkest to Lightest)
+
+      "linear-primary-dark":
+        "linear-gradient(to bottom, #037799 0%, #058DB5 20%, #08AEF0 40%, #1AA1D7 60%, #5BB7DC 80%, #9AD0E6 100%)",
+
+      // Linear Gradient (Dark to Light)
+      "linear-primary-soft":
+        "linear-gradient(to bottom left, #1AA1D7 0%, #5BB7DC 33%, #9AD0E6 66%, #CDE5F1 100%)",
+    },
   },
 };
 export const plugins = ["prettier-plugin-tailwindcss"];

@@ -35,16 +35,16 @@ function Banner() {
       </div>
 
       {/* <!---- Desktop Banner ----> */}
-      <div id="banner-container">      
+      <div>
         <div className="relative mt-[-3rem] hidden sm:block">
-        <div class="absolute inset-0 bg-black opacity-20 blur-xl"></div>
+          <div className="absolute inset-0"></div>
           <img
             src="/images/banners/desktop-view-banner-1.png"
             alt="mobile-view-banner"
             className="w-full"
           />
           <div className="absolute left-5 top-1/2 flex -translate-y-1/2 flex-col items-center gap-7 text-white">
-            <div className="flex ml-20 flex-col gap-4 lg:gap-6">
+            <div className="ml-20 flex flex-col gap-4 lg:gap-6">
               <div className="text-left *:font-lobsterTwo *:text-3xl *:font-semibold *:lg:text-6xl">
                 <p>A Happy, Safe & Engaging</p>
                 <p>Preschool Experience for your child</p>

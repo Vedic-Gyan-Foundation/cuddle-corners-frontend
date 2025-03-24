@@ -1,8 +1,8 @@
-import { Banner, SchoolFacilities, AboutUs } from "../components";
+import { Banner, SchoolFacilities, AboutUsSection } from "../components";
 
 function Home() {
   return (
-    <section>
+    <section className="">
       {/* <!---- Banner ----> */}
       <Banner />
 
@@ -11,7 +11,7 @@ function Home() {
         <SchoolFacilities />
 
         {/* <!---- About Us -----> */}
-        <AboutUs />
+        <AboutUsSection />
       </div>
     </section>
   );

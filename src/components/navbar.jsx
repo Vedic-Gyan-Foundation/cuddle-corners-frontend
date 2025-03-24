@@ -14,7 +14,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const banner = document.getElementById("banner-container");
+      const banner = document.getElementById("main-container");
       if (!banner) return;
 
       const bannerTop = banner.getBoundingClientRect().top;
@@ -31,7 +31,7 @@ function Navbar() {
     <nav>
       {/* <!--- Mobile Navbar ----> */}
       <div className="sm:hidden">
-        <div className="flex items-center justify-between bg-primary-100 px-2.5 py-4">
+        <div className="flex items-center justify-between px-2.5 py-4">
           <button
             onClick={() => setToggleHamburgerMenu((prev) => !prev)}
             className="relative inline-flex items-center justify-center rounded-lg bg-secondary-500 p-1"
@@ -70,18 +70,16 @@ function Navbar() {
       {/* <!--- Desktop Navbar ----> */}
       <div
         ref={navbarRef}
-        className={`fixed top-0 z-50 w-full transition-shadow duration-300 ${
-          hasBackground ? "" : "shadow-md"
-        }`}
+        className={`fixed top-0 z-50 w-full transition-shadow duration-300`}
       >
-        <div className="relative hidden items-center justify-between bg-primary-100 px-7 py-3 sm:flex lg:px-14">
+        <div className="bg-linear-primary-mix relative hidden items-center justify-between px-7 py-3 sm:flex lg:px-14">
           <img
             src="/images/logos/logo-without-bg.png"
             alt="cuddle-corners-logo"
             className="h-10 lg:h-14"
           />
 
-          <ul className="space-x-6 py-3 font-fredoka text-sm font-medium *:inline-block lg:space-x-10 lg:text-base">
+          <ul className="space-x-5 py-3 font-fredoka text-sm font-medium *:inline-block lg:space-x-10 lg:text-base">
             {navListItems.map((item, index) => {
               // Get the route path, checking for ROOT first, then falling back to the direct route or home ("/") if undefined.
               const path =
@@ -99,23 +97,23 @@ function Navbar() {
 
           <Link
             to={ROUTES.FRANCHISE_OPPURTUNITY}
-            className="flex items-center gap-2 rounded-full bg-secondary-500 px-4 py-1 font-semibold text-white transition-all duration-300 ease-linear hover:bg-secondary-400 hover:text-stone-700 hover:shadow-md"
+            className="flex items-center gap-1 rounded-full bg-secondary-500 px-2 py-1 text-sm font-semibold text-white transition-all duration-300 ease-linear hover:bg-secondary-400 hover:text-stone-700 hover:shadow-md lg:gap-2 lg:px-4 lg:text-base"
           >
-            <span> Join Us</span> <MoveRight />
+            <span> Join Us</span> <MoveRight size={20} />
           </Link>
         </div>
         {/* <!--- Wavey Background Image ----> */}
         <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{
-            opacity: hasBackground ? 1 : 0,
-            height: hasBackground ? "0.75rem" : 0,
-          }}
-          transition={{
-            duration: 0.7,
-            ease: [0.22, 1, 0.36, 1], // Smooth cubic-bezier easing
-          }}
-          className="relative hidden bg-[url(/images/backgrounds/wavey-bg.png)] bg-contain sm:block"
+          initial={{ opacity: 1, height: "0.95rem" }}
+          // animate={{
+          //   opacity: hasBackground ? 1 : 1,
+          //   height: hasBackground ? "0.95rem" : 0,
+          // }}
+          // transition={{
+          //   duration: 0.7,
+          //   ease: [0.22, 1, 0.36, 1], // Smooth cubic-bezier easing
+          // }}
+          className="hidden bg-[url(/images/backgrounds/wavey-bg.png)] bg-contain sm:block"
         />
       </div>
     </nav>
