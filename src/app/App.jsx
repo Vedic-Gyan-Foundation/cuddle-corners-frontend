@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { AppLayout } from "../components";
+import AppLayout from "./app_layout";
 import ROUTES from "../config/routes";
 import { Home, AboutUs, LocateUs, Programmes, Admission } from "../pages";
 

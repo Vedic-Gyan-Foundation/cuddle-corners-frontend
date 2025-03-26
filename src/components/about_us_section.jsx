@@ -1,54 +1,67 @@
+import { useNavigate } from "react-router";
 import { ButtonPrimary, RevealOnScroll } from "../ui";
 
 function AboutUsSection() {
+  const naviagte = useNavigate();
+
+  // redirect to the about-us page
+  const navigateToAboutUs = () => {
+    naviagte("/about-us");
+  };
+
   return (
     <div className="flex flex-wrap items-center gap-10 lg:flex-nowrap">
       {/* <!----- Left Side: Text Content -----> */}
       <RevealOnScroll
         staggerChildren={0.5} // Adds a 0.5s delay between the start of each child's animation, creating a smooth sequential effect.
-        className="w-full px-6 sm:px-12 lg:w-1/2"
+        className="w-full lg:w-1/2"
       >
-        <h1 className="mb-4 font-lobsterTwo text-3xl font-bold sm:text-5xl">
+        <h1 className="mb-4 text-3xl font-bold sm:text-5xl">
           Explore Our Commitment to Learning and Joyful Experiences
         </h1>
         <div className="my-5 space-y-7 *:text-left *:font-robotoSlab *:text-gray-700">
           <p>
-            At Cuddle Corners, we create a warm and nurturing space where
-            children feel safe, valued, and excited to learn. Our focus is on
-            building meaningful connections, ensuring that every child’s early
-            learning journey is filled with love, care, and joyful experiences.
+            At <span className="font-semibold">Cuddle Corners</span>, we provide
+            a<span className="font-semibold"> warm, nurturing environment</span>{" "}
+            where children feel{" "}
+            <span className="italic">safe, valued, and excited</span> to learn.
+            We believe that early childhood education is more than just
+            academics—it&apos;s about
+            <span className="font-semibold">
+              {" "}
+              love, care, and meaningful connections
+            </span>
+            .
           </p>
           <p>
-            Through our partnership with{" "}
+            In collaboration with{" "}
             <span className="font-semibold">Toondemy</span>, Singapore&apos;s
-            leading education provider, we offer a unique curriculum that blends
-            creativity with structured learning. Our approach encourages
-            curiosity, problem-solving, and self-expression, helping children
-            develop confidence and essential life skills.
+            leading education provider, our unique curriculum blends{" "}
+            <span className="italic">creativity with structured learning</span>.
+            We encourage{" "}
+            <span className="font-semibold">
+              curiosity, problem-solving, and self-expression
+            </span>
+            , helping children build confidence and essential life skills.
           </p>
-
           <p>
-            We believe learning goes beyond academics—it&apos;s about fostering
-            strong relationships, creativity, and a love for discovery. With
-            caring educators and a supportive environment, we prepare children
-            for a bright future, where they grow with confidence and joy.
+            At Cuddle Corners, we strive to create an environment that fosters
+            <span className="font-semibold">
+              {" "}
+              strong relationships, creativity, and a lifelong love for learning
+            </span>
+            . With caring educators and a supportive atmosphere, we empower
+            children to grow with{" "}
+            <span className="italic">confidence and joy</span>, preparing them
+            for a bright future.
           </p>
         </div>
-        {/* <div className="flex items-center gap-6"> */}
-        <ButtonPrimary label="Read More" color="blue" />
 
-        {/* <div className="flex items-center">
-            <img
-              className="h-12 w-12 rounded-full"
-              src="img/user.jpg"
-              alt="CEO"
-            />
-            <div className="ml-3">
-              <h6 className="font-semibold text-blue-500">John Doe</h6>
-              <small className="text-gray-600">CEO & Founder</small>
-            </div>
-          </div> */}
-        {/* </div> */}
+        <ButtonPrimary
+          label="Read More"
+          color="blue"
+          onClick={navigateToAboutUs}
+        />
       </RevealOnScroll>
 
       {/* <!----- Right Side: Images -----> */}

@@ -8,7 +8,23 @@
 @tailwind utilities;
 
 body {
-  background: linear-gradient(to left, rgb(239, 246, 255), rgb(255, 255, 255));
+  /* background: linear-gradient(to left, rgb(239, 246, 255), rgb(255, 255, 255)); */
+  background: rgb(255, 255, 255);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-lobsterTwo;
+  }
+
+  p {
+    @apply font-robotoSlab;
+  }
 }
 
 @layer components {

@@ -6,15 +6,15 @@ function Banner() {
       {/* <!---- Mobile Banner ----> */}
       <div className="relative block sm:hidden">
         <img
-          src="/images/banners/mobile-view-banner-1.png"
+          src="./images/banners/mobile-home-banner-1.png.png"
           alt="mobile-view-banner"
-          className="w-full"
+          className="mt-[-7rem] w-full"
         />
         <div className="absolute left-5 top-[20%] flex transform flex-col items-center justify-center text-white">
           <div className="flex w-full flex-col gap-6">
-            <div className="*:font-lobsterTwo *:text-4xl *:font-semibold">
-              <p>A Happy, Safe & Engaging</p>
-              <p>Preschool Experience for your child</p>
+            <div className="*:text-4xl *:font-semibold">
+              <h1>A Happy, Safe & Engaging</h1>
+              <h1>Preschool Experience for your child</h1>
             </div>
 
             <p className="font-robotoSlab">
@@ -39,15 +39,15 @@ function Banner() {
         <div className="relative mt-[-3rem] hidden sm:block">
           <div className="absolute inset-0"></div>
           <img
-            src="/images/banners/desktop-view-banner-1.png"
+            src="./images/banners/desktop-home-banner-1.png"
             alt="mobile-view-banner"
             className="w-full"
           />
           <div className="absolute left-5 top-1/2 flex -translate-y-1/2 flex-col items-center gap-7 text-white">
             <div className="ml-20 flex flex-col gap-4 lg:gap-6">
-              <div className="text-left *:font-lobsterTwo *:text-3xl *:font-semibold *:lg:text-6xl">
-                <p>A Happy, Safe & Engaging</p>
-                <p>Preschool Experience for your child</p>
+              <div className="text-left *:text-3xl *:font-semibold *:lg:text-6xl">
+                <h1>A Happy, Safe & Engaging</h1>
+                <h1>Preschool Experience for your child</h1>
               </div>
               <p className="w-2/3 font-robotoSlab text-lg lg:w-full lg:text-xl">
                 A safe and a nurturing place where your little one can grow,

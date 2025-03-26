@@ -1,10 +1,10 @@
 import { Menu } from "lucide-react";
-import { navListItems } from "../utils/constants";
+import { navListItems } from "../utils/data/navListItems";
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link, NavLink } from "react-router";
 import ROUTES from "../config/routes";
-import { getRouteKey } from "../utils/getRouteKey";
+import { getRouteKey } from "../utils/navigation/getRouteKey";
 import { MoveRight } from "lucide-react";
 
 function Navbar() {
@@ -31,7 +31,7 @@ function Navbar() {
     <nav>
       {/* <!--- Mobile Navbar ----> */}
       <div className="sm:hidden">
-        <div className="flex items-center justify-between px-2.5 py-4">
+        <div className="flex items-center justify-between bg-linear-primary-mix px-2.5 py-4">
           <button
             onClick={() => setToggleHamburgerMenu((prev) => !prev)}
             className="relative inline-flex items-center justify-center rounded-lg bg-secondary-500 p-1"
@@ -70,9 +70,9 @@ function Navbar() {
       {/* <!--- Desktop Navbar ----> */}
       <div
         ref={navbarRef}
-        className={`fixed top-0 z-50 w-full transition-shadow duration-300`}
+        className={`fixed top-0 z-50 w-full transition-shadow duration-300 ${!hasBackground ? "shadow-xl" : ""}`}
       >
-        <div className="bg-linear-primary-mix relative hidden items-center justify-between px-7 py-3 sm:flex lg:px-14">
+        <div className="relative hidden items-center justify-between bg-linear-primary-mix px-7 py-4 sm:flex lg:px-14">
           <img
             src="/images/logos/logo-without-bg.png"
             alt="cuddle-corners-logo"
@@ -104,16 +104,16 @@ function Navbar() {
         </div>
         {/* <!--- Wavey Background Image ----> */}
         <motion.div
-          initial={{ opacity: 1, height: "0.95rem" }}
-          // animate={{
-          //   opacity: hasBackground ? 1 : 1,
-          //   height: hasBackground ? "0.95rem" : 0,
-          // }}
-          // transition={{
-          //   duration: 0.7,
-          //   ease: [0.22, 1, 0.36, 1], // Smooth cubic-bezier easing
-          // }}
-          className="hidden bg-[url(/images/backgrounds/wavey-bg.png)] bg-contain sm:block"
+          initial={{ opacity: 1, height: "1.75rem" }}
+          animate={{
+            opacity: hasBackground ? 1 : 0,
+            height: hasBackground ? "1.75rem" : 0,
+          }}
+          transition={{
+            duration: 0.5,
+            ease: [0.22, 1, 0.36, 1], // Smooth cubic-bezier easing
+          }}
+          className="hidden bg-[url(/images/backgrounds/wavey-bg-downfacing.png)] bg-contain sm:block"
         />
       </div>
     </nav>

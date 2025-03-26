@@ -1,238 +1,206 @@
-export default function AboutUs() {
+import Breadcrumbs from "../components/breadcrumbs";
+import { learningDomains } from "../utils/data/learningDomains";
+import { RevealOnScroll } from "../ui";
+
+function AboutUs() {
   return (
-    <div className="mt-20 min-h-screen">
-      {/* <div className="mt-20 min-h-screen bg-gradient-to-b from-blue-50 to-white"> */}
-      {/* Hero Section with Bubbles */}
-      <div className="relative overflow-hidden">
-        {/* Decorative Bubbles */}
-        <div className="absolute left-10 top-10 h-24 w-24 animate-bounce rounded-full bg-pink-400 opacity-20"></div>
-        <div
-          className="absolute right-20 top-20 h-16 w-16 animate-bounce rounded-full bg-yellow-300 opacity-20"
-          style={{ animationDelay: "0.5s" }}
-        ></div>
-        <div
-          className="absolute bottom-10 left-1/4 h-20 w-20 animate-bounce rounded-full bg-green-300 opacity-20"
-          style={{ animationDelay: "0.7s" }}
-        ></div>
-        <div
-          className="absolute right-1/4 top-1/3 h-28 w-28 animate-bounce rounded-full bg-blue-300 opacity-20"
-          style={{ animationDelay: "1.2s" }}
-        ></div>
+    <div>
+      {/* <!-- Banner image section --> */}
+      <section className="relative mt-[-7rem] sm:mt-[-3rem]">
+        {/* <!-- Background banner image --> */}
+        <img
+          src="/images/banners/carousel-1.jpg"
+          alt="cuddle-corners-about-us-banner-img"
+          className="h-80 w-full object-cover"
+        />
+        {/* <!-- Upside-facing cloud wave background --> */}
+        <div className="absolute bottom-0 left-0 h-4 w-full bg-[url(/images/backgrounds/wavey-bg-upfacing.png)] bg-contain sm:h-7"></div>
 
-        <div className="container mx-auto mt-10 px-4 pb-16 pt-12">
-          <h1 className="mb-6 text-center font-lobsterTwo text-5xl font-bold text-black">
-            About Our School
-          </h1>
-          <div className="mb-12 text-center">
-            <p className="mx-auto max-w-3xl text-xl text-purple-800">
-              Where curiosity blooms and learning adventures begin!
-            </p>
+        {/* <!-- Page title & Breadcrumbs --> */}
+        <div className="absolute bottom-1/3 left-6 *:text-white sm:left-12">
+          <div className="flex flex-col gap-9">
+            {/* <!-- Page title --> */}
+            <h1 className="text-7xl font-bold">About Us</h1>
+            {/* <!-- Breadcrumbs navigation --> */}
+            <Breadcrumbs />
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-8">
-        {/* Our Story Section */}
-        <div className="mb-16 flex flex-col items-center gap-8 md:flex-row">
-          <div className="md:w-1/2">
-            <div className="relative">
-              <div className="absolute -left-4 -top-4 h-full w-full rounded-lg bg-yellow-300"></div>
-              <img
-                src="/images/about/kids_about.webp"
-                alt="Happy children learning"
-                className="relative z-10 rounded-lg shadow-lg"
-              />
-            </div>
+      {/* <!----- Main contents -----> */}
+      <div className="mt-12 flex flex-col gap-32 px-6 sm:px-12">
+        {/* <!----- About us -----> */}
+        <section>
+          <h2 className="mb-14 text-5xl font-semibold">About Us</h2>
+          <div className="space-y-4 *:text-justify *:text-lg">
+            <p>
+              At Cuddle Corners, we believe that a child&apos;s journey into
+              education should begin with love, care, and a deep sense of
+              belonging. As a dedicated preschool chain, we are committed to
+              nurturing young minds and shaping bright futures through our
+              partnership with Toondemy, Singapore&apos;s premier choice for
+              innovative education solutions.
+            </p>
+            <p>
+              In today&apos;s fast-evolving world, early childhood education
+              plays a crucial role in shaping a child&apos;s emotional, social,
+              and intellectual development. Our vision is to create a safe,
+              stimulating, and loving environment where children feel valued,
+              confident, and eager to explore the world around them. We
+              understand that every child is unique, and we foster their
+              individuality through meaningful interactions and carefully
+              designed learning experiences.
+            </p>
+            <p>
+              Our curriculum blends
+              <b>
+                {" "}
+                traditional education with modern, creative learning solutions
+              </b>
+              , making learning engaging, enjoyable, and impactful. We emphasize
+              <b> experiential learning</b>, where children develop essential
+              cognitive, social, and motor skills through play, exploration, and
+              guided discovery.
+            </p>
+            <p>
+              At Cuddle Corners, we don&apos;t just teach—we <b>nurture</b>,{" "}
+              <b>support</b>, and <b>inspire</b>. Our passionate educators guide
+              children on a journey of exploration and self-discovery, equipping
+              them with the skills and confidence to excel in their future
+              academic and personal lives.
+            </p>
+            <p>
+              The name <b>Cuddle Corners</b> reflects our core belief: that a
+              <b> warm</b>, <b>caring</b>, and <b>supportive</b> environment
+              lays the foundation for lifelong learning and success. Through our
+              unique approach, we instill emotional resilience, curiosity, and
+              problem-solving skills—empowering children to thrive in an
+              ever-changing world.
+            </p>
+            <p>
+              <b>
+                Join us at Cuddle Corners, where education is more than
+                learning—it&apos;s about love, care, and creating meaningful
+                connections that last a lifetime.
+              </b>
+            </p>
           </div>
-          <div className="md:w-1/2">
-            <h2 className="mb-4 text-3xl font-bold text-indigo-700">
-              Our Story
+        </section>
+
+        {/* <!----- Learning Journey ------> */}
+        <section>
+          <RevealOnScroll
+            staggerChildren={0.2} // stagger timing
+          >
+            <h2 className="mb-14 text-5xl font-semibold">
+              Our Learning Journey
             </h2>
-            <p className="mb-4 text-lg">
-              Kids Wonder School was founded in 2010 with a simple vision: to
-              create a place where children love to learn. Our journey started
-              with just 15 students and 2 teachers in a small building.
-            </p>
-            <p className="text-lg">
-              Today, we&apos;ve grown into a vibrant community of over 300
-              students and 30 dedicated teachers. While we&apos;ve grown in
-              size, our commitment to joyful, engaging education remains
-              unchanged!
-            </p>
-          </div>
-        </div>
+          </RevealOnScroll>
 
-        {/* Our Mission Section */}
-        <div className="relative mb-16 overflow-hidden rounded-2xl bg-white p-8 shadow-xl">
-          {/* Decorative Elements */}
-          <div className="absolute -right-6 -top-6 h-16 w-16 rounded-full bg-red-300 opacity-50"></div>
-          <div className="absolute bottom-10 right-10 h-12 w-12 rounded-full bg-green-300 opacity-50"></div>
-
-          <h2 className="mb-8 text-center text-3xl font-bold text-indigo-700">
-            Our Mission
-          </h2>
-          <div className="flex flex-col justify-center gap-8 md:flex-row">
-            <div className="flex-1 rounded-xl border-2 border-blue-200 bg-blue-50 p-6 shadow-sm">
-              <h3 className="mb-2 text-xl font-bold text-blue-700">
-                Inspire Curiosity
-              </h3>
-              <p>
-                We create an environment where questions are celebrated and
-                exploration is encouraged.
-              </p>
-            </div>
-            <div className="flex-1 rounded-xl border-2 border-green-200 bg-green-50 p-6 shadow-sm">
-              <h3 className="mb-2 text-xl font-bold text-green-700">
-                Build Confidence
-              </h3>
-              <p>
-                We empower children to express themselves and take pride in
-                their unique abilities.
-              </p>
-            </div>
-            <div className="flex-1 rounded-xl border-2 border-purple-200 bg-purple-50 p-6 shadow-sm">
-              <h3 className="mb-2 text-xl font-bold text-purple-700">
-                Foster Kindness
-              </h3>
-              <p>
-                We nurture empathy and teach children to be compassionate
-                community members.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Meet Our Team Section */}
-        <h2 className="mb-8 text-center text-3xl font-bold text-indigo-700">
-          Meet Our Amazing Team
-        </h2>
-        <div className="mb-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Team Member Card */}
-          <div className="transform overflow-hidden rounded-xl bg-white shadow-lg transition hover:-translate-y-2">
-            <div className="h-48 bg-indigo-100">
-              <img
-                src="/images/about/principal.jpg"
-                alt="Principal Sarah Johnson"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="p-4 text-center">
-              <h3 className="text-xl font-bold text-indigo-700">
-                Sarah Johnson
-              </h3>
-              <p className="mb-2 text-purple-600">Principal</p>
-              <p className="text-sm text-gray-600">
-                Leading our school with 15 years of experience in childhood
-                education
-              </p>
-            </div>
-          </div>
-
-          {/* Team Member Card */}
-          <div className="transform overflow-hidden rounded-xl bg-white shadow-lg transition hover:-translate-y-2">
-            <div className="h-48 bg-pink-100">
-              <img
-                src="/images/about/jagajeet_pic.jpeg"
-                alt="Teacher Michael Rodriguez"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="p-4 text-center">
-              <h3 className="text-xl font-bold text-indigo-700">
-                Jagajeet Sinha
-              </h3>
-              <p className="mb-2 text-purple-600">Trustee (Operations)</p>
-              <p className="text-sm text-gray-600">
-                Bringing creativity to life through paint, clay, and imagination
-              </p>
-            </div>
-          </div>
-
-          {/* Team Member Card */}
-          <div className="transform overflow-hidden rounded-xl bg-white shadow-lg transition hover:-translate-y-2">
-            <div className="h-48 bg-yellow-100">
-              <img
-                src="/images/about/founder.jpeg"
-                alt="Teacher Emily Chen"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="p-4 text-center">
-              <h3 className="text-xl font-bold text-indigo-700">Sanjay Jha</h3>
-              <p className="mb-2 text-purple-600">Managing Trustee</p>
-              <p className="text-sm text-gray-600">
-                Making science magical through hands-on experiments and
-                discovery
-              </p>
-            </div>
-          </div>
-
-          {/* Team Member Card */}
-          <div className="transform overflow-hidden rounded-xl bg-white shadow-lg transition hover:-translate-y-2">
-            <div className="h-48 bg-green-100">
-              <img
-                src="/images/about/jagajeet_pic.jpeg"
-                alt="Teacher James Wilson"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="p-4 text-center">
-              <h3 className="text-xl font-bold text-indigo-700">
-                James Wilson
-              </h3>
-              <p className="mb-2 text-purple-600">Music Teacher</p>
-              <p className="text-sm text-gray-600">
-                Helping children find their rhythm and voice through music
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Testimonials Section */}
-        <div className="mb-16 rounded-2xl bg-gradient-to-r from-purple-100 to-pink-100 p-8">
-          <h2 className="mb-8 text-center text-3xl font-bold text-indigo-700">
-            What Parents Say
-          </h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div className="rounded-xl bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-lg font-bold text-blue-500">
-                  L
+          <RevealOnScroll
+            className="grid gap-8 md:grid-cols-3"
+            staggerChildren={0.5} // stagger timing
+          >
+            {learningDomains.map(
+              ({ title, description, icon: Icon }, index) => (
+                // <!--- Learning domain card ---->
+                <div
+                  key={index}
+                  className="group rounded-2xl bg-secondary-50 p-6 shadow-lg transition-shadow hover:shadow-xl"
+                >
+                  <div className="mb-4 flex items-center transition-transform group-hover:scale-110">
+                    <Icon size={34} className="text-primary-600" />
+                    <p className="ml-2 text-xl font-semibold text-stone-800">
+                      {title}
+                    </p>
+                  </div>
+                  <p className="text-stone-700">{description}</p>
                 </div>
-                <div className="ml-4">
-                  <p className="font-bold">Lisa Thompson</p>
-                  <p className="text-sm text-gray-500">
-                    Parent of Alex, Grade 2
-                  </p>
-                </div>
-              </div>
-              <p className="italic">
-                &quot;My son used to dread school. Since joining Kids Wonder, he
-                jumps out of bed every morning excited for the day ahead!&quot;
-              </p>
-            </div>
-            <div className="rounded-xl bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-lg font-bold text-green-500">
-                  R
-                </div>
-                <div className="ml-4">
-                  <p className="font-bold">Robert Patel</p>
-                  <p className="text-sm text-gray-500">
-                    Parent of Maya, Grade 4
-                  </p>
-                </div>
-              </div>
-              <p className="italic">
-                &quot;The teachers truly know my daughter as an individual.
-                They&apos;ve helped her confidence grow so much in just one
-                year.&quot;
-              </p>
-            </div>
-          </div>
-        </div>
+              ),
+            )}
+          </RevealOnScroll>
+        </section>
       </div>
     </div>
   );
 }
+
+export default AboutUs;
+
+// import { motion } from "framer-motion";
+// import { BookOpen, Heart, Rocket, Cloud } from "lucide-react";
+// import { Cloud as CloudCompo } from "../ui";
+// import { learningDomains } from "../utils/learningDomainsData";
+
+// export default function AboutUs() {
+//   return (
+//     <div className="relative min-h-screen overflow-hidden">
+//       <div className="relative z-10 mx-auto max-w-7xl px-4 py-12">
+//         {/* Header */}
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           className="mb-16 text-center"
+//         >
+//           <h1 className="mb-6 text-5xl font-bold text-sky-600">
+//             <Rocket className="mr-2 inline-block h-12 w-12 animate-bounce text-yellow-400" />
+//             Cuddle Corners
+//           </h1>
+//           <p className="text-xl font-semibold text-gray-700">
+//             Where Learning Begins with Love and Care
+//           </p>
+//         </motion.div>
+
+//         {/* Main Content */}
+//         <section className="mb-20">
+//           <div className="grid items-center gap-12 md:grid-cols-2">
+//             {/* Our Story */}
+//             <motion.div
+//               initial={{ x: -100, opacity: 0 }}
+//               animate={{ x: 0, opacity: 1 }}
+//               className="relative rounded-3xl border-4 border-pink-200 bg-white p-8 shadow-xl"
+//             >
+//               <h2 className="mb-6 text-3xl font-bold text-pink-600">
+//                 Our Story
+//               </h2>
+//               <p className="mb-4 text-gray-700">
+//                 At Cuddle Corners, we believe that the foundation of a child's
+//                 educational journey starts with love...
+//               </p>
+//               <div className="mt-6 flex items-center">
+//                 <Heart className="mr-2 h-8 w-8 animate-pulse text-red-500" />
+//                 <span className="text-lg font-semibold text-gray-700">
+//                   Nurturing Young Minds Since 2015
+//                 </span>
+//               </div>
+//               <motion.img
+//                 src="/mascot.png"
+//                 alt="Friendly Bear Mascot"
+//                 className="absolute -bottom-8 -right-8 h-48 w-48"
+//                 animate={{ y: [0, -20, 0] }}
+//                 transition={{ duration: 2, repeat: Infinity }}
+//               />
+//             </motion.div>
+
+//             {/* Team Section */}
+//             <motion.div
+//               initial={{ x: 100, opacity: 0 }}
+//               animate={{ x: 0, opacity: 1 }}
+//               className="rounded-3xl border-4 border-yellow-300 bg-yellow-100 p-8 shadow-xl"
+//             >
+//               <h3 className="mb-6 text-2xl font-bold text-amber-600">
+//                 Our Team
+//               </h3>
+//               <div className="grid grid-cols-2 gap-4">
+//                 {teamMembers.map((member, index) => (
+//                   <TeamMemberCard key={index} {...member} />
+//                 ))}
+//               </div>
+//             </motion.div>
+//           </div>
+//         </section>
+
+//       </div>
+//     </div>
+//   );
+// }

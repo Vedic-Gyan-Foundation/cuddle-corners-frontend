@@ -3,8 +3,8 @@ import { MapPin } from "lucide-react";
 import { Phone } from "lucide-react";
 import { Mail } from "lucide-react";
 
-import { navListItems } from "../utils/constants";
-import { getRouteKey } from "../utils/getRouteKey";
+import { navListItems } from "../utils/data/navListItems";
+import { getRouteKey } from "../utils/navigation/getRouteKey";
 import ROUTES from "../config/routes";
 
 function Footer() {
@@ -15,26 +15,26 @@ function Footer() {
           <div className="mb-8 w-full md:mb-0 md:w-1/3">
             {/* <!---- Get in touch details ---> */}
             <div className="mb-7 space-y-7">
-              <h2 className="font-lobsterTwo text-3xl font-bold text-stone-800">
+              <h2 className="text-3xl font-bold text-stone-800">
                 Get in Touch
               </h2>
               <div className="space-y-5 *:text-sm">
-                <p className="flex items-center gap-2">
-                  <span className="self-start">
+                <p className="group flex transform items-center gap-2 transition-transform duration-300 hover:scale-110">
+                  <span className="self-start transition-colors duration-300 group-hover:text-secondary-50">
                     <MapPin size={20} />
                   </span>
                   <a
                     href="https://maps.app.goo.gl/DpoUnPBk86P9UYDg6"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-secondary-200"
+                    className="transition-colors duration-300 hover:text-secondary-50"
                   >
                     Mahapurush Madhabdev Path, Near ITI, Nalapara, Sarusajai,
                     Guwahati, Assam, 781040
                   </a>
                 </p>
-                <p className="flex items-center gap-2">
-                  <span>
+                <p className="group flex items-center gap-2 transition-transform duration-300 hover:scale-110">
+                  <span className="transition-colors duration-300 group-hover:text-secondary-50">
                     <Phone size={20} />
                   </span>
                   <span>
@@ -42,7 +42,7 @@ function Footer() {
                       href="tel:+917002446735"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-secondary-200"
+                      className="transition-colors duration-300 hover:text-secondary-50"
                     >
                       +91-7002446735
                     </a>
@@ -51,21 +51,21 @@ function Footer() {
                       href="tel:+919856199105"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-secondary-200"
+                      className="transition-colors duration-300 hover:text-secondary-50"
                     >
                       +91-9856199105
                     </a>
                   </span>
                 </p>
-                <p className="flex items-center gap-2">
-                  <span>
+                <p className="group flex items-center gap-2 transition-transform duration-300 hover:scale-110">
+                  <span className="transition-colors duration-300 group-hover:text-secondary-50">
                     <Mail size={20} />
                   </span>
                   <a
                     href="mailto:info@cuddlecorners.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-secondary-200"
+                    className="transition-colors duration-300 hover:text-secondary-50"
                   >
                     info@cuddlecorners.com
                   </a>
@@ -106,7 +106,7 @@ function Footer() {
 
           {/* <!---- Pages naviagtion links ----> */}
           <div className="mb-8 w-full md:mb-0 md:w-1/4">
-            <h3 className="mb-6 font-lobsterTwo text-3xl font-bold text-stone-800">
+            <h3 className="mb-6 text-3xl font-bold text-stone-800">
               Quick Links
             </h3>
             <ul className="space-y-3 pl-3">
