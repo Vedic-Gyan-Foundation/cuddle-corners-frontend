@@ -71,20 +71,20 @@ function AboutUsSection() {
           {/* Top Image */}
           <img
             className="aspect-square w-3/4 rounded-full border-8 border-primary-100 object-cover transition-colors duration-300 ease-in hover:border-primary-500"
-            src="./images/placeholders/about-us-img-1.jpg"
+            src="./images/placeholders/about-us-img-1.webp"
             alt="cuddle-corners-about-us-img-1"
           />
 
           {/* Bottom Images */}
-          <div className="absolute -bottom-20 flex w-full justify-between px-2 sm:-bottom-5 sm:px-14">
+          <div className="absolute -bottom-20 flex w-full justify-between gap-8 px-2 sm:-bottom-5 sm:px-14">
             <img
-              className="aspect-square w-36 rounded-full border-8 border-primary-100 object-cover transition-colors duration-300 ease-in hover:border-primary-500 sm:w-48"
-              src="./images/placeholders/about-us-img-2.jpg"
+              className="aspect-square w-44 rounded-full border-8 border-primary-100 object-cover transition-colors duration-300 ease-in hover:border-primary-500 sm:w-36"
+              src="./images/placeholders/about-us-img-2.webp"
               alt="cuddle-corners-about-us-img-2"
             />
             <img
-              className="aspect-square w-36 rounded-full border-8 border-primary-100 object-cover transition-colors duration-300 ease-in hover:border-primary-500 sm:w-48"
-              src="./images/placeholders/about-us-img-3.jpg"
+              className="aspect-square w-44 rounded-full border-8 border-primary-100 object-cover transition-colors duration-300 ease-in hover:border-primary-500 sm:w-36"
+              src="./images/placeholders/about-us-img-3.webp"
               alt="cuddle-corners-about-us-img-3"
             />
           </div>

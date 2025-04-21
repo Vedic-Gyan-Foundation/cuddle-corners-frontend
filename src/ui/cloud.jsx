@@ -1,23 +1,23 @@
 export default function Cloud({
-  width = 250, // Reduced width to keep proportions
-  height = 100, // Increased height for a rounder look
+  width = 250,
+  height = 100,
   scale = 1,
   className = "",
 }) {
   const cloudWidth = width * scale;
   const cloudHeight = height * scale;
-  const beforeSize = 120 * scale; // Adjusted size for balance
+  const beforeSize = 120 * scale;
   const afterSize = 90 * scale;
 
   return (
-    <div className={`absolute ${className}`}>
+    <div className={`absolute ${className}`} style={{ zIndex: 0 }}>
       <div
         style={{
           width: `${cloudWidth}px`,
           height: `${cloudHeight}px`,
           borderRadius: `${cloudHeight / 2}px`,
-          background: "linear-gradient(to bottom, #E1F1F9 5%, #e2eff5 100%)",
-          boxShadow: `0 5px 10px #E1F1F9`, // Softer shadow
+          background: "linear-gradient(to bottom, #c9dfea 5%, #c9dfea 100%)",
+          boxShadow: `0 5px 10px #E1F1F9`,
           position: "relative",
         }}
       >
@@ -25,7 +25,7 @@ export default function Cloud({
         <div
           style={{
             position: "absolute",
-            background: "#E1F1F9",
+            background: "#c9dfea",
             width: `${beforeSize}px`,
             height: `${beforeSize}px`,
             borderRadius: "50%",
@@ -38,7 +38,7 @@ export default function Cloud({
         <div
           style={{
             position: "absolute",
-            background: "#E1F1F9",
+            background: "#c9dfea",
             width: `${afterSize}px`,
             height: `${afterSize}px`,
             borderRadius: "50%",

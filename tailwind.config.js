@@ -2,6 +2,19 @@
 export const content = ["./src/**/*.{js,jsx,ts,tsx}"];
 export const theme = {
   extend: {
+    keyframes: {
+      floatCloud: {
+        "0%": { transform: "translateX(-100%)" },
+        "100%": { transform: "translateX(100vw)" },
+      },
+    },
+    animation: {
+      "cloud-slow": "floatCloud 60s linear infinite",
+      "cloud-medium": "floatCloud 45s linear infinite",
+      "cloud-fast": "floatCloud 30s linear infinite",
+      "cloud-xfast": "floatCloud 20s linear infinite",
+      "cloud-ultraslow": "floatCloud 90s linear infinite",
+    },
     colors: {
       primary: {
         900: "#025A77",
@@ -62,11 +75,14 @@ export const theme = {
         "radial-gradient(circle, #CDE5F1 10%, #E1F1F9 50%, #ECF7FC 100%)",
 
       // Linear Gradient (Darkest at the top, Lightest at the bottom)
-      "linear-primary-mix":
+      "linear-primary-mix-tb":
         "linear-gradient(to bottom, #9AD0E6 10%, #CDE5F1 50%, #E1F1F9 100%)",
 
-      // Linear Gradient (Darkest to Lightest)
+      // Linear Gradient (Darkest at the bottom, Lightest at the top)
+      "linear-primary-mix-bt":
+        "linear-gradient(to top, #9AD0E6 10%, #CDE5F1 50%, #E1F1F9 100%)",
 
+      // Linear Gradient (Darkest to Lightest)
       "linear-primary-dark":
         "linear-gradient(to bottom, #037799 0%, #058DB5 20%, #08AEF0 40%, #1AA1D7 60%, #5BB7DC 80%, #9AD0E6 100%)",
 

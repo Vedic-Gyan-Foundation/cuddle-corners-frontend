@@ -3,3 +3,4 @@ export { default as AboutUs } from "./about_us";
 export { default as LocateUs } from "./locate_us";
 export { default as Programmes } from "./programmes";
 export { default as Admission } from "./admission";
+export { default as JoinUs } from "./join_us";

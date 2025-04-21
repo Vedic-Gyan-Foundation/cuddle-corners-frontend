@@ -28,7 +28,7 @@ const ROUTES = {
   ADMISSION: "/admission",
 
   // Partner with
-  FRANCHISE_OPPURTUNITY: "/partner-with-cuddle-corners",
+  JOIN_US: "/partner-with-cuddle-corners",
 
   // Locate Us
   LOCATE_US: "/locate-us",

@@ -1,15 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
 
-const Breadcrumbs = () => {
-  const location = useLocation(); // Get the current URL location
+function Breadcrumbs() {
+  const location = useLocation();
 
+  // Split the current URL path into segments, removing any empty parts
   const pathSegments = location.pathname
-    .split("/") // Split the pathname into an array based on "/"
-    .filter((segment) => !!segment); // Remove empty segments (""), keeping only valid parts
+    .split("/")
+    .filter((segment) => !!segment);
 
   return (
     <nav className="font-robotoSlab text-xl">
-      {/* <!---- Home link (always present) ----> */}
+      {/* Always show the Home link */}
       <Link
         to="/"
         className="inline-block transform capitalize text-secondary-500 transition-transform duration-200 hover:scale-110 hover:text-secondary-300"
@@ -17,38 +18,23 @@ const Breadcrumbs = () => {
         Home
       </Link>
 
-      {/*  <!---- Loop through each segment to build breadcrumb links ----> */}
       {pathSegments.map((segment, index) => {
-        /**
-         * Constructs the full breadcrumb path step by step.
-         *
-         * @param {string[]} pathSegments - Array of URL path segments.
-         * @param {number} index - Current segment index in the loop.
-         * @returns {string} - The full path up to the current breadcrumb.
-         *
-         * @example
-         * // Given URL: "/about-us/team/contact"
-         * pathSegments = ["about-us", "team", "contact"]
-         *
-         * Iterations:
-         * - index = 0 → slice(0, 1) → `["about-us"]` → "/about-us"
-         * - index = 1 → slice(0, 2) → `["about-us", "team"]` → "/about-us/team"
-         * - index = 2 → slice(0, 3) → `["about-us", "team", "contact"]` → "/about-us/team/contact"
-         */
+        // Build the full path up to the current segment
         const path = `/${pathSegments.slice(0, index + 1).join("/")}`;
-        const isLast = index === pathSegments.length - 1; // Check if this is the last segment
+        const isLast = index === pathSegments.length - 1;
 
         return (
           <span key={path}>
-            <span className="mx-2">/</span>{" "}
-            {/* <!---- Separator between breadcrumbs ----> */}
+            {/* Separator between breadcrumbs */}
+            <span className="mx-2">/</span>
+
             {isLast ? (
-              // Last breadcrumb (non-clickable, gray color)
+              // Last segment: plain text (not a link)
               <span className="capitalize text-primary-400">
                 {segment.replace(/-/g, " ")}
               </span>
             ) : (
-              // Clickable breadcrumb link
+              // Intermediate segments: clickable breadcrumb links
               <Link
                 to={path}
                 className="inline-block transform capitalize text-secondary-500 transition-transform hover:scale-110 hover:text-secondary-300"
@@ -61,6 +47,6 @@ const Breadcrumbs = () => {
       })}
     </nav>
   );
-};
+}
 
 export default Breadcrumbs;

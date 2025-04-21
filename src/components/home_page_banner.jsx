@@ -1,12 +1,12 @@
 import { ButtonPrimary } from "../ui";
 
-function Banner() {
+export default function HomePageBanner() {
   return (
     <>
       {/* <!---- Mobile Banner ----> */}
       <div className="relative block sm:hidden">
         <img
-          src="./images/banners/mobile-home-banner-1.png.png"
+          src="./images/banners/mobile-home-banner-1.webp"
           alt="mobile-view-banner"
           className="mt-[-7rem] w-full"
         />
@@ -39,7 +39,7 @@ function Banner() {
         <div className="relative mt-[-3rem] hidden sm:block">
           <div className="absolute inset-0"></div>
           <img
-            src="./images/banners/desktop-home-banner-1.png"
+            src="./images/banners/desktop-home-banner-1.webp"
             alt="mobile-view-banner"
             className="w-full"
           />
@@ -68,5 +68,3 @@ function Banner() {
     </>
   );
 }
-
-export default Banner;

@@ -2,7 +2,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import AppLayout from "./app_layout";
 import ROUTES from "../config/routes";
-import { Home, AboutUs, LocateUs, Programmes, Admission } from "../pages";
+import {
+  Home,
+  AboutUs,
+  LocateUs,
+  Programmes,
+  Admission,
+  JoinUs,
+} from "../pages";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: ROUTES.LOCATE_US,
         element: <LocateUs />,
+      },
+      {
+        path: ROUTES.JOIN_US,
+        element: <JoinUs />,
       },
     ],
   },
