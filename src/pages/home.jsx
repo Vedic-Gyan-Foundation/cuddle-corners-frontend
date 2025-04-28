@@ -6,7 +6,7 @@ import {
 
 function Home() {
   return (
-    <section>
+    <section className="py-28">
       {/* <!---- Banner ----> */}
       <HomePageBanner />
 

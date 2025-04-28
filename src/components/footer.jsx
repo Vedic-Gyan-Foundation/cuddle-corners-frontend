@@ -11,14 +11,14 @@ import { Cloud } from "../ui";
 function Footer() {
   return (
     <footer className="relative overflow-hidden bg-linear-primary-mix-bt">
-      {/* Animatioed Clouds */}
+      {/* Animationed Clouds */}
       <Cloud
-        className="animate-cloud-medium left-[-350px] top-36"
+        className="left-[-350px] top-36 animate-cloud-medium"
         scale={0.3}
       />
-      <Cloud className="animate-cloud-fast left-[-200px] top-44" scale={0.5} />
+      <Cloud className="left-[-200px] top-44 animate-cloud-fast" scale={0.5} />
       <Cloud
-        className="animate-cloud-xfast left-[-250px] top-28"
+        className="left-[-250px] top-28 animate-cloud-xfast"
         scale={0.35}
       />
 

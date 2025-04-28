@@ -1,11 +1,11 @@
 import Breadcrumbs from "./breadcrumbs";
 
-function PagesBanner({ headingText }) {
+function PagesBanner({ headingText, imgSrc }) {
   return (
     <section className="relative mt-[-7rem] sm:mt-[-3rem]">
       {/* <!-- Background banner image --> */}
       <img
-        src="/images/banners/about-us-banner-1.png"
+        src={imgSrc ? imgSrc : "/images/banners/about-us-banner-1.png"}
         alt="cuddle-corners-about-us-banner-img"
         className="h-80 w-full object-cover"
       />

@@ -5,7 +5,7 @@ import { PagesBanner } from "../components";
 
 function AboutUs() {
   return (
-    <article>
+    <div className="py-28">
       {/* <!--  Hero Section --> */}
       <PagesBanner headingText="About Us" />
 
@@ -15,7 +15,7 @@ function AboutUs() {
         <section className="grid w-full gap-28 sm:grid-cols-1 lg:grid-cols-5">
           {/* <!-- Text --> */}
           <div className="lg:col-span-3">
-            <h2 className="mb-6 text-5xl font-semibold text-primary-600">
+            <h2 className="mb-6 text-5xl font-semibold text-primary-900">
               Our School
             </h2>
             <div className="space-y-4 *:text-left *:text-base *:leading-[1.5]">
@@ -57,7 +57,7 @@ function AboutUs() {
 
           {/* <!-- Text  --> */}
           <div className="order-1 lg:order-2 lg:col-span-3">
-            <h2 className="mb-6 text-5xl font-semibold text-primary-600">
+            <h2 className="mb-6 text-5xl font-semibold text-primary-900">
               Mission
             </h2>
 
@@ -84,7 +84,7 @@ function AboutUs() {
           <RevealOnScroll
             staggerChildren={0.1} // stagger timing
           >
-            <h2 className="mb-12 text-5xl font-semibold text-primary-600">
+            <h2 className="mb-12 text-5xl font-semibold text-primary-900">
               Our Learning Journey
             </h2>
           </RevealOnScroll>
@@ -101,7 +101,7 @@ function AboutUs() {
                   className="group h-full rounded-2xl bg-secondary-50 p-6 shadow-lg transition-shadow hover:shadow-xl"
                 >
                   <div className="mb-4 flex items-center transition-transform group-hover:scale-110">
-                    <Icon size={34} className="text-primary-600" />
+                    <Icon size={34} className="text-primary-900" />
                     <p className="ml-2 text-xl font-semibold text-stone-800">
                       {title}
                     </p>
@@ -115,13 +115,13 @@ function AboutUs() {
 
         {/* <!----- Our Team ------> */}
         <section>
-          <h2 className="mb-14 text-5xl font-semibold text-primary-600">
+          <h2 className="mb-14 text-5xl font-semibold text-primary-900">
             Our Team
           </h2>
           <div></div>
         </section>
       </div>
-    </article>
+    </div>
   );
 }
 

@@ -6,7 +6,7 @@ import {
 
 function Programmes() {
   return (
-    <article>
+    <article className="py-28">
       <PagesBanner headingText="Programmes" />
 
       {/* <!--- Program Contents ---> */}
@@ -44,7 +44,7 @@ function Programmes() {
 
           {/* Content */}
           <div className="space-y-6">
-            <h2 className="text-5xl font-bold text-gray-800 dark:text-white">
+            <h2 className="text-5xl font-bold text-primary-900 dark:text-white">
               Preschool Classroom
             </h2>
             <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
@@ -52,11 +52,11 @@ function Programmes() {
               <li>Curriculum: Experience Preschool</li>
               <li>Classroom ratio is 1:10</li>
             </ul>
-            <p className="text-2xl font-semibold text-gray-800 dark:text-white">
+            <p className="text-2xl font-semibold text-primary-800 dark:text-white">
               Helpful resources to download:
             </p>
 
-            <div className="grid grid-cols-1 gap-4 *:rounded-md *:bg-slate-100 *:p-3 *:font-semibold *:text-primary-500 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 *:rounded-md *:bg-slate-100 *:p-3 *:text-center *:font-robotoSlab *:font-semibold *:text-primary-500 sm:grid-cols-2">
               <a
                 href="/s/Toddler-Classroom-Description.pdf"
                 target="_blank"
@@ -111,15 +111,15 @@ function Programmes() {
       </section>
 
       {/* <!--- Program Additional Resources ---> */}
-      <section className="px-10 py-20">
-        <h2 className="mb-24 text-center text-5xl font-semibold text-primary-600">
+      <section className="mt-20 px-8">
+        <h2 className="mb-16 text-center text-5xl font-semibold text-primary-900">
           Additional resources
         </h2>
         <div className="flex flex-col gap-5 sm:flex-row">
           {programAdditionalResources?.map((item, index) => (
             <div
               key={index}
-              className="mx-5 flex flex-1 flex-col items-center justify-center gap-6 rounded-sm bg-primary-100 px-4 py-6 *:text-stone-600"
+              className="mx-5 flex flex-1 flex-col items-center justify-center gap-6 rounded-md bg-primary-200 px-4 py-6 *:text-stone-600"
             >
               <h2 className="font-robotoSlab text-2xl">{item?.heading}</h2>
               <p className="text-center">{item?.para}</p>

@@ -9,7 +9,7 @@ function AppLayout() {
       <header>
         <Navbar />
       </header>
-      <main id="main-container" className="flex-grow py-28">
+      <main id="main-container" className="flex-grow">
         <Outlet />
       </main>
       <Footer />
