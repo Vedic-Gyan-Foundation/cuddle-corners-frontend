@@ -1,4 +1,5 @@
 import { PagesBanner } from "../components";
+import { RevealOnScroll } from "../ui";
 import {
   programAdditionalResources,
   programContents,
@@ -7,10 +8,13 @@ import {
 function Programmes() {
   return (
     <article className="py-28">
-      <PagesBanner headingText="Programmes" />
+      <PagesBanner headingText="Inspiring Young Explorers Every Step of the Way" />
 
       {/* <!--- Program Contents ---> */}
-      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-x-20 gap-y-16 px-10 py-20 md:grid-cols-2">
+      <RevealOnScroll
+        className="mx-auto grid max-w-6xl grid-cols-1 gap-x-20 gap-y-16 px-10 py-20 md:grid-cols-2"
+        staggerChildren={0.2} // stagger timing
+      >
         {programContents?.map((item, index) => (
           <div key={index} className="space-y-4">
             <div className="flex items-center gap-4">
@@ -28,7 +32,7 @@ function Programmes() {
             </div>
           </div>
         ))}
-      </section>
+      </RevealOnScroll>
 
       {/* <!---- Types of classroom ---> */}
       <section className="bg-secondary-400 px-6 py-16">
@@ -56,7 +60,10 @@ function Programmes() {
               Helpful resources to download:
             </p>
 
-            <div className="grid grid-cols-1 gap-4 *:rounded-md *:bg-slate-100 *:p-3 *:text-center *:font-robotoSlab *:font-semibold *:text-primary-500 sm:grid-cols-2">
+            <RevealOnScroll
+              staggerChildren={0.2}
+              className="grid grid-cols-1 gap-4 *:rounded-md *:bg-slate-100 *:p-3 *:text-center *:font-robotoSlab *:font-semibold *:text-primary-500 sm:grid-cols-2"
+            >
               <a
                 href="/s/Toddler-Classroom-Description.pdf"
                 target="_blank"
@@ -105,7 +112,7 @@ function Programmes() {
               >
                 Family Newsletter
               </a>
-            </div>
+            </RevealOnScroll>
           </div>
         </div>
       </section>

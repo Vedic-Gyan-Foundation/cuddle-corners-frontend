@@ -3,6 +3,7 @@ export const navListItemsDesktop = [
   "About Us",
   "Programmes",
   "Admission",
+  "Careers",
   "Locate Us",
 ];
 
@@ -11,6 +12,7 @@ export const navListItemsMobile = [
   "About Us",
   "Programmes",
   "Admission",
+  "Careers",
   "Locate Us",
   "Join Us",
 ];

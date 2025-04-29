@@ -6,7 +6,7 @@ function Modal({ isOpen, onClose, title, children }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="hide-scrollbar relative max-h-[90dvh] w-full max-w-3xl overflow-y-auto rounded-lg bg-white p-14 shadow-lg">
+      <div className="hide-scrollbar relative max-h-[90dvh] w-full max-w-3xl overflow-y-auto rounded-lg bg-white px-10 pb-10 shadow-lg">
         {!title ? (
           // Close Button
           <button

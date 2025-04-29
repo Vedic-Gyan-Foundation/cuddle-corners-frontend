@@ -27,11 +27,14 @@ const ROUTES = {
   // Admission
   ADMISSION: "/admission",
 
-  // Partner with
-  JOIN_US: "/partner-with-cuddle-corners",
-
   // Locate Us
   LOCATE_US: "/locate-us",
+
+  // Locate Us
+  CAREERS: "/careers",
+
+  // Partner with
+  JOIN_US: "/partner-with-cuddle-corners",
 };
 
 export default ROUTES;

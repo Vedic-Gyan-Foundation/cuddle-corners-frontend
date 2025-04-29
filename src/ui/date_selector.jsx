@@ -6,7 +6,8 @@ function DateSelector({ labelText, id, htmlFor, selectedDate, onDateChange }) {
   return (
     <div className="grid w-fit space-y-2">
       <label className="font-medium" htmlFor={htmlFor}>
-        {labelText}
+        {labelText}{" "}
+        <span className="py-1 text-xs text-stone-500">(required)</span>
       </label>
       <input
         id={id}

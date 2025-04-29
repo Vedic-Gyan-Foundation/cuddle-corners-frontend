@@ -1,18 +1,27 @@
 import { learningDomains } from "../utils/data/learning_journey";
-import { RevealOnScroll, StackedCards } from "../ui";
+import { ButtonPrimary, RevealOnScroll, StackedCards } from "../ui";
 import { aboutUSImagesOne } from "../utils/data/about_us_images";
 import { PagesBanner } from "../components";
+import { useState } from "react";
+import Modal from "../ui/modal";
+import EnrollmentForm from "../components/enrollment_form";
 
 function AboutUs() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenModal = (value) => {
+    setIsOpen(value);
+  };
+
   return (
-    <div className="py-28">
+    <div className="pt-28">
       {/* <!--  Hero Section --> */}
-      <PagesBanner headingText="About Us" />
+      <PagesBanner headingText="We believe every child is born with a natural curiosity and a love for learning." />
 
       {/* <!----- About Us Section -----> */}
-      <div className="mt-20 flex flex-col gap-32 px-6 sm:px-12">
+      <div className="mt-20 flex flex-col gap-32">
         {/* <!---- Our School ----> */}
-        <section className="grid w-full gap-28 sm:grid-cols-1 lg:grid-cols-5">
+        <section className="grid w-full gap-28 px-6 sm:grid-cols-1 sm:px-12 lg:grid-cols-5">
           {/* <!-- Text --> */}
           <div className="lg:col-span-3">
             <h2 className="mb-6 text-5xl font-semibold text-primary-900">
@@ -49,7 +58,7 @@ function AboutUs() {
         </section>
 
         {/* <!---- Mission -----> */}
-        <section className="grid w-full gap-28 sm:grid-cols-1 lg:grid-cols-5">
+        <section className="grid w-full gap-28 px-6 sm:grid-cols-1 sm:px-12 lg:grid-cols-5">
           {/* <!-- Image  --> */}
           <div className="order-2 mx-14 flex items-center justify-center lg:order-1 lg:col-span-2 lg:mx-10">
             <StackedCards images={aboutUSImagesOne} />
@@ -80,7 +89,7 @@ function AboutUs() {
         </section>
 
         {/* <!----- Learning Journey ------> */}
-        <section>
+        <section className="px-6 sm:px-12">
           <RevealOnScroll
             staggerChildren={0.1} // stagger timing
           >
@@ -113,14 +122,66 @@ function AboutUs() {
           </RevealOnScroll>
         </section>
 
-        {/* <!----- Our Team ------> */}
-        <section>
-          <h2 className="mb-14 text-5xl font-semibold text-primary-900">
-            Our Team
-          </h2>
-          <div></div>
-        </section>
+        {/* <!----- Photos and Enrollment form container ------> */}
+        <div className="bg-primary-50 pb-14">
+          {/* <!-- Photos --> */}
+          <section>
+            <h2 className="mb-14 pt-12 text-center font-robotoSlab text-4xl font-semibold text-primary-900">
+              See How We Learn, Laugh, and Grow at Cuddle Corners!
+            </h2>
+            <div className="grid grid-cols-2 gap-0.5 sm:grid-cols-3 md:grid-cols-4">
+              {Array.from({ length: 8 }, (_, i) => i + 1).map(
+                (imgName, index) => (
+                  <img
+                    key={index}
+                    src="https://images.squarespace-cdn.com/content/v1/623b745f99da7f6d050e59e5/993571be-b4ac-4d9e-8be9-973cd0013236/TSD_gallery_art_class.jpg?format=1000w"
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full rounded-md object-cover"
+                  />
+                ),
+              )}
+            </div>
+          </section>
+
+          {/* <!-- Enrollment form  --> */}
+          <section className="mx-auto max-w-3xl space-y-10 px-4 py-20 text-center">
+            <img
+              src="./images/icons/chat.svg"
+              alt="cuddle-corners-enrollment-form-img"
+              className="mx-auto aspect-square w-20 sm:w-32"
+            />
+            <div className="space-y-6">
+              <p className="text-4xl text-primary-900">
+                Ready to Begin a Learning Adventure?
+              </p>
+              <p className="mx-auto max-w-prose text-sm text-stone-500">
+                If you’d like to learn more about our programs or the enrollment
+                process, simply click the button below to fill out our short
+                questionnaire. A member of our team will be in touch with you
+                shortly!
+              </p>
+            </div>
+            <ButtonPrimary
+              label="Contact Us"
+              color="blue"
+              onClick={() => setIsOpen(true)}
+              className="mx-auto pt-6"
+            />
+          </section>
+        </div>
       </div>
+
+      <>
+        {/* <!---- Modal  ----> */}
+        <Modal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          title="Cuddle Corners enrollment"
+        >
+          {/* <!-- Enrollment form --> */}
+          <EnrollmentForm onOpenModal={handleOpenModal} />
+        </Modal>
+      </>
     </div>
   );
 }

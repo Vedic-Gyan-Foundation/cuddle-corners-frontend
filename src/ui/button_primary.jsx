@@ -48,7 +48,6 @@ function ButtonPrimary({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        download
         className={baseClasses}
         {...props}
       >

@@ -22,7 +22,9 @@ function DaysSelector({ title, selectedDay = [], onDayChange }) {
 
   return (
     <div className="flex flex-col gap-3">
-      <p>{title}</p>
+      <p>
+        {title} <span className="py-1 text-xs text-stone-500">(required)</span>
+      </p>
       {days.map((day, index) => (
         <div className="space-x-5" key={index}>
           <input

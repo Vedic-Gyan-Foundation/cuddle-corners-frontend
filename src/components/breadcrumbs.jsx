@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-function Breadcrumbs() {
+function Breadcrumbs({ className }) {
   const location = useLocation();
 
   // Split the current URL path into segments, removing any empty parts
@@ -9,7 +9,7 @@ function Breadcrumbs() {
     .filter((segment) => !!segment);
 
   return (
-    <nav className="font-robotoSlab text-xl">
+    <nav className={`font-robotoSlab text-xl ${className}`}>
       {/* Always show the Home link */}
       <Link
         to="/"
