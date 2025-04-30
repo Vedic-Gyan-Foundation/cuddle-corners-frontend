@@ -341,7 +341,7 @@ const JoinUs = () => {
                   contact you shortly to discuss the opportunity in detail.
                 </p>
                 <div className="space-y-2 font-robotoSlab">
-                  <p className="flex items-center gap-2 text-primary-700">
+                  <p className="flex items-center gap-2 text-primary-800">
                     <Mail size={20} />
                     <a
                       href="mailto:info@cuddlecorners.com"
@@ -352,7 +352,7 @@ const JoinUs = () => {
                       info@cuddlecorners.com
                     </a>
                   </p>
-                  <p className="flex items-center gap-2 text-primary-700">
+                  <p className="flex items-center gap-2 text-primary-800">
                     <Phone size={20} />
                     <a
                       href="tel:+919856199105"
