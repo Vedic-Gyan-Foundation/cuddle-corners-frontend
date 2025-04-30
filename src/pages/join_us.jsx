@@ -1,3 +1,4 @@
+import { Mail, Phone } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -340,11 +341,27 @@ const JoinUs = () => {
                   contact you shortly to discuss the opportunity in detail.
                 </p>
                 <div className="space-y-2 font-robotoSlab">
-                  <p className="flex items-center text-primary-700">
-                    <span className="mr-2">📧</span> franchise@cuddlecorners.com
+                  <p className="flex items-center gap-2 text-primary-700">
+                    <Mail size={20} />
+                    <a
+                      href="mailto:info@cuddlecorners.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mr-2 transition-colors duration-300 hover:text-secondary-600"
+                    >
+                      info@cuddlecorners.com
+                    </a>
                   </p>
-                  <p className="flex items-center text-primary-700">
-                    <span className="mr-2">📱</span> (555) 123-4567
+                  <p className="flex items-center gap-2 text-primary-700">
+                    <Phone size={20} />
+                    <a
+                      href="tel:+919856199105"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mr-2 transition-colors duration-300 hover:text-secondary-600"
+                    >
+                      +91-9856199105
+                    </a>
                   </p>
                 </div>
               </div>
