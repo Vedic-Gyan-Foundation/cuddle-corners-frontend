@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 function CareersForm() {
+  const fileResume = useRef(null);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -40,10 +42,10 @@ function CareersForm() {
     e.preventDefault();
     const { fullName, email, phone_number, message } = formData;
 
-    if (!fullName || !email || !phone_number || !message || !resume) {
-      toast.error("Please fill all required fields and upload your resume.");
-      return;
-    }
+    // if (!fullName || !email || !phone_number || !message || !resume) {
+    //   toast.error("Please fill all required fields and upload your resume.");
+    //   return;
+    // }
 
     if (phone_number.length !== 10) {
       toast.error("Phone number must be 10 digits.");
@@ -57,17 +59,17 @@ function CareersForm() {
     setFormData({ fullName: "", email: "", phone_number: "", message: "" });
     setResume(null);
     e.target.reset();
-    toast.success("Form submitted successfully!");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-12 space-y-6 rounded-xl p-8">
+    <form action="https://formsubmit.co/vedicgyanfoundation@gmail.com" encType="multipart/form-data" method="POST" className="mt-12 space-y-6 rounded-xl p-8">
       <div>
         <label className="block font-semibold text-gray-700">
           Name <span className="text-sm text-gray-500">(required)</span>
         </label>
         <input
           type="text"
+          name="Name"
           className="mt-1 w-full rounded-md border border-gray-300 bg-gray-50 p-2"
           value={formData.fullName}
           onChange={(e) => handleFormDataUpdate("fullName", e.target.value)}
@@ -80,6 +82,7 @@ function CareersForm() {
         </label>
         <input
           type="email"
+          name="Email"
           className="mt-1 w-full rounded-md border border-gray-300 bg-gray-50 p-2"
           value={formData.email}
           onChange={(e) => handleFormDataUpdate("email", e.target.value)}
@@ -92,6 +95,7 @@ function CareersForm() {
         </label>
         <input
           type="text"
+          name="Number"
           className="mt-1 w-full rounded-md border border-gray-300 bg-gray-50 p-2"
           value={formData.phone_number}
           onChange={handlePhoneNumberChange}
@@ -102,6 +106,7 @@ function CareersForm() {
         <label className="block font-semibold text-gray-700">Message</label>
         <textarea
           rows={4}
+          name="Message"
           className="mt-1 w-full resize-none rounded-md border border-gray-300 bg-gray-50 p-2"
           value={formData.message}
           onChange={(e) =>
@@ -119,9 +124,11 @@ function CareersForm() {
           Upload Resume (PDF, max 2MB)
         </label>
         <input
+          name="Resume"
           type="file"
           accept=".pdf"
-          onChange={handleResumeUpload}
+          // onChange={handleResumeUpload}
+          ref={fileResume}
           className="mt-1"
         />
       </div>

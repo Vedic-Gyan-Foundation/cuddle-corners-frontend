@@ -1,5 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 import { DaysSelector, DateSelector, ButtonPrimary } from "../ui";
 
@@ -64,6 +65,20 @@ function EnrollmentForm({ onOpenModal }) {
 
     // API logic goes here
     console.dir(formData);
+    // admissionFormSubmitBtn.disabled = true;
+    // admissionFormSubmitBtn.innerHTML = "Please Wait..";
+    axios.defaults.headers.post["Content-Type"] = "application/json";
+    axios.post(
+        "https://formsubmit.co/ajax/vedicgyanfoundation@gmail.com",
+        formData,
+      )
+      .then((response) => {
+        response.data.success && toast.success("Form Submitted successfully");
+      })
+      .catch((error) => {
+        console.log(error)
+        toast.error("Something Went Wrong!");
+      });
 
     // Close-Modal
     onOpenModal(false);
@@ -79,8 +94,6 @@ function EnrollmentForm({ onOpenModal }) {
       tour_days_time: "",
       additional_info: "",
     });
-
-    toast.success("Form Submitted successfully");
   };
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
