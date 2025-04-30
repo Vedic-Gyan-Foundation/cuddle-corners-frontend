@@ -12,6 +12,7 @@ import {
 } from "../pages";
 import { Toaster } from "react-hot-toast";
 import Careers from "../pages/careers";
+import OurTeam from "../pages/our_team";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: ROUTES.ABOUT_US.ROOT,
         element: <AboutUs />,
+      },
+      {
+        path: ROUTES.OUR_TEAM,
+        element: <OurTeam />,
       },
       {
         path: ROUTES.PROGRAMMES.ROOT,

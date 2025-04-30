@@ -13,6 +13,9 @@ const ROUTES = {
     },
   },
 
+  // Our Team
+  OUR_TEAM: "/team",
+
   // Programmes
   PROGRAMMES: {
     ROOT: "/programmes",
