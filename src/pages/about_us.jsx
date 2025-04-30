@@ -67,7 +67,7 @@ function AboutUs() {
           {/* <!-- Text  --> */}
           <div className="order-1 lg:order-2 lg:col-span-3">
             <h2 className="mb-6 text-5xl font-semibold text-primary-900">
-              Mission
+              Our Mission
             </h2>
 
             <div className="space-y-4 *:text-left *:text-base *:leading-[1.5]">
