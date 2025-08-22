@@ -479,7 +479,8 @@ const JoinUs = () => {
             What Our Franchisees Say
           </h2>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {/* <div className="grid grid-cols-1 gap-6 md:grid-cols-3"> */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="rounded-lg border-t-4 border-secondary-500 bg-primary-50 p-6 shadow-md">
               <div className="mb-4 text-4xl text-secondary-500">&quot;</div>
               <p className="mb-6 font-robotoSlab italic text-primary-800">
@@ -504,7 +505,7 @@ const JoinUs = () => {
               </div>
             </div>
 
-            <div className="rounded-lg border-t-4 border-secondary-500 bg-primary-50 p-6 shadow-md">
+            {/* <div className="rounded-lg border-t-4 border-secondary-500 bg-primary-50 p-6 shadow-md">
               <div className="mb-4 text-4xl text-secondary-500">&quot;</div>
               <p className="mb-6 font-robotoSlab italic text-primary-800">
                 As someone without a background in education, I was worried
@@ -514,7 +515,7 @@ const JoinUs = () => {
               <div className="font-medium text-primary-900">
                 - David Chen, Franchise Owner since 2023
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
