@@ -43,9 +43,9 @@ const franchiseFeatures = [
 
 const faqs = [
   {
-    question: "What is the initial investment required?",
+    question: "What is the joining/sign-in fee?",
     answer:
-      "The initial investment ranges from $50,000 to $150,000 depending on location size and local requirements. This includes franchise fee, equipment, and initial training.",
+      "The joining/sign-in fee is ₹1,25,000. This covers your franchise application, onboarding, and initial training. Additional setup costs may apply depending on your location and requirements.",
   },
   {
     question: "What education background do I need?",
@@ -55,7 +55,7 @@ const faqs = [
   {
     question: "How long does it take to open a franchise?",
     answer:
-      "Typically, it takes 4-6 months from signing the franchise agreement to opening day. This includes location selection, staff hiring, training, and setup.",
+      "Typically, it takes 2-3 months from signing the franchise agreement to opening day. This includes location selection, staff hiring, training, and setup.",
   },
   {
     question: "What ongoing support will I receive?",
@@ -65,7 +65,7 @@ const faqs = [
   {
     question: "What are the royalty fees?",
     answer:
-      "Our franchisees pay a 6% royalty fee on gross revenue and contribute 2% to a national marketing fund that benefits all locations.",
+      "We do not charge any royalty fee on gross revenue. You keep 100% of your earnings.",
   },
 ];
 
@@ -354,14 +354,25 @@ const JoinUs = () => {
                   </p>
                   <p className="flex items-center gap-2 text-primary-800">
                     <Phone size={20} />
-                    <a
-                      href="tel:+919856199105"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mr-2 transition-colors duration-300 hover:text-secondary-600"
-                    >
-                      +91-9856199105
-                    </a>
+                    <span>
+                      <a
+                        href="tel:+919856199105"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mr-2 transition-colors duration-300 hover:text-secondary-600"
+                      >
+                        +91-9856199105
+                      </a>
+                      <span>/ </span>
+                      <a
+                        href="tel:+918134992941"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mr-2 transition-colors duration-300 hover:text-secondary-600"
+                      >
+                        +91-8134992941
+                      </a>
+                    </span>
                   </p>
                 </div>
               </div>
