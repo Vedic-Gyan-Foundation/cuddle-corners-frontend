@@ -29,11 +29,15 @@ function AboutUs() {
             </h2>
             <div className="space-y-4 *:text-left *:text-base *:leading-[1.5]">
               <p>
-                At Cuddle Corners, we offer a warm and nurturing preschool
-                experience for children aged 18 months to 5 years. Located in
-                LOCATION, our bright and engaging classrooms provide the perfect
-                setting for early learning, play, and discovery.
+                At Cuddle Corners, we provide a warm and nurturing preschool
+                experience for children aged 18 months to 5 years. With three
+                convenient locations across Guwahati — The Green School
+                International (Nalapara), R.K. Choudhury Road (Near Sluice Gate,
+                Bharalumukh), and House No. 13, Lutuma Road, 4th Battalion Gate,
+                Kahilipara — our bright and engaging classrooms create the
+                perfect environment for early learning, play, and discovery.
               </p>
+
               <p>
                 In partnership with <b>Toondemy</b>, Singapore&apos;s leading
                 education provider, we deliver a well-rounded curriculum that
