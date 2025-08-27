@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import toast from "react-hot-toast";
-import axios from "axios";
 
 function CareersForm() {
   const fileResume = useRef(null);
