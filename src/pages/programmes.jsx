@@ -51,7 +51,7 @@ function Programmes() {
             <h2 className="text-5xl font-bold text-primary-900 dark:text-white">
               Preschool Classroom
             </h2>
-            <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
+            <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-700">
               <li>For ages 3 through 5 years old</li>
               <li>Curriculum: Experience Preschool</li>
               <li>Classroom ratio is 1:10</li>
