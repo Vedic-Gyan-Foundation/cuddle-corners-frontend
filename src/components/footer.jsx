@@ -53,15 +53,6 @@ function Footer() {
                       </span>
                       <span>
                         <a
-                          href="tel:+917002446735"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-colors duration-300 hover:text-secondary-600"
-                        >
-                          +91-7002446735
-                        </a>
-                        <span> / </span>
-                        <a
                           href="tel:+919856199105"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -69,6 +60,15 @@ function Footer() {
                         >
                           +91-9856199105
                         </a>
+                        <span> / </span>
+                        <a
+                        href="tel:+918134992941"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors duration-300 hover:text-secondary-600"
+                      >
+                        +91-8134992941
+                      </a>
                       </span>
                     </p>
                     <p className="group flex items-center gap-2 transition-transform duration-300 hover:scale-110">
