@@ -29,24 +29,28 @@ function AboutUs() {
             </h2>
             <div className="space-y-4 *:text-left *:text-base *:leading-[1.5]">
               <p>
-                At Cuddle Corners, we offer a warm and nurturing preschool
-                experience for children aged 18 months to 5 years. Located in
-                LOCATION, our bright and engaging classrooms provide the perfect
-                setting for early learning, play, and discovery.
+                At Cuddle Corners, we provide a warm and nurturing preschool
+                experience for children aged 18 months to 5 years. With three
+                convenient locations across Guwahati — The Green School
+                International (Nalapara), R.K. Choudhury Road (Near Sluice Gate,
+                Bharalumukh), and House No. 13, Lutuma Road, 4th Battalion Gate,
+                Kahilipara — our bright and engaging classrooms create the
+                perfect environment for early learning, play, and discovery.
               </p>
+
               <p>
-                In partnership with <b>Toondemy</b>, Singapore&apos;sleading
+                In partnership with <b>Toondemy</b>, Singapore&apos;s leading
                 education provider, we deliver a well-rounded curriculum that
                 blends creativity, structure, and meaningful exploration. From
                 literacy and numeracy to art and social-emotional growth, each
                 day is filled with joy and purpose.
               </p>
               <p>
-                AOur passionate educators focus on building strong relationships
-                and supporting each child&apos;s unique potential. With a
-                foundation in care, curiosity, and connection, we help children
-                grow into confident, happy learners—ready to thrive in school
-                and life.
+                A Our passionate educators focus on building strong
+                relationships and supporting each child&apos;s unique potential.
+                With a foundation in care, curiosity, and connection, we help
+                children grow into confident, happy learners—ready to thrive in
+                school and life.
               </p>
             </div>
           </div>
