@@ -64,8 +64,7 @@ const faqs = [
   },
   {
     question: "What are the royalty fees?",
-    answer:
-      "We do not charge any royalty fee on gross revenue. You keep 100% of your earnings.",
+    answer: "We do not charge any royalty fee on gross revenue.",
   },
 ];
 
