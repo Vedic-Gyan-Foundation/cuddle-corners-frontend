@@ -13,7 +13,7 @@ export const teamMembers = [
     designation: "Trustee (Operations)",
     description:
       "The driving force behind The Green School International Guwahati, Jagajeet Sinha, not only serves as the Trustee overseeing all Operations but also embodies a deep-rooted passion for environmentalism.  With a solid academic foundation in Agricultural and Environmental Sciences and 25 years of corporate experience across diverse roles, Jagajeet envisions a school that breaks traditional molds. His aspiration is to nurture Global Citizens while upholding our cherished Sanskars. A forward-thinking leader in education, Jagajeet adopts an assertive approach aligned with global standards, without compromising affordability. His innovative strategy revolves around academic excellence through Sports, Sanskar, and Sustainability. Furthermore, he aims to foster a school culture that prioritizes the well-being and happiness of both teachers and students.",
-    image: "/public/images/team/jagajeet_sinha.jpeg",
+    image: "/images/team/jagajeet_sinha.jpeg",
   },
   // {
   //   id: 3,

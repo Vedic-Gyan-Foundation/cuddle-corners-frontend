@@ -46,11 +46,11 @@ function AboutUs() {
                 day is filled with joy and purpose.
               </p>
               <p>
-                A Our passionate educators focus on building strong
-                relationships and supporting each child&apos;s unique potential.
-                With a foundation in care, curiosity, and connection, we help
-                children grow into confident, happy learners—ready to thrive in
-                school and life.
+                Our passionate educators focus on building strong relationships
+                and supporting each child&apos;s unique potential. With a
+                foundation in care, curiosity, and connection, we help children
+                grow into confident, happy learners—ready to thrive in school
+                and life.
               </p>
             </div>
           </div>
