@@ -14,6 +14,7 @@ import { Toaster } from "react-hot-toast";
 import Careers from "../pages/careers";
 import OurTeam from "../pages/our_team";
 import PrivacyPolicy from "../pages/privacy_policy";
+import TermsOfUse from "../pages/terms_of_use";
 
 const router = createBrowserRouter([
   {
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
       },
       {
         path: ROUTES.TERMS_OF_USE,
-        // element: <TermsOfUse />,
+        element: <TermsOfUse />,
       },
     ],
   },
