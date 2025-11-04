@@ -38,6 +38,12 @@ const ROUTES = {
 
   // Partner with
   JOIN_US: "/partner-with-cuddle-corners",
+
+  // Privacy Policy
+  PRIVACY_POLICY: "/privacy-policy",
+
+  // Terms of Use
+  TERMS_OF_USE: "/terms-of-use",
 };
 
 export default ROUTES;

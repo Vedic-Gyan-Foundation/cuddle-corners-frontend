@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
 import { Phone } from "lucide-react";
 import { Mail } from "lucide-react";
@@ -62,13 +62,13 @@ function Footer() {
                         </a>
                         <span> / </span>
                         <a
-                        href="tel:+918134992941"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition-colors duration-300 hover:text-secondary-600"
-                      >
-                        +91-8134992941
-                      </a>
+                          href="tel:+918134992941"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-colors duration-300 hover:text-secondary-600"
+                        >
+                          +91-8134992941
+                        </a>
                       </span>
                     </p>
                     <p className="group flex items-center gap-2 transition-transform duration-300 hover:scale-110">
@@ -173,15 +173,21 @@ function Footer() {
                   reserved.
                 </p>
                 <div className="mt-2 flex justify-center space-x-4 text-sm">
-                  <Link href="#" className="hover:text-secondary-75">
+                  <Link
+                    to={ROUTES.PRIVACY_POLICY}
+                    className="hover:text-secondary-75"
+                  >
                     Privacy Policy
                   </Link>
-                  <Link href="#" className="hover:text-secondary-75">
+                  <Link
+                    to={ROUTES.TERMS_OF_USE}
+                    className="hover:text-secondary-75"
+                  >
                     Terms of Use
                   </Link>
-                  <Link href="#" className="hover:text-secondary-75">
+                  {/* <Link href="#" className="hover:text-secondary-75">
                     Contact Us
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
