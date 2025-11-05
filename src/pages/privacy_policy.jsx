@@ -1,6 +1,6 @@
 function PrivacyPolicy() {
   return (
-    <div className="mt-24 min-h-screen bg-primary-50">
+    <div className="mt-20 min-h-screen bg-primary-50">
       <div className="mx-auto max-w-4xl px-6 py-16 text-primary-900 sm:px-12">
         <h1 className="mb-2 text-4xl font-bold">Privacy Policy</h1>
         <p className="mb-8 text-sm text-primary-500">
