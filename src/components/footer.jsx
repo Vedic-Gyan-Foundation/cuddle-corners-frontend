@@ -90,7 +90,7 @@ function Footer() {
                 {/* <!---- Social media link ---> */}
                 <div className="flex space-x-4">
                   <a
-                    href="https://www.facebook.com/people/Cuddle-Corners/61572448028455/"
+                    href="https://www.facebook.com/cuddle.corners.preschool"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex aspect-square w-7 transform items-center justify-center rounded-full bg-primary-600 transition-transform duration-300 hover:scale-110"
@@ -103,7 +103,7 @@ function Footer() {
                     </span>
                   </a>
                   <a
-                    href="https://www.instagram.com/cuddle__corners?igsh=MWQ5NGxrcXY3a3dkbg=="
+                    href="https://www.instagram.com/cuddle.corners"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex aspect-square h-7 transform items-center justify-center rounded-full bg-primary-600 transition-transform duration-300 hover:scale-110"
