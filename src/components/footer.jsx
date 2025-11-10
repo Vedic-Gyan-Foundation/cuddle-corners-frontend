@@ -183,7 +183,7 @@ function Footer() {
                     to={ROUTES.TERMS_OF_USE}
                     className="hover:text-secondary-75"
                   >
-                    Terms and Conditions
+                    Terms & Conditions
                   </Link>
                   {/* <Link href="#" className="hover:text-secondary-75">
                     Contact Us
