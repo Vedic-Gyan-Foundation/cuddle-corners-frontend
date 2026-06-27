@@ -4,6 +4,7 @@ export const navListItemsDesktop = [
   "Our Team",
   "Programmes",
   "Admission",
+  "Franchise Details",
   "Careers",
   // "Locate Us",
 ];
@@ -14,6 +15,7 @@ export const navListItemsMobile = [
   "Our Team",
   "Programmes",
   "Admission",
+  "Franchise Details",
   "Careers",
   // "Locate Us",
   "Join Us",

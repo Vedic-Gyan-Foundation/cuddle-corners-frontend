@@ -1,0 +1,73 @@
+export const franchiseDetails = [
+  {
+    id: 1,
+    franchiseName: "Prachee Bharalumukh Branch",
+    contactNumber: "+919181184207 / +917002912070",
+    franchiseAddress:
+      "R.K. Choudhury Road, near Sluice Gate, Bharalumukh, Guwahati, Assam, India, 781019",
+    googleMapLocation: "https://share.google/ERU7bM5uMP3znONkv",
+    whatsappLink: "http://wa.me/+919181184207",
+    facebookLink: "https://www.facebook.com/pracheescuddlecorners",
+    instagramLink: "https://www.instagram.com/pracheescuddlecorners",
+    emailId: "prachees.info@gmail.com",
+  },
+  {
+    id: 2,
+    franchiseName: "Prachee Battalion Gate",
+    contactNumber: "+919181184207 / +917002912070",
+    franchiseAddress:
+      "House No 13, Lutuma Road, 4th Battalion Gate, Kahilipara, Guwahati, Assam, India, 781019",
+    googleMapLocation: "https://share.google/UAwqo8yveQ42h4XBZ",
+    whatsappLink: "http://wa.me/+919181184207",
+    facebookLink: "https://www.facebook.com/pracheescuddlecorners",
+    instagramLink: "https://www.instagram.com/pracheescuddlecorners",
+    emailId: "prachees.info@gmail.com",
+  },
+  {
+    id: 3,
+    franchiseName: "Rehabari Branch",
+    contactNumber: "+9138638472744 / +919181319130",
+    franchiseAddress:
+      "Kali Mandir Path, A.K. Azad Road, Behind Jagaran Artfed, Rehabari, Guwahati, Assam, India, 781008",
+    googleMapLocation: "https://share.google/vtBVU7mD080ewBhFi",
+    whatsappLink: "http://wa.me/+91918131930",
+    facebookLink: "https://www.facebook.com/cuddle.corners.rehabari",
+    instagramLink: "https://www.instagram.com/cuddle_corners_rehabari",
+    emailId: "cuddlecr@gmail.com",
+  },
+  {
+    id: 4,
+    franchiseName: "Nalapara Branch",
+    contactNumber: "+9149387130617 / +919856199105",
+    franchiseAddress:
+      "Mahapurush Madhabdev Path, Nalapara, Sarusajai, Guwahati, Assam, India, 781040",
+    googleMapLocation: "https://share.google/LMM3NM7oo6AxUzfsu",
+    whatsappLink: "https://wa.me/+919856199105",
+    facebookLink: "https://www.facebook.com/cuddle.corners.nalapara",
+    instagramLink: "https://www.instagram.com/cuddle.corners.nalapara",
+    emailId: "info@cuddlecorners.com",
+  },
+  {
+    id: 5,
+    franchiseName: "Beltola Branch",
+    contactNumber: "+916003112029",
+    franchiseAddress:
+      "House No. 4, Rupkonwar Path, Beltola, Guwahati, Assam, India, 781028",
+    googleMapLocation: "https://share.google/O8sBiVUPbbs9jtbHz",
+    whatsappLink: "https://wa.me/+916003112029",
+    facebookLink: "https://www.facebook.com/cuddle.corners.beltola",
+    instagramLink: "https://www.instagram.com/cuddle_corners_beltola",
+    emailId: "cuddlecornersbeltola@gmail.com",
+  },
+  {
+    id: 6,
+    franchiseName: "Mirza Branch",
+    contactNumber: "Coming Soon",
+    franchiseAddress: "Coming Soon",
+    googleMapLocation: "",
+    whatsappLink: "",
+    facebookLink: "",
+    instagramLink: "",
+    emailId: "",
+  },
+];

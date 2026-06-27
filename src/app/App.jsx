@@ -9,6 +9,7 @@ import {
   Programmes,
   Admission,
   JoinUs,
+  FranchiseDetails,
 } from "../pages";
 import { Toaster } from "react-hot-toast";
 import Careers from "../pages/careers";
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: ROUTES.LOCATE_US,
         element: <LocateUs />,
+      },
+      {
+        path: ROUTES.FRANCHISE_DETAILS,
+        element: <FranchiseDetails />,
       },
       {
         path: ROUTES.CAREERS,

@@ -1,5 +1,7 @@
+import FranchiseDetails from "./franchise_details";
+
 function LocateUs() {
-  return <div className="py-28">LocateUs</div>;
+  return <FranchiseDetails />;
 }
 
 export default LocateUs;

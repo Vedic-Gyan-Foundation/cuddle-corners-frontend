@@ -33,6 +33,9 @@ const ROUTES = {
   // Locate Us
   LOCATE_US: "/locate-us",
 
+  // Franchise Details
+  FRANCHISE_DETAILS: "/franchise-details",
+
   // Locate Us
   CAREERS: "/careers",
 
