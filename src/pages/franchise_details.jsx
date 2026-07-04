@@ -76,7 +76,7 @@ function FranchiseDetails() {
               className="rounded-2xl border border-primary-100 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
             >
               <div className="mb-4 flex items-center justify-between gap-3">
-                <h3 className="text-2xl text-primary-900">
+                <h3 className="font-fredoka text-2xl font-semibold text-primary-900">
                   {branch.franchiseName}
                 </h3>
                 <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700">
