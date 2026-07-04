@@ -1,7 +1,7 @@
 export const franchiseDetails = [
   {
     id: 1,
-    franchiseName: "Prachee Bharalumukh Branch",
+    franchiseName: "Prachees Bharalumukh Branch",
     contactNumber: "+919181184207 / +917002912070",
     franchiseAddress:
       "R.K. Choudhury Road, near Sluice Gate, Bharalumukh, Guwahati, Assam, India, 781019",
@@ -13,7 +13,7 @@ export const franchiseDetails = [
   },
   {
     id: 2,
-    franchiseName: "Prachee Battalion Gate",
+    franchiseName: "Prachees Battalion Gate",
     contactNumber: "+919181184207 / +917002912070",
     franchiseAddress:
       "House No 13, Lutuma Road, 4th Battalion Gate, Kahilipara, Guwahati, Assam, India, 781019",
