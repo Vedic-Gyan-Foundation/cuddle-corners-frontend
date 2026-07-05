@@ -35,7 +35,7 @@ const AGE_BANDS = [
     age: "1.5 – 2.5 yrs",
     icon: Baby,
     blurb:
-      "Gentle first steps away from home — sensory play, songs and lots of cuddles.",
+      "Gentle first steps away from home: sensory play, songs and lots of cuddles.",
     tint: "bg-primary-100 text-primary-700",
   },
   {
@@ -59,7 +59,7 @@ const AGE_BANDS = [
     age: "4.5 – 5.5 yrs",
     icon: GraduationCap,
     blurb:
-      "School-ready confidence — reading, writing and big-kid independence.",
+      "School-ready confidence: reading, writing and big-kid independence.",
     tint: "bg-primary-100 text-primary-700",
   },
   {
@@ -67,7 +67,7 @@ const AGE_BANDS = [
     age: "Full & half day",
     icon: Clock,
     blurb:
-      "Safe, cared-for hours beyond class — meals, rest and play while you work.",
+      "Safe, cared-for hours beyond class: meals, rest and play while you work.",
     tint: "bg-secondary-100 text-secondary-800",
   },
 ];
@@ -84,7 +84,7 @@ function AgeBands() {
           </h2>
           <p className="mt-3 text-lg leading-relaxed text-ink-soft">
             From first steps to school-ready, each year is shaped around how
-            little ones actually learn — through play, warmth and wonder.
+            little ones actually learn, through play, warmth and wonder.
           </p>
         </div>
         <div className="flex items-center gap-4 rounded-card border border-line bg-white px-6 py-4 shadow-soft">
@@ -161,8 +161,8 @@ function Curriculum() {
             How we nurture the whole child
           </h2>
           <p className="mt-3 text-lg leading-relaxed text-ink-soft">
-            Every day weaves together the skills a growing mind and heart need —
-            thoughtfully planned, gently delivered across{" "}
+            Every day weaves together the skills a growing mind and heart need,
+            thoughtfully planned and gently delivered across{" "}
             {programContents?.length} connected areas of growth.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -240,7 +240,7 @@ function Curriculum() {
             One joyful whole
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-            These strands never stand alone — a single morning of play can grow
+            These strands never stand alone. A single morning of play can grow
             language, confidence and little hands all at once.
           </p>
         </div>

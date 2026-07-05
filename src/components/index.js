@@ -4,3 +4,4 @@ export { default as ScrollToTop } from "./scroll_to_top";
 export { default as PagesBanner } from "./pages_banner";
 export { default as Breadcrumbs } from "./breadcrumbs";
 export { default as VisitCTA } from "./visit_cta";
+export { default as Seo } from "./seo";

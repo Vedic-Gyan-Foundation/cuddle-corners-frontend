@@ -32,7 +32,7 @@ const VALUES = [
   {
     icon: Users,
     title: "A supportive team",
-    body: "Small groups, shared planning and colleagues who genuinely have your back — teaching here never feels lonely.",
+    body: "Small groups, shared planning and colleagues who genuinely have your back. Teaching here never feels lonely.",
     tint: "bg-secondary-100 text-secondary-800",
   },
   {
@@ -44,7 +44,7 @@ const VALUES = [
   {
     icon: Sparkles,
     title: "Joy is part of the job",
-    body: "Songs, stories, art and belly-laughs are the everyday tools of the trade — you get paid to spark wonder.",
+    body: "Songs, stories, art and belly-laughs are the everyday tools of the trade, and you get paid to spark wonder.",
     tint: "bg-primary-100 text-primary-700",
   },
 ];
@@ -61,7 +61,7 @@ function Intro() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">
             We are seeking qualified, experienced and passionate educators to
-            join Cuddle Corners in {SITE.city}. Our goal is simple — to add
+            join Cuddle Corners in {SITE.city}. Our goal is simple: to add
             talented, energetic and positive people to a team that treats every
             child like their own.
           </p>
@@ -131,7 +131,7 @@ function Culture() {
               waiting to be told.&rdquo;
             </p>
             <p className="mt-4 text-sm font-medium text-ink-soft">
-              — the everyday joy of teaching at Cuddle Corners
+              on the everyday joy of teaching at Cuddle Corners
             </p>
             <CloudPuff className="pointer-events-none absolute -right-4 -top-5 hidden w-16 sm:block" />
           </div>
@@ -205,8 +205,8 @@ function ClosingCTA() {
             Ready to join the Cuddle Corners team?
           </h2>
           <p className="max-w-xl text-lg text-primary-100">
-            Send us your application above, or say a quick hello on WhatsApp —
-            we&apos;d love to hear how you&apos;d like to spark wonder with us.
+            Send us your application above, or say a quick hello on WhatsApp.
+            We&apos;d love to hear how you&apos;d like to spark wonder with us.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Button

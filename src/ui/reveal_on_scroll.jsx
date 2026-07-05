@@ -3,7 +3,7 @@ import { Children, useRef } from "react";
 
 // Reveals its children with a staggered fade-in as they scroll into view.
 // Children are flattened (React.Children.toArray) so a mapped array *and* extra
-// sibling elements each become their own grid/flex item — never nested into one.
+// sibling elements each become their own grid/flex item, never nested into one.
 function RevealOnScroll({
   children,
   duration = 0.5,

@@ -10,7 +10,7 @@ import { Container, Button, BearMascot, CloudDivider, CloudPuff } from "../ui";
  */
 export default function VisitCTA({
   heading = "Come see the smiles for yourself",
-  text = "Book a campus visit or send us a quick WhatsApp — we'd love to show you around and answer every little question.",
+  text = "Book a campus visit or send us a quick WhatsApp. We'd love to show you around and answer every little question.",
 }) {
   return (
     <section className="relative text-white">

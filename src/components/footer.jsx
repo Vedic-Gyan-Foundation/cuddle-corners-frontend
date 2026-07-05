@@ -18,7 +18,7 @@ function Footer() {
   return (
     <footer className="relative mt-auto">
       {/* The pre-footer CTA (VisitCTA / page CTA) owns the single cream→blue
-          wave and is also blue, so it flows seamlessly straight into here —
+          wave and is also blue, so it flows seamlessly straight into here:
           one continuous dark zone, no second wave, no cream sliver. */}
       <div className="bg-primary-900 pb-20 text-primary-50 lg:pb-0">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.4fr_1fr_1.3fr]">
@@ -27,8 +27,7 @@ function Footer() {
             <span className="wordmark text-3xl text-white">Cuddle Corners</span>
             <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-primary-100">
               A happy, safe place for little ones aged {SITE.ageRange} to grow,
-              play and learn — across {SITE.centresCount} centres in {SITE.city}
-              .
+              play and learn, across {SITE.centresCount} centres in {SITE.city}.
             </p>
             <div className="mt-6 flex gap-3">
               <a
@@ -139,7 +138,7 @@ function Footer() {
                 htmlFor="footer-email"
                 className="text-sm text-primary-100"
               >
-                Little updates, big smiles — join our list
+                Little updates, big smiles. Join our list
               </label>
               <div className="mt-2 flex overflow-hidden rounded-full bg-white shadow-soft">
                 <input

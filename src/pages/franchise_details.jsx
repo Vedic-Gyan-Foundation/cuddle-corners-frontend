@@ -156,7 +156,7 @@ function BranchCard({ branch }) {
         )}
       </ul>
 
-      {/* actions — full-width stacked on mobile, equal 3-across from sm up (never wraps) */}
+      {/* actions: full-width stacked on mobile, equal 3-across from sm up (never wraps) */}
       <div className="mt-auto grid grid-cols-1 gap-2 pt-6 sm:grid-cols-3">
         <Button
           href={`tel:${primaryNumber}`}
@@ -215,11 +215,11 @@ function FranchiseDetails() {
       <PagesBanner
         headingText="Our Centres in Guwahati"
         kicker="Locate us"
-        subtitle={`Find the Cuddle Corners nearest to you — ${SITE.centresCount} warm, welcoming centres across ${SITE.city}. Call, message or get directions in a tap.`}
+        subtitle={`Find the Cuddle Corners nearest to you: ${SITE.centresCount} warm, welcoming centres across ${SITE.city}. Call, message or get directions in a tap.`}
       />
 
       <Section tone="paper">
-        {/* intro + search — balanced two-column so no half sits empty */}
+        {/* intro + search: balanced two-column so no half sits empty */}
         <div className="mb-12 grid items-center gap-12 lg:mb-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="max-w-xl">
             <Kicker>Find your neighbourhood centre</Kicker>
@@ -227,7 +227,7 @@ function FranchiseDetails() {
               Branches in &amp; around Guwahati
             </h2>
             <p className="mt-3 text-lg leading-relaxed text-ink-soft">
-              Every centre shares the same care, curriculum and safety promise —
+              Every centre shares the same care, curriculum and safety promise,
               just closer to home.
             </p>
 
@@ -306,7 +306,7 @@ function FranchiseDetails() {
               No centre matched “{searchQuery.trim()}”.
             </p>
             <p className="mt-2 text-ink-soft">
-              Try a locality like Beltola, Rehabari or Nalapara — or reach out
+              Try a locality like Beltola, Rehabari or Nalapara, or reach out
               and we&apos;ll point you to the closest one.
             </p>
             <div className="mt-6 flex justify-center">

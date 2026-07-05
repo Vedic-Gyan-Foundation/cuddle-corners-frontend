@@ -1,10 +1,10 @@
 // Hand-drawn signature motifs for Cuddle Corners: a friendly bear, soft clouds,
-// and a smooth wave section divider. Soft and a touch imperfect — the brand's
+// and a smooth wave section divider. Soft and a touch imperfect: the brand's
 // warmth, not machine-perfect vector.
 
 /**
  * A smooth, elegant wave divider between two colour bands.
- * Set the fill via a text color class (e.g. `text-primary-900`) — the path
+ * Set the fill via a text color class (e.g. `text-primary-900`). The path
  * uses currentColor. `flip` points the wave the other way (for footers).
  */
 export function CloudDivider({ className = "text-paper", flip = false }) {
@@ -70,7 +70,7 @@ export function Sparkle({ className = "text-secondary-400", style }) {
 }
 
 /**
- * The Cuddle Corners bear — a warm, waving honey-bear character.
+ * The Cuddle Corners bear, a warm, waving honey-bear character.
  * Decorative; give it an accessible label only where it carries meaning.
  */
 export function BearMascot({ className = "" }) {

@@ -29,7 +29,7 @@ const VALUES = [
   {
     icon: Heart,
     title: "Led with heart",
-    body: "Every decision starts with the well-being of the child — the same warmth we would give our own.",
+    body: "Every decision starts with the well-being of the child, the same warmth we would give our own.",
     tint: "bg-primary-100 text-primary-700",
   },
   {

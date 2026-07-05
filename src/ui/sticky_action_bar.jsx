@@ -5,7 +5,7 @@ import { SITE } from "../config/site";
 import ROUTES from "../config/routes";
 import { WhatsAppIcon } from "./icons";
 
-// Fixed bottom action bar on mobile — the channels Indian parents actually
+// Fixed bottom action bar on mobile: the channels Indian parents actually
 // convert on. Hidden on desktop, where the header CTA + footer cover it.
 function StickyActionBar() {
   return (

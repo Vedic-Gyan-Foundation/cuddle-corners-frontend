@@ -71,9 +71,9 @@ function OurStory() {
               <strong className="font-semibold text-ink">
                 {SITE.ageRange}
               </strong>
-              . With three welcoming centres across {SITE.city}, our bright,
-              engaging classrooms are the perfect place for early learning, play
-              and discovery.
+              . With {SITE.centresCount} welcoming centres across {SITE.city},
+              our bright, engaging classrooms are the perfect place for early
+              learning, play and discovery.
             </p>
             <p>
               In partnership with{" "}
@@ -82,7 +82,7 @@ function OurStory() {
               </strong>
               , Singapore&apos;s leading early-education provider, we deliver a
               well-rounded curriculum that blends creativity, structure and
-              meaningful exploration — from literacy and numeracy to art and
+              meaningful exploration, from literacy and numeracy to art and
               social-emotional growth.
             </p>
             <p>
@@ -160,13 +160,13 @@ function Mission() {
             <p>
               Our mission is to nurture every child with the same love, patience
               and care they receive at home. We are committed to a programme
-              focused on the holistic development of young children — creating
+              focused on the holistic development of young children. We create
               enriching experiences through exploration, discovery and hands-on
               activities.
             </p>
             <p>
               By fostering a safe, supportive environment, we build a strong
-              foundation for lifelong learning — helping each child grow with
+              foundation for lifelong learning, helping each child grow with
               confidence, curiosity and a genuine love for education.
             </p>
           </div>
@@ -184,7 +184,7 @@ function Locations() {
         <div className="max-w-2xl">
           <Kicker>Where to find us</Kicker>
           <h2 className="mt-3 font-fredoka text-3xl font-semibold text-ink sm:text-4xl">
-            Three warm centres across {SITE.city}
+            Warm centres across {SITE.city}
           </h2>
         </div>
         <Button
@@ -242,7 +242,7 @@ function LearningJourney() {
         </h2>
         <p className="mt-3 text-lg text-ink-soft">
           Every day weaves these domains together through play, warmth and
-          wonder — so children build real skills without ever feeling like
+          wonder, so children build real skills without ever feeling like
           they&apos;re at &ldquo;work&rdquo;.
         </p>
       </div>
@@ -286,7 +286,7 @@ function Curriculum() {
             We&apos;ve teamed up with {SITE.curriculumPartner}, one of
             Singapore&apos;s leading early-education providers, to bring a
             well-rounded, research-backed curriculum to Cuddle Corners. It
-            balances creativity with structure — so every day feels playful, yet
+            balances creativity with structure, so every day feels playful, yet
             quietly builds the skills children carry into big school and beyond.
           </p>
         </div>

@@ -336,7 +336,7 @@ function PrivacyPolicy() {
           Your information, including Personal Data, is processed at the
           Company&apos;s operating offices and in any other places where the
           parties involved in the processing are located. It means that this
-          information may be transferred to — and maintained on — computers
+          information may be transferred to, and maintained on, computers
           located outside of Your state, province, country or other governmental
           jurisdiction where the data protection laws may differ from those from
           Your jurisdiction.

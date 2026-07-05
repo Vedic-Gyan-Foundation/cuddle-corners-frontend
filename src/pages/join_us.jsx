@@ -57,7 +57,7 @@ const BENEFITS = [
   {
     icon: HeartHandshake,
     title: "A child-centric approach",
-    body: "Whole-child development — academics, sports, teamwork, discipline and leadership.",
+    body: "Whole-child development: academics, sports, teamwork, discipline and leadership.",
     tint: "bg-tertiary-50 text-tertiary-600",
   },
   {
@@ -116,11 +116,11 @@ const STAGES = [
 const FAQS = [
   {
     q: "What is the franchise fee?",
-    a: "The one-time franchise fee is ₹2,00,000 — a 33% waiver on the standard ₹3,00,000, as a limited introductory offer. It covers your franchise onboarding and initial training; additional setup costs depend on your location and requirements.",
+    a: "The one-time franchise fee is ₹2,00,000, a 33% waiver on the standard ₹3,00,000, as a limited introductory offer. It covers your franchise onboarding and initial training; additional setup costs depend on your location and requirements.",
   },
   {
     q: "What education background do I need?",
-    a: "An education background is helpful but not mandatory. Our comprehensive training programme equips you with everything you need — a genuine passion for early childhood education is what matters most.",
+    a: "An education background is helpful but not mandatory. Our comprehensive training programme equips you with everything you need. A genuine passion for early childhood education is what matters most.",
   },
   {
     q: "How long does it take to open a franchise?",
@@ -128,11 +128,11 @@ const FAQS = [
   },
   {
     q: "What ongoing support will I receive?",
-    a: "Continuous curriculum updates (powered by ToonDemy), marketing and branding assistance, operational guidance, and access to our franchise support team — plus regular training and refresher sessions.",
+    a: "Continuous curriculum updates (powered by ToonDemy), marketing and branding assistance, operational guidance, and access to our franchise support team, plus regular training and refresher sessions.",
   },
   {
     q: "What are the royalty fees?",
-    a: "Year 1 is a token ₹100 per child, per month — so you can focus on getting established. From the second year, a nominal ₹2,000 per student, per year applies at the start of each academic session. You also earn healthy margins on learning essentials (15% on books, 20% on uniforms & shoes) from day one.",
+    a: "Year 1 is a token ₹100 per child, per month, so you can focus on getting established. From the second year, a nominal ₹2,000 per student, per year applies at the start of each academic session. You also earn healthy margins on learning essentials (15% on books, 20% on uniforms & shoes) from day one.",
   },
 ];
 
@@ -182,7 +182,7 @@ function FranchiseHero() {
             Grow a preschool your community will love
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-primary-100">
-            Bring warm, world-class early education to your neighbourhood —
+            Bring warm, world-class early education to your neighbourhood,
             backed by{" "}
             <a
               href={SITE.greenSchoolUrl}
@@ -250,7 +250,7 @@ function Intro() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">
             A Cuddle Corners franchise lets you bring warm, high-quality early
-            childhood education to your community — backed by a proven model,
+            childhood education to your community, backed by a proven model,
             hands-on training and a brand that families already trust across{" "}
             {SITE.city}.
           </p>
@@ -304,7 +304,7 @@ function Offer() {
           An opening offer built to get you started
         </h2>
         <p className="mt-3 text-lg text-ink-soft">
-          Launch on strong financial footing — a reduced franchise fee, a token
+          Launch on strong financial footing: a reduced franchise fee, a token
           first-year royalty, and revenue from day one.
         </p>
       </div>
@@ -313,7 +313,7 @@ function Offer() {
         className="grid gap-5 md:grid-cols-3"
         staggerChildren={0.1}
       >
-        {/* Fee waiver — emphasised */}
+        {/* Fee waiver, emphasised */}
         <div className="relative flex h-full flex-col rounded-card border-2 border-secondary-300 bg-white p-6 shadow-soft">
           <span className="absolute right-5 top-5 rounded-full bg-secondary-500 px-3 py-1 font-fredoka text-xs font-semibold text-primary-900">
             Save 33%
@@ -387,7 +387,7 @@ function Offer() {
       </RevealOnScroll>
 
       <p className="mt-6 text-sm text-ink-muted">
-        Introductory figures — final terms are confirmed during onboarding.
+        Introductory figures. Final terms are confirmed during onboarding.
       </p>
     </Section>
   );
@@ -445,7 +445,7 @@ function Process() {
             From first inquiry to grand opening
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-            Six clear steps, and our team beside you at every one of them — from
+            Six clear steps, and our team beside you at every one of them, from
             your very first enquiry to the day you cut the ribbon.
           </p>
 
@@ -528,7 +528,7 @@ function Faqs() {
               Still have questions?
             </h3>
             <p className="mt-1.5 leading-relaxed text-ink-soft">
-              Chat with our franchise development team — no obligation, just a
+              Chat with our franchise development team. No obligation, just a
               friendly conversation.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
@@ -618,7 +618,7 @@ function RequestInfo() {
           </h2>
           <p className="mt-4 leading-relaxed text-ink-soft">
             Share your details and our franchise development team will contact
-            you to discuss the opportunity in detail. There is no obligation —
+            you to discuss the opportunity in detail. There is no obligation,
             just a friendly conversation about what a Cuddle Corners could look
             like in your community.
           </p>
@@ -687,7 +687,7 @@ function RequestInfo() {
           <input
             type="hidden"
             name="_subject"
-            value="New franchise enquiry — Cuddle Corners"
+            value="New franchise enquiry, Cuddle Corners"
           />
           <input
             type="text"

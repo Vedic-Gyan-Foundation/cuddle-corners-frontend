@@ -7,7 +7,7 @@ import ROUTES from "../config/routes";
 import { SITE } from "../config/site";
 import { Button } from "../ui";
 
-// Explicit label→route map — clearer for parents than the raw route names
+// Explicit label→route map, clearer for parents than the raw route names
 // ("Locations" instead of "Franchise Details", which read as "buy a franchise").
 const NAV = [
   { label: "Home", to: ROUTES.HOME },

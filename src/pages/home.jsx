@@ -48,7 +48,7 @@ const PROGRAMMES = [
     age: "1.5 – 2.5 yrs",
     icon: Baby,
     blurb:
-      "Gentle first steps away from home — sensory play, songs and lots of cuddles.",
+      "Gentle first steps away from home: sensory play, songs and lots of cuddles.",
     tint: "bg-primary-100 text-primary-700",
   },
   {
@@ -72,7 +72,7 @@ const PROGRAMMES = [
     age: "4.5 – 5.5 yrs",
     icon: GraduationCap,
     blurb:
-      "School-ready confidence — reading, writing and big-kid independence.",
+      "School-ready confidence: reading, writing and big-kid independence.",
     tint: "bg-primary-100 text-primary-700",
   },
 ];
@@ -93,7 +93,7 @@ const FACILITIES = [
   {
     icon: Apple,
     title: "Healthy, home-style meals",
-    body: "Fresh, nutritious, all-vegetarian food from our in-house kitchen — balanced for growing bodies.",
+    body: "Fresh, nutritious, all-vegetarian food from our in-house kitchen, balanced for growing bodies.",
     tint: "bg-tertiary-50",
   },
   {
@@ -111,7 +111,7 @@ const PROMISES = [
   },
   {
     title: "Play with purpose",
-    body: "A real curriculum delivered through play — literacy, numeracy, art and social-emotional growth.",
+    body: "A real curriculum delivered through play: literacy, numeracy, art and social-emotional growth.",
   },
   {
     title: "Always in the loop",
@@ -123,7 +123,7 @@ const PROMISES = [
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-paper">
-      {/* soft sky wash — a single deliberate gradient accent */}
+      {/* soft sky wash: a single deliberate gradient accent */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -268,7 +268,7 @@ function Programmes() {
         </h2>
         <p className="mt-3 text-lg text-ink-soft">
           From first steps to school-ready, each year is designed around how
-          little ones actually learn — through play, warmth and wonder.
+          little ones actually learn, through play, warmth and wonder.
         </p>
       </div>
 

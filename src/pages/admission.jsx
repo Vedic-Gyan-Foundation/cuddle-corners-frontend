@@ -39,7 +39,7 @@ const STEPS = [
   {
     icon: MapPinned,
     title: "Tour the centre",
-    body: "Walk our classrooms, meet the educators and see the daily rhythm for yourself — in person or on a virtual tour.",
+    body: "Walk our classrooms, meet the educators and see the daily rhythm for yourself, in person or on a virtual tour.",
     tint: "bg-secondary-100 text-secondary-800",
   },
   {
@@ -51,7 +51,7 @@ const STEPS = [
   {
     icon: Sparkles,
     title: "Orientation",
-    body: "Once we receive both, you'll get an enrollment packet and we'll schedule your orientation — the first happy step of the journey.",
+    body: "Once we receive both, you'll get an enrollment packet and we'll schedule your orientation, the first happy step of the journey.",
     tint: "bg-primary-100 text-primary-700",
   },
 ];
@@ -65,7 +65,7 @@ const POLICY = [
   {
     icon: ListChecks,
     q: "What if my child is placed on the waitlist?",
-    a: "If your child is placed on the waitlist, your deposit will be held until a space becomes available. Should you choose to withdraw before a space opens up, your deposit may be refunded — however, you must notify the Centre in writing.",
+    a: "If your child is placed on the waitlist, your deposit will be held until a space becomes available. Should you choose to withdraw before a space opens up, your deposit may be refunded. You must, however, notify the Centre in writing.",
   },
   {
     icon: BadgeCheck,
@@ -97,7 +97,7 @@ function Admission() {
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
               We&apos;d love to learn more about your child. There are two easy
-              ways to begin — book a warm, no-pressure visit through our short
+              ways to begin: book a warm, no-pressure visit through our short
               questionnaire, or download the admission form and email it back to
               us. Either way, we&apos;ll take it from there.
             </p>
@@ -185,9 +185,9 @@ function Admission() {
             </h2>
             <p className="mt-3 text-lg leading-relaxed text-ink-soft">
               From your first enquiry to your child&apos;s orientation, we keep
-              every step warm, clear and simple. No confusing forms, no pressure
-              — just a friendly hand guiding you from hello to your little
-              one&apos;s very first day.
+              every step warm, clear and simple. No confusing forms, no
+              pressure, just a friendly hand guiding you from hello to your
+              little one&apos;s very first day.
             </p>
           </div>
 

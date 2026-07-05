@@ -83,7 +83,7 @@ function EnrollmentForm({ onOpenModal }) {
       }
     } catch (err) {
       console.error(err);
-      toast.error("Something went wrong — please try again or call us."); // keep data
+      toast.error("Something went wrong. Please try again or call us."); // keep data
     } finally {
       setSubmitting(false);
     }
