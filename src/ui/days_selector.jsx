@@ -9,38 +9,42 @@ function DaysSelector({ title, selectedDay = [], onDayChange }) {
   ];
 
   const handleSelectedDay = (day) => {
-    let updatedDays = [];
-
-    if (selectedDay.includes(day)) {
-      updatedDays = selectedDay.filter((d) => d !== day);
-    } else {
-      updatedDays = [...selectedDay, day];
-    }
-
+    const updatedDays = selectedDay.includes(day)
+      ? selectedDay.filter((d) => d !== day)
+      : [...selectedDay, day];
     onDayChange(updatedDays); // Update parent
   };
 
   return (
-    <div className="flex flex-col gap-3">
-      <p>
-        {title} <span className="py-1 text-xs text-stone-500">(required)</span>
-      </p>
-      {days.map((day, index) => (
-        <div className="space-x-5" key={index}>
-          <input
-            type="checkbox"
-            name="day"
-            id={day.toLowerCase()}
-            checked={selectedDay.includes(day)}
-            onChange={() => handleSelectedDay(day)}
-            className="border px-5 py-2 accent-primary-700"
-          />
-          <label htmlFor={day.toLowerCase()} className="font-medium">
-            {day}
-          </label>
-        </div>
-      ))}
-    </div>
+    <fieldset className="flex flex-col gap-2">
+      <legend className="font-fredoka text-sm font-medium text-ink">
+        {title} <span className="text-xs text-ink-muted">(required)</span>
+      </legend>
+      <div className="mt-1 flex flex-wrap gap-2">
+        {days.map((day) => {
+          const active = selectedDay.includes(day);
+          return (
+            <label
+              key={day}
+              className={`flex cursor-pointer items-center gap-2 rounded-full border px-4 py-2 text-sm transition-colors ${
+                active
+                  ? "border-primary-400 bg-primary-50 text-primary-800"
+                  : "border-line text-ink-soft hover:border-primary-200"
+              }`}
+            >
+              <input
+                type="checkbox"
+                name="day"
+                checked={active}
+                onChange={() => handleSelectedDay(day)}
+                className="accent-primary-600"
+              />
+              {day}
+            </label>
+          );
+        })}
+      </div>
+    </fieldset>
   );
 }
 

@@ -22,12 +22,14 @@ function SubSubSectionTitle({ children }) {
 
 function TermsOfUse() {
   return (
-    <div className="mt-20 min-h-screen bg-primary-50">
-      <div className="mx-auto max-w-4xl px-6 py-16 text-primary-900 sm:px-12">
-        <h1 className="mb-2 text-4xl font-bold">Terms and Conditions</h1>
-        <p className="mb-8 text-sm text-primary-500">
-          Last updated: November 04, 2025
-        </p>
+    <div className="bg-paper">
+      <div className="mx-auto max-w-3xl px-5 py-16 text-ink sm:px-8 [&_a]:font-medium [&_a]:text-primary-700 [&_a]:underline [&_a]:underline-offset-2 [&_li]:leading-relaxed [&_li]:text-ink-soft [&_p]:leading-relaxed [&_p]:text-ink-soft">
+        <span className="mb-3 inline-flex items-center gap-2 font-fredoka text-xs font-semibold uppercase tracking-[0.16em] text-primary-700">
+          <span className="h-[3px] w-6 rounded-full bg-secondary-500" />
+          Legal
+        </span>
+        <h1 className="mb-2 text-4xl font-semibold text-ink">Terms &amp; Conditions</h1>
+        <p className="mb-10 text-sm text-ink-muted">Last updated: November 04, 2025</p>
         <p className="mb-6">
           Please read these terms and conditions carefully before using Our
           Service.

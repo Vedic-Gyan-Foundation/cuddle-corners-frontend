@@ -1,151 +1,180 @@
-import { Menu } from "lucide-react";
-import {
-  navListItemsDesktop,
-  navListItemsMobile,
-} from "../utils/data/navlist_items";
-import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
-import { Link, NavLink } from "react-router";
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Phone, CalendarHeart } from "lucide-react";
+
 import ROUTES from "../config/routes";
-import { getRouteKey } from "../utils/navigation/getRouteKey";
-import { MoveRight } from "lucide-react";
+import { SITE } from "../config/site";
+import { Button } from "../ui";
+
+// Explicit label→route map — clearer for parents than the raw route names
+// ("Locations" instead of "Franchise Details", which read as "buy a franchise").
+const NAV = [
+  { label: "Home", to: ROUTES.HOME },
+  { label: "About", to: ROUTES.ABOUT_US.ROOT },
+  { label: "Programmes", to: ROUTES.PROGRAMMES.ROOT },
+  { label: "Admissions", to: ROUTES.ADMISSION },
+  { label: "Locations", to: ROUTES.FRANCHISE_DETAILS },
+  { label: "Our Team", to: ROUTES.OUR_TEAM },
+  { label: "Careers", to: ROUTES.CAREERS },
+];
 
 function Navbar() {
-  const [toggleHamburgerMenu, setToggleHamburgerMenu] = useState(false);
-  const [hasBackground, setHasBackground] = useState(true);
-  const navbarRef = useRef(null);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const menuRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const banner = document.getElementById("main-container");
-      if (!banner) return;
-
-      const bannerTop = banner.getBoundingClientRect().top;
-      const shouldHaveBackground = bannerTop > -80; // Adjust threshold if needed
-
-      setHasBackground(shouldHaveBackground);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // close the mobile menu whenever the route changes
+  useEffect(() => setOpen(false), [location.pathname]);
+
+  // close on Escape
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const linkClass = ({ isActive }) =>
+    [
+      "relative py-1 font-fredoka text-[15px] font-medium transition-colors",
+      isActive
+        ? "text-primary-700"
+        : "text-ink hover:text-primary-700",
+    ].join(" ");
+
   return (
-    <nav>
-      {/* <!--- Mobile Navbar ----> */}
-      <div className="sm:hidden">
-        <div className="flex items-center justify-between bg-linear-primary-mix-tb px-2.5 py-4">
+    <div
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-line bg-paper/85 shadow-soft backdrop-blur-md"
+          : "border-b border-transparent bg-paper/60 backdrop-blur-sm"
+      }`}
+    >
+      <nav className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-8">
+        {/* Logo */}
+        <Link to={ROUTES.HOME} className="flex shrink-0 items-center" aria-label="Cuddle Corners home">
+          <img
+            src="/images/logos/logo-without-bg.webp"
+            alt="Cuddle Corners"
+            className="h-10 w-auto sm:h-11"
+            width="140"
+            height="44"
+          />
+        </Link>
+
+        {/* Desktop links */}
+        <ul className="hidden items-center gap-6 lg:flex xl:gap-8">
+          {NAV.map((item) => (
+            <li key={item.label}>
+              <NavLink to={item.to} className={linkClass} end={item.to === "/"}>
+                {({ isActive }) => (
+                  <>
+                    {item.label}
+                    <span
+                      className={`absolute -bottom-0.5 left-0 h-[2.5px] rounded-full bg-secondary-500 transition-all duration-300 ${
+                        isActive ? "w-full" : "w-0"
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </>
+                )}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+
+        {/* Right cluster */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href={SITE.phoneHref}
+            className="hidden items-center gap-2 rounded-full px-3 py-2 font-fredoka text-sm font-medium text-primary-800 transition-colors hover:bg-primary-50 md:inline-flex"
+          >
+            <Phone size={17} aria-hidden="true" />
+            <span className="hidden xl:inline">{SITE.phone}</span>
+            <span className="xl:hidden">Call</span>
+          </a>
+          <Button
+            to={ROUTES.ADMISSION}
+            size="sm"
+            icon={CalendarHeart}
+            className="hidden sm:inline-flex"
+          >
+            Book a Visit
+          </Button>
+
+          {/* Mobile toggle */}
           <button
-            onClick={() => setToggleHamburgerMenu((prev) => !prev)}
-            className="relative inline-flex items-center justify-center rounded-lg bg-secondary-500 p-1"
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="inline-flex items-center justify-center rounded-full bg-primary-600 p-2.5 text-white shadow-soft transition-colors hover:bg-primary-700 lg:hidden"
           >
-            <Menu size={40} absoluteStrokeWidth strokeWidth={3} />
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
-          <img
-            src="/images/logos/logo-without-bg.webp"
-            alt="cuddle-corners-logo"
-            className="h-14"
-          />
         </div>
+      </nav>
 
-        {/* <!--- Hamburger Menu ----> */}
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{
-            height: toggleHamburgerMenu ? "auto" : 0,
-            opacity: toggleHamburgerMenu ? 1 : 0,
-          }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className={`overflow-hidden border bg-primary-100 px-4 shadow-inner ${
-            toggleHamburgerMenu ? "border" : "border-0"
-          }`}
-        >
-          <ul className="flex flex-col gap-3 py-2.5 text-sm font-semibold">
-            {navListItemsMobile.map((item, index) => {
-              // Get the route path, checking for ROOT first, then falling back to the direct route or home ("/") if undefined.
-              const path =
-                ROUTES[getRouteKey(item)]?.ROOT ||
-                ROUTES[getRouteKey(item)] ||
-                "/";
-
-              return (
-                <li key={index} className="cursor-pointer">
-                  <NavLink
-                    to={path}
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-tertiary-300 underline underline-offset-4"
-                        : ""
-                    }
-                  >
-                    {item}
-                  </NavLink>
-                </li>
-              );
-            })}
-          </ul>
-        </motion.div>
-      </div>
-
-      {/* <!--- Desktop Navbar ----> */}
-      <div
-        ref={navbarRef}
-        className={`fixed top-0 z-50 w-full transition-shadow duration-300 ${!hasBackground ? "shadow-xl" : ""}`}
-      >
-        <div className="relative hidden items-center justify-between bg-linear-primary-mix-tb px-7 py-4 sm:flex lg:px-14">
-          <img
-            src="/images/logos/logo-without-bg.webp"
-            alt="cuddle-corners-logo"
-            className="h-10 lg:h-14"
-          />
-
-          <ul className="space-x-5 py-3 font-fredoka text-sm font-medium *:inline-block lg:space-x-10 lg:text-base">
-            {navListItemsDesktop.map((item, index) => {
-              // Get the route path, checking for ROOT first, then falling back to the direct route or home ("/") if undefined.
-              const path =
-                ROUTES[getRouteKey(item)]?.ROOT ||
-                ROUTES[getRouteKey(item)] ||
-                "/";
-
-              return (
-                <li key={index} className="cursor-pointer">
-                  <NavLink
-                    to={path}
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-tertiary-300 underline underline-offset-4"
-                        : "hover:text-tertiary-300"
-                    }
-                  >
-                    {item}
-                  </NavLink>
-                </li>
-              );
-            })}
-          </ul>
-
-          <Link
-            to={ROUTES.JOIN_US}
-            className="flex items-center gap-1 rounded-full bg-secondary-500 px-2 py-1 text-sm font-semibold text-white transition-all duration-300 ease-linear hover:bg-secondary-400 hover:text-stone-700 hover:shadow-md lg:gap-2 lg:px-4 lg:text-base"
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-menu"
+            ref={menuRef}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-line bg-paper/95 backdrop-blur-md lg:hidden"
           >
-            <span> Join Us</span> <MoveRight size={20} />
-          </Link>
-        </div>
-        {/* <!--- Wavey Background Image ----> */}
-        <motion.div
-          initial={{ opacity: 1, height: "1.75rem" }}
-          animate={{
-            opacity: hasBackground ? 1 : 0,
-            height: hasBackground ? "1.75rem" : 0,
-          }}
-          transition={{
-            duration: 0.5,
-            ease: [0.22, 1, 0.36, 1], // Smooth cubic-bezier easing
-          }}
-          className="hidden bg-[url(/images/backgrounds/wavey-bg-downfacing.webp)] bg-contain sm:block"
-        />
-      </div>
-    </nav>
+            <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-8">
+              {NAV.map((item) => (
+                <li key={item.label}>
+                  <NavLink
+                    to={item.to}
+                    end={item.to === "/"}
+                    className={({ isActive }) =>
+                      `block rounded-xl px-4 py-3 font-fredoka text-lg font-medium transition-colors ${
+                        isActive
+                          ? "bg-primary-50 text-primary-800"
+                          : "text-ink hover:bg-paper-alt"
+                      }`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+              <li className="mt-3 grid grid-cols-2 gap-3">
+                <Button href={SITE.phoneHref} variant="ghost" size="md" icon={Phone}>
+                  Call us
+                </Button>
+                <Button to={ROUTES.ADMISSION} size="md" icon={CalendarHeart}>
+                  Book a Visit
+                </Button>
+              </li>
+              <li className="mt-1">
+                <Link
+                  to={ROUTES.JOIN_US}
+                  className="block px-4 py-2 text-center font-fredoka text-sm text-ink-soft underline underline-offset-4 hover:text-primary-700"
+                >
+                  Own a Cuddle Corners franchise →
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 
