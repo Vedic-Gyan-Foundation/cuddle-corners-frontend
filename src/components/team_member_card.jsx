@@ -28,7 +28,9 @@ function TeamMemberCard({ name, role, image, bio, clampLines = 5 }) {
           />
         </div>
         <div className="min-w-0">
-          <h3 className="font-fredoka text-2xl font-semibold text-ink">{name}</h3>
+          <h3 className="font-fredoka text-2xl font-semibold text-ink">
+            {name}
+          </h3>
           <span className="mt-2 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 font-fredoka text-sm font-semibold text-primary-800">
             {role}
           </span>

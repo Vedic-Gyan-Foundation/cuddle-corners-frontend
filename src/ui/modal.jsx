@@ -56,7 +56,8 @@ function Modal({ isOpen, onClose, title, children }) {
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
-      if (lastFocused.current instanceof HTMLElement) lastFocused.current.focus();
+      if (lastFocused.current instanceof HTMLElement)
+        lastFocused.current.focus();
     };
   }, [isOpen, onClose]);
 
@@ -80,7 +81,10 @@ function Modal({ isOpen, onClose, title, children }) {
       >
         <div className="sticky top-0 z-10 -mx-6 mb-2 flex items-center justify-between gap-4 bg-paper/95 px-6 py-3 backdrop-blur sm:-mx-9 sm:px-9">
           {title ? (
-            <h2 id={titleId} className="font-fredoka text-2xl font-semibold text-ink sm:text-3xl">
+            <h2
+              id={titleId}
+              className="font-fredoka text-2xl font-semibold text-ink sm:text-3xl"
+            >
               {title}
             </h2>
           ) : (

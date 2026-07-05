@@ -166,8 +166,8 @@ function JoinBand() {
           </h2>
           <p className="max-w-xl text-lg text-primary-100">
             Whether you dream of shaping little minds as an educator, or of
-            opening a Cuddle Corners in your own neighbourhood, we&apos;d love to
-            hear from you.
+            opening a Cuddle Corners in your own neighbourhood, we&apos;d love
+            to hear from you.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Button

@@ -7,7 +7,9 @@ function PrivacyPolicy() {
           Legal
         </span>
         <h1 className="mb-2 text-4xl font-semibold text-ink">Privacy Policy</h1>
-        <p className="mb-10 text-sm text-ink-muted">Last updated: November 04, 2025</p>
+        <p className="mb-10 text-sm text-ink-muted">
+          Last updated: November 04, 2025
+        </p>
         <p className="mb-6">
           This Privacy Policy describes Our policies and procedures on the
           collection, use and disclosure of Your information when You use the

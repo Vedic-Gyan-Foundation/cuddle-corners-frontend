@@ -27,7 +27,8 @@ function Footer() {
             <span className="wordmark text-3xl text-white">Cuddle Corners</span>
             <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-primary-100">
               A happy, safe place for little ones aged {SITE.ageRange} to grow,
-              play and learn — across {SITE.centresCount} centres in {SITE.city}.
+              play and learn — across {SITE.centresCount} centres in {SITE.city}
+              .
             </p>
             <div className="mt-6 flex gap-3">
               <a
@@ -62,7 +63,9 @@ function Footer() {
 
           {/* Explore */}
           <nav aria-label="Footer">
-            <h2 className="font-fredoka text-lg font-semibold text-white">Explore</h2>
+            <h2 className="font-fredoka text-lg font-semibold text-white">
+              Explore
+            </h2>
             <ul className="mt-4 space-y-2.5 text-[15px]">
               {EXPLORE.map((item) => (
                 <li key={item.label}>
@@ -79,25 +82,50 @@ function Footer() {
 
           {/* Contact + newsletter */}
           <div>
-            <h2 className="font-fredoka text-lg font-semibold text-white">Get in touch</h2>
+            <h2 className="font-fredoka text-lg font-semibold text-white">
+              Get in touch
+            </h2>
             <ul className="mt-4 space-y-3 text-[15px] text-primary-100">
               <li className="flex gap-3">
-                <MapPin size={18} className="mt-0.5 shrink-0 text-secondary-400" aria-hidden="true" />
-                <a href={SITE.mapHref} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                <MapPin
+                  size={18}
+                  className="mt-0.5 shrink-0 text-secondary-400"
+                  aria-hidden="true"
+                />
+                <a
+                  href={SITE.mapHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
                   {SITE.addressFull}
                 </a>
               </li>
               <li className="flex gap-3">
-                <Phone size={18} className="shrink-0 text-secondary-400" aria-hidden="true" />
+                <Phone
+                  size={18}
+                  className="shrink-0 text-secondary-400"
+                  aria-hidden="true"
+                />
                 <span>
-                  <a href={SITE.phoneHref} className="hover:text-white">{SITE.phone}</a>
+                  <a href={SITE.phoneHref} className="hover:text-white">
+                    {SITE.phone}
+                  </a>
                   <span className="px-1 text-primary-300">/</span>
-                  <a href={`tel:${SITE.phoneAlt}`} className="hover:text-white">{SITE.phoneAlt}</a>
+                  <a href={`tel:${SITE.phoneAlt}`} className="hover:text-white">
+                    {SITE.phoneAlt}
+                  </a>
                 </span>
               </li>
               <li className="flex gap-3">
-                <Mail size={18} className="shrink-0 text-secondary-400" aria-hidden="true" />
-                <a href={SITE.emailHref} className="hover:text-white">{SITE.email}</a>
+                <Mail
+                  size={18}
+                  className="shrink-0 text-secondary-400"
+                  aria-hidden="true"
+                />
+                <a href={SITE.emailHref} className="hover:text-white">
+                  {SITE.email}
+                </a>
               </li>
             </ul>
 
@@ -107,7 +135,10 @@ function Footer() {
               method="POST"
               aria-label="Newsletter signup"
             >
-              <label htmlFor="footer-email" className="text-sm text-primary-100">
+              <label
+                htmlFor="footer-email"
+                className="text-sm text-primary-100"
+              >
                 Little updates, big smiles — join our list
               </label>
               <div className="mt-2 flex overflow-hidden rounded-full bg-white shadow-soft">
@@ -133,13 +164,24 @@ function Footer() {
         {/* bottom bar */}
         <div className="border-t border-white/10">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-sm text-primary-200 sm:flex-row sm:px-8">
-            <p>© {new Date().getFullYear()} Cuddle Corners. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} Cuddle Corners. All rights reserved.
+            </p>
             <div className="flex items-center gap-5">
-              <Link to={ROUTES.PRIVACY_POLICY} className="hover:text-white">Privacy Policy</Link>
-              <Link to={ROUTES.TERMS_OF_USE} className="hover:text-white">Terms &amp; Conditions</Link>
+              <Link to={ROUTES.PRIVACY_POLICY} className="hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link to={ROUTES.TERMS_OF_USE} className="hover:text-white">
+                Terms &amp; Conditions
+              </Link>
             </div>
             <p className="flex items-center gap-1.5">
-              Made with <Heart size={14} className="fill-secondary-400 text-secondary-400" /> in Guwahati
+              Made with{" "}
+              <Heart
+                size={14}
+                className="fill-secondary-400 text-secondary-400"
+              />{" "}
+              in Guwahati
             </p>
           </div>
         </div>

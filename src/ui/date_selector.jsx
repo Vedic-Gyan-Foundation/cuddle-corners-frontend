@@ -5,7 +5,10 @@ function DateSelector({ labelText, id, htmlFor, selectedDate, onDateChange }) {
 
   return (
     <div className="grid w-fit gap-1.5">
-      <label className="font-fredoka text-sm font-medium text-ink" htmlFor={htmlFor}>
+      <label
+        className="font-fredoka text-sm font-medium text-ink"
+        htmlFor={htmlFor}
+      >
         {labelText} <span className="text-xs text-ink-muted">(required)</span>
       </label>
       <input

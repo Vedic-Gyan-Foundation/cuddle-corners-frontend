@@ -10,7 +10,12 @@ const TONES = {
 };
 
 export function Container({ children, className = "", size = "default" }) {
-  const max = size === "narrow" ? "max-w-3xl" : size === "wide" ? "max-w-7xl" : "max-w-6xl";
+  const max =
+    size === "narrow"
+      ? "max-w-3xl"
+      : size === "wide"
+        ? "max-w-7xl"
+        : "max-w-6xl";
   return (
     <div className={`mx-auto w-full ${max} px-5 sm:px-8 ${className}`}>
       {children}
@@ -44,7 +49,10 @@ export function Kicker({ children, className = "" }) {
     <span
       className={`inline-flex items-center gap-2 font-fredoka text-xs font-semibold uppercase tracking-[0.16em] text-primary-700 ${className}`}
     >
-      <span className="h-[3px] w-6 rounded-full bg-secondary-500" aria-hidden="true" />
+      <span
+        className="h-[3px] w-6 rounded-full bg-secondary-500"
+        aria-hidden="true"
+      />
       {children}
     </span>
   );

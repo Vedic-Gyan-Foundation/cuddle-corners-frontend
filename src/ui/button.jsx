@@ -13,8 +13,7 @@ const VARIANTS = {
     "bg-white/70 text-primary-800 ring-1 ring-inset ring-primary-200 hover:bg-white hover:ring-primary-300",
   whatsapp:
     "bg-whatsapp text-white shadow-soft hover:bg-whatsapp-dark hover:shadow-lift",
-  soft:
-    "bg-primary-100 text-primary-800 hover:bg-primary-200",
+  soft: "bg-primary-100 text-primary-800 hover:bg-primary-200",
 };
 
 const SIZES = {

@@ -34,7 +34,10 @@ export function Cloud({ className = "", style }) {
       viewBox="0 0 128 76"
       aria-hidden="true"
       className={className}
-      style={{ filter: "drop-shadow(0 6px 12px rgba(2,90,119,0.12))", ...style }}
+      style={{
+        filter: "drop-shadow(0 6px 12px rgba(2,90,119,0.12))",
+        ...style,
+      }}
     >
       <path
         d="M34 68C18 68 6 57 6 43c0-12 9-21 21-22 3-11 13-19 25-19 12 0 22 7 26 18 1 0 2-1 3-1 13 0 23 9 23 21 0 6-3 12-7 15 3 2 5 6 5 10 0 3-3 5-6 5H34z"
@@ -49,7 +52,12 @@ export function Cloud({ className = "", style }) {
 /** A defined four-point sparkle twinkle. */
 export function Sparkle({ className = "text-secondary-400", style }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} style={style}>
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+      style={style}
+    >
       <path
         d="M12 1c1.1 5.6 4.3 8.8 9.9 9.9C16.3 12 13.1 15.2 12 20.8 10.9 15.2 7.7 12 2.1 10.9 7.7 9.8 10.9 6.6 12 1z"
         fill="currentColor"
@@ -73,7 +81,14 @@ export function BearMascot({ className = "" }) {
       role="img"
       aria-label="Cuddle Corners bear mascot"
     >
-      <ellipse cx="110" cy="226" rx="66" ry="10" className="fill-ink" opacity="0.08" />
+      <ellipse
+        cx="110"
+        cy="226"
+        rx="66"
+        ry="10"
+        className="fill-ink"
+        opacity="0.08"
+      />
 
       {/* ---- body ---- */}
       <path
@@ -86,29 +101,73 @@ export function BearMascot({ className = "" }) {
         className="fill-primary-500"
         d="M64 168c14 8 32 12 46 12s32-4 46-12c4 22-6 42-46 42s-50-20-46-42z"
       />
-      <rect x="96" y="150" width="10" height="26" rx="5" className="fill-primary-500" />
-      <rect x="114" y="150" width="10" height="26" rx="5" className="fill-primary-500" />
+      <rect
+        x="96"
+        y="150"
+        width="10"
+        height="26"
+        rx="5"
+        className="fill-primary-500"
+      />
+      <rect
+        x="114"
+        y="150"
+        width="10"
+        height="26"
+        rx="5"
+        className="fill-primary-500"
+      />
       <circle cx="101" cy="182" r="4" className="fill-secondary-400" />
       <circle cx="119" cy="182" r="4" className="fill-secondary-400" />
 
       {/* left arm */}
-      <circle cx="58" cy="164" r="16" className="fill-sand stroke-sand-dark" strokeWidth="2" />
+      <circle
+        cx="58"
+        cy="164"
+        r="16"
+        className="fill-sand stroke-sand-dark"
+        strokeWidth="2"
+      />
       {/* right arm waving */}
       <path
         className="fill-sand stroke-sand-dark"
         strokeWidth="2"
         d="M150 150c14-14 30-24 44-18 8 4 6 16-4 22-12 8-28 12-40 8z"
       />
-      <circle cx="192" cy="130" r="15" className="fill-sand stroke-sand-dark" strokeWidth="2" />
+      <circle
+        cx="192"
+        cy="130"
+        r="15"
+        className="fill-sand stroke-sand-dark"
+        strokeWidth="2"
+      />
 
       {/* ---- ears ---- */}
-      <circle cx="72" cy="58" r="24" className="fill-sand stroke-sand-dark" strokeWidth="2" />
-      <circle cx="148" cy="58" r="24" className="fill-sand stroke-sand-dark" strokeWidth="2" />
+      <circle
+        cx="72"
+        cy="58"
+        r="24"
+        className="fill-sand stroke-sand-dark"
+        strokeWidth="2"
+      />
+      <circle
+        cx="148"
+        cy="58"
+        r="24"
+        className="fill-sand stroke-sand-dark"
+        strokeWidth="2"
+      />
       <circle cx="72" cy="58" r="12" className="fill-sand-light" />
       <circle cx="148" cy="58" r="12" className="fill-sand-light" />
 
       {/* ---- head ---- */}
-      <circle cx="110" cy="86" r="58" className="fill-sand stroke-sand-dark" strokeWidth="2" />
+      <circle
+        cx="110"
+        cy="86"
+        r="58"
+        className="fill-sand stroke-sand-dark"
+        strokeWidth="2"
+      />
 
       {/* muzzle */}
       <ellipse cx="110" cy="104" rx="34" ry="27" className="fill-sand-light" />

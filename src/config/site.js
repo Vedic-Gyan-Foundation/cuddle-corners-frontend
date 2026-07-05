@@ -34,6 +34,7 @@ export const SITE = {
 // Build a WhatsApp deep-link for any number with a friendly prefilled message.
 export function waLink(number, message = WA_MESSAGE) {
   const digits = (number || "").replace(/[^\d]/g, "");
-  const msg = typeof message === "string" ? encodeURIComponent(message) : message;
+  const msg =
+    typeof message === "string" ? encodeURIComponent(message) : message;
   return `https://wa.me/${digits}?text=${msg}`;
 }

@@ -47,11 +47,16 @@ function ComingSoonCard({ branch }) {
         </span>
       </div>
       <p className="mt-4 flex-grow text-sm leading-relaxed text-ink-soft">
-        A brand-new Cuddle Corners centre is on its way to Mirza. Leave us a note
-        on WhatsApp and we&apos;ll tell you the moment doors open.
+        A brand-new Cuddle Corners centre is on its way to Mirza. Leave us a
+        note on WhatsApp and we&apos;ll tell you the moment doors open.
       </p>
       <div className="mt-5">
-        <Button href={SITE.whatsappHref} variant="whatsapp" size="sm" icon={MessageCircle}>
+        <Button
+          href={SITE.whatsappHref}
+          variant="whatsapp"
+          size="sm"
+          icon={MessageCircle}
+        >
           Notify me
         </Button>
       </div>
@@ -76,13 +81,21 @@ function BranchCard({ branch }) {
       </div>
 
       <p className="mt-5 flex gap-2.5 text-sm leading-relaxed text-ink-soft">
-        <MapPin size={18} className="mt-0.5 shrink-0 text-primary-600" aria-hidden="true" />
+        <MapPin
+          size={18}
+          className="mt-0.5 shrink-0 text-primary-600"
+          aria-hidden="true"
+        />
         <span>{branch.franchiseAddress}</span>
       </p>
 
       {branch.emailId && (
         <p className="mt-3 flex items-center gap-2.5 text-sm text-ink-soft">
-          <Mail size={18} className="shrink-0 text-primary-600" aria-hidden="true" />
+          <Mail
+            size={18}
+            className="shrink-0 text-primary-600"
+            aria-hidden="true"
+          />
           <a
             href={`mailto:${branch.emailId}`}
             className="break-all font-medium text-primary-700 underline-offset-2 hover:underline"
@@ -95,7 +108,12 @@ function BranchCard({ branch }) {
       {/* primary actions */}
       <div className="mt-auto flex flex-wrap gap-2 pt-6">
         {primaryNumber && (
-          <Button href={`tel:${primaryNumber}`} variant="soft" size="sm" icon={Phone}>
+          <Button
+            href={`tel:${primaryNumber}`}
+            variant="soft"
+            size="sm"
+            icon={Phone}
+          >
             Call
           </Button>
         )}
@@ -278,8 +296,8 @@ function FranchiseDetails() {
               No centre matched “{searchQuery.trim()}”.
             </p>
             <p className="mt-2 text-ink-soft">
-              Try a locality like Beltola, Rehabari or Nalapara — or reach out and
-              we&apos;ll point you to the closest one.
+              Try a locality like Beltola, Rehabari or Nalapara — or reach out
+              and we&apos;ll point you to the closest one.
             </p>
             <div className="mt-6 flex justify-center">
               <Button

@@ -32,7 +32,8 @@ function EnrollmentForm({ onOpenModal }) {
 
   const handlePhoneNumberChange = (e) => {
     const value = e.target.value;
-    if (/^\d*$/.test(value) && value.length <= 10) update("phone_number", value);
+    if (/^\d*$/.test(value) && value.length <= 10)
+      update("phone_number", value);
   };
 
   const handleSubmit = async (e) => {
@@ -92,7 +93,8 @@ function EnrollmentForm({ onOpenModal }) {
     <form onSubmit={handleSubmit} className="space-y-5">
       <p className="text-ink-soft">
         Tell us a little about your child and we&apos;ll arrange a warm,
-        no-pressure visit. Fields marked <span className="text-ink-muted">(required)</span>.
+        no-pressure visit. Fields marked{" "}
+        <span className="text-ink-muted">(required)</span>.
       </p>
 
       <div className="grid gap-5 sm:grid-cols-2">
@@ -168,7 +170,8 @@ function EnrollmentForm({ onOpenModal }) {
 
       <fieldset>
         <legend className={LABEL}>
-          How would you like to tour a centre? <span className={REQ}>(required)</span>
+          How would you like to tour a centre?{" "}
+          <span className={REQ}>(required)</span>
         </legend>
         <div className="mt-2 flex flex-wrap gap-3">
           {["In-person", "Virtual"].map((mode) => (
@@ -195,7 +198,8 @@ function EnrollmentForm({ onOpenModal }) {
 
       <div>
         <label htmlFor="tour_days_time" className={LABEL}>
-          Best days &amp; times for a visit <span className={REQ}>(required)</span>
+          Best days &amp; times for a visit{" "}
+          <span className={REQ}>(required)</span>
         </label>
         <input
           id="tour_days_time"
@@ -222,7 +226,13 @@ function EnrollmentForm({ onOpenModal }) {
       </div>
 
       <div className="pt-2">
-        <Button type="submit" size="lg" icon={Send} disabled={submitting} className="w-full sm:w-auto">
+        <Button
+          type="submit"
+          size="lg"
+          icon={Send}
+          disabled={submitting}
+          className="w-full sm:w-auto"
+        >
           {submitting ? "Sending…" : "Request my visit"}
         </Button>
       </div>

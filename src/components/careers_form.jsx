@@ -48,8 +48,7 @@ function CareersForm() {
   const inputClasses =
     "mt-2 w-full rounded-xl border border-line bg-white px-4 py-3 text-ink placeholder:text-ink-muted transition-colors duration-200 ease-gentle focus:border-primary-300 focus:outline-none focus:ring-4 focus:ring-primary-200";
 
-  const labelClasses =
-    "block font-fredoka text-sm font-semibold text-ink";
+  const labelClasses = "block font-fredoka text-sm font-semibold text-ink";
 
   return (
     <form

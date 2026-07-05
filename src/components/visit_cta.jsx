@@ -25,7 +25,13 @@ export default function VisitCTA({
           </h2>
           <p className="max-w-xl text-lg text-primary-100">{text}</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Button to={ROUTES.ADMISSION} variant="secondary" size="lg" icon={ArrowRight} iconRight>
+            <Button
+              to={ROUTES.ADMISSION}
+              variant="secondary"
+              size="lg"
+              icon={ArrowRight}
+              iconRight
+            >
               Book a Visit
             </Button>
             <Button href={SITE.whatsappHref} variant="whatsapp" size="lg">

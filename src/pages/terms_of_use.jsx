@@ -12,13 +12,6 @@ function SubSectionTitle({ children }) {
     </h3>
   );
 }
-function SubSubSectionTitle({ children }) {
-  return (
-    <h4 className="mb-2 mt-6 text-lg font-semibold text-primary-600">
-      {children}
-    </h4>
-  );
-}
 
 function TermsOfUse() {
   return (
@@ -28,8 +21,12 @@ function TermsOfUse() {
           <span className="h-[3px] w-6 rounded-full bg-secondary-500" />
           Legal
         </span>
-        <h1 className="mb-2 text-4xl font-semibold text-ink">Terms &amp; Conditions</h1>
-        <p className="mb-10 text-sm text-ink-muted">Last updated: November 04, 2025</p>
+        <h1 className="mb-2 text-4xl font-semibold text-ink">
+          Terms &amp; Conditions
+        </h1>
+        <p className="mb-10 text-sm text-ink-muted">
+          Last updated: November 04, 2025
+        </p>
         <p className="mb-6">
           Please read these terms and conditions carefully before using Our
           Service.

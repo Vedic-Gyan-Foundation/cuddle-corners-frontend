@@ -6,7 +6,7 @@ choice isn't covered here, favour warmth, legibility, and restraint.
 
 Positioning: **a warm, grounded, trustworthy neighbourhood preschool.** The
 child is the user; the parent is the buyer. Every screen must feel joyful to a
-child *and* signal safety and competence to an anxious parent on a phone.
+child _and_ signal safety and competence to an anxious parent on a phone.
 
 ---
 
@@ -16,19 +16,19 @@ Defined as Tailwind tokens in `tailwind.config.js`. Use the token, never a raw
 hex value in a component and never a stock Tailwind colour (`blue-`, `green-`,
 `indigo-`, `purple-`, `slate-`, `gray-` …).
 
-| Role | Token | Use for |
-|------|-------|---------|
-| **Trust anchor** | `primary` (sky-blue, `500` = `#08AEF0`, ink `800/900`) | Primary CTAs, links, key headings, large calm fills |
-| **Joy accent** | `secondary` (golden-yellow `500` = `#FEC802`) | Sparing highlights, the motif, one hover state |
-| **Brand red** | `tertiary` (`600` = `#7C0001`) | The wordmark/logo lockup and rare emphasis **only** |
-| **Ground** | `paper` (`#FBF7EF`, `alt`, `deep`) | The canvas for everything — warm, never clinical white |
-| **Text** | `ink` (`#0E3A49`, `soft`, `muted`) | Body and heading text; clears WCAG AA on paper |
-| **Hairline** | `line` | Card borders, dividers |
+| Role             | Token                                                  | Use for                                                |
+| ---------------- | ------------------------------------------------------ | ------------------------------------------------------ |
+| **Trust anchor** | `primary` (sky-blue, `500` = `#08AEF0`, ink `800/900`) | Primary CTAs, links, key headings, large calm fills    |
+| **Joy accent**   | `secondary` (golden-yellow `500` = `#FEC802`)          | Sparing highlights, the motif, one hover state         |
+| **Brand red**    | `tertiary` (`600` = `#7C0001`)                         | The wordmark/logo lockup and rare emphasis **only**    |
+| **Ground**       | `paper` (`#FBF7EF`, `alt`, `deep`)                     | The canvas for everything — warm, never clinical white |
+| **Text**         | `ink` (`#0E3A49`, `soft`, `muted`)                     | Body and heading text; clears WCAG AA on paper         |
+| **Hairline**     | `line`                                                 | Card borders, dividers                                 |
 
 Rules:
 
 - **Contrast is non-negotiable.** Every text/icon/border colour must clear WCAG
-  AA against its *actual* background — 4.5:1 for body text, 3:1 for large text
+  AA against its _actual_ background — 4.5:1 for body text, 3:1 for large text
   and UI. Pastels (`primary-100/200`, `secondary-50/75`) live only in **fills
   and decorative shapes**, never as text colour.
 - **Never white or light text on `secondary` (yellow).** Yellow surfaces take
@@ -71,7 +71,7 @@ One `<h1>` per page. `<h2>` for sections, `<h3>` for cards.
   `src/app/App.jsx`; CSS animations degrade via the `prefers-reduced-motion`
   block in `src/index.css`. Scroll-linked parallax must be gated manually.
 - **Animate only `transform`, `opacity`, `filter`.** Never `top/left/width/
-  height/margin` (layout thrash). Float things with `transform: translate()`.
+height/margin` (layout thrash). Float things with `transform: translate()`.
 - Motion never gates content — a fade that fails must still leave text visible.
 
 ## 5. Anti-AI-slop rules (enforced)

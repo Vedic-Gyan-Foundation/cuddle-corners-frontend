@@ -270,7 +270,11 @@ function Admission() {
               haven&apos;t covered? We&apos;re a message away.
             </p>
             <div className="mt-6">
-              <Button href={SITE.whatsappHref} variant="whatsapp" icon={MessageCircle}>
+              <Button
+                href={SITE.whatsappHref}
+                variant="whatsapp"
+                icon={MessageCircle}
+              >
                 Ask on WhatsApp
               </Button>
             </div>

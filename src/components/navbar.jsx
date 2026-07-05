@@ -45,9 +45,7 @@ function Navbar() {
   const linkClass = ({ isActive }) =>
     [
       "relative py-1 font-fredoka text-[15px] font-medium transition-colors",
-      isActive
-        ? "text-primary-700"
-        : "text-ink hover:text-primary-700",
+      isActive ? "text-primary-700" : "text-ink hover:text-primary-700",
     ].join(" ");
 
   return (
@@ -60,7 +58,11 @@ function Navbar() {
     >
       <nav className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-8">
         {/* Logo */}
-        <Link to={ROUTES.HOME} className="flex shrink-0 items-center" aria-label="Cuddle Corners home">
+        <Link
+          to={ROUTES.HOME}
+          className="flex shrink-0 items-center"
+          aria-label="Cuddle Corners home"
+        >
           <img
             src="/images/logos/logo-without-bg.webp"
             alt="Cuddle Corners"
@@ -155,7 +157,12 @@ function Navbar() {
                 </li>
               ))}
               <li className="mt-3 grid grid-cols-2 gap-3">
-                <Button href={SITE.phoneHref} variant="ghost" size="md" icon={Phone}>
+                <Button
+                  href={SITE.phoneHref}
+                  variant="ghost"
+                  size="md"
+                  icon={Phone}
+                >
                   Call us
                 </Button>
                 <Button to={ROUTES.ADMISSION} size="md" icon={CalendarHeart}>

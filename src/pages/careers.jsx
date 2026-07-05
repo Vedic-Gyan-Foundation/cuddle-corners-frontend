@@ -116,8 +116,8 @@ function Culture() {
             A workplace built on the same warmth we give the children
           </h2>
           <p className="mt-3 text-lg text-ink-soft">
-            We look after the people who look after our little ones. Here is what
-            being part of the team feels like.
+            We look after the people who look after our little ones. Here is
+            what being part of the team feels like.
           </p>
         </div>
 

@@ -27,7 +27,10 @@ function PagesBanner({ headingText, imgSrc, kicker, subtitle }) {
           <Breadcrumbs className="mb-5" />
           {kicker && (
             <span className="mb-3 inline-flex items-center gap-2 font-fredoka text-xs font-semibold uppercase tracking-[0.16em] text-primary-700">
-              <span className="h-[3px] w-6 rounded-full bg-secondary-500" aria-hidden="true" />
+              <span
+                className="h-[3px] w-6 rounded-full bg-secondary-500"
+                aria-hidden="true"
+              />
               {kicker}
             </span>
           )}
@@ -48,7 +51,11 @@ function PagesBanner({ headingText, imgSrc, kicker, subtitle }) {
               className="w-72 overflow-hidden border-4 border-white shadow-lift"
               style={{ borderRadius: "46% 54% 55% 45% / 50% 46% 54% 50%" }}
             >
-              <img src={imgSrc} alt="" className="aspect-square w-full object-cover" />
+              <img
+                src={imgSrc}
+                alt=""
+                className="aspect-square w-full object-cover"
+              />
             </div>
           ) : (
             <div className="relative flex justify-center">

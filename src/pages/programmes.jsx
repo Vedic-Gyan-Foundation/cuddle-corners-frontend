@@ -137,15 +137,11 @@ function AgeBands() {
             Not sure which fits?
           </h3>
           <p className="mt-2 flex-grow text-sm leading-relaxed text-ink-soft">
-            Tell us your little one&apos;s age and we&apos;ll gently guide you to
-            the right stage.
+            Tell us your little one&apos;s age and we&apos;ll gently guide you
+            to the right stage.
           </p>
           <div className="mt-5">
-            <Button
-              href={SITE.whatsappHref}
-              variant="whatsapp"
-              size="sm"
-            >
+            <Button href={SITE.whatsappHref} variant="whatsapp" size="sm">
               Ask us
             </Button>
           </div>
@@ -166,14 +162,18 @@ function Curriculum() {
           </h2>
           <p className="mt-3 text-lg leading-relaxed text-ink-soft">
             Every day weaves together the skills a growing mind and heart need —
-            thoughtfully planned, gently delivered across {programContents?.length}{" "}
-            connected areas of growth.
+            thoughtfully planned, gently delivered across{" "}
+            {programContents?.length} connected areas of growth.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button to={ROUTES.ADMISSION} icon={ArrowRight} iconRight>
               Book a Visit
             </Button>
-            <Button href={SITE.whatsappHref} variant="whatsapp" icon={MessageCircle}>
+            <Button
+              href={SITE.whatsappHref}
+              variant="whatsapp"
+              icon={MessageCircle}
+            >
               WhatsApp
             </Button>
           </div>

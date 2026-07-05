@@ -25,7 +25,10 @@ import { PagesBanner, VisitCTA } from "../components";
 /* ---------------------------------------------------------------- data ---- */
 const LOCATIONS = [
   { name: "The Green School International", area: "Nalapara, Guwahati" },
-  { name: "R.K. Choudhury Road Centre", area: "Near Sluice Gate, Bharalumukh, Guwahati" },
+  {
+    name: "R.K. Choudhury Road Centre",
+    area: "Near Sluice Gate, Bharalumukh, Guwahati",
+  },
   {
     name: "Battalion Gate Centre",
     area: "House No. 13, Lutuma Road, 4th Battalion Gate, Kahilipara, Guwahati",
@@ -64,15 +67,19 @@ function OurStory() {
             <p>
               At Cuddle Corners, we provide a warm, nurturing preschool
               experience for children aged{" "}
-              <strong className="font-semibold text-ink">{SITE.ageRange}</strong>.
-              With three welcoming centres across {SITE.city}, our bright,
+              <strong className="font-semibold text-ink">
+                {SITE.ageRange}
+              </strong>
+              . With three welcoming centres across {SITE.city}, our bright,
               engaging classrooms are the perfect place for early learning, play
               and discovery.
             </p>
             <p>
               In partnership with{" "}
-              <strong className="font-semibold text-ink">{SITE.curriculumPartner}</strong>,
-              Singapore&apos;s leading early-education provider, we deliver a
+              <strong className="font-semibold text-ink">
+                {SITE.curriculumPartner}
+              </strong>
+              , Singapore&apos;s leading early-education provider, we deliver a
               well-rounded curriculum that blends creativity, structure and
               meaningful exploration — from literacy and numeracy to art and
               social-emotional growth.
@@ -87,7 +94,11 @@ function OurStory() {
             <Button to={ROUTES.ADMISSION} icon={ArrowRight} iconRight>
               Book a Visit
             </Button>
-            <Button href={SITE.whatsappHref} variant="whatsapp" icon={MessageCircle}>
+            <Button
+              href={SITE.whatsappHref}
+              variant="whatsapp"
+              icon={MessageCircle}
+            >
               WhatsApp
             </Button>
           </div>
@@ -175,12 +186,20 @@ function Locations() {
             Three warm centres across {SITE.city}
           </h2>
         </div>
-        <Button to={ROUTES.FRANCHISE_DETAILS} variant="ghost" icon={ArrowRight} iconRight>
+        <Button
+          to={ROUTES.FRANCHISE_DETAILS}
+          variant="ghost"
+          icon={ArrowRight}
+          iconRight
+        >
           View all {SITE.centresCount} centres
         </Button>
       </div>
 
-      <RevealOnScroll className="grid gap-5 md:grid-cols-3" staggerChildren={0.12}>
+      <RevealOnScroll
+        className="grid gap-5 md:grid-cols-3"
+        staggerChildren={0.12}
+      >
         {LOCATIONS.map(({ name, area }) => (
           <div
             key={name}
@@ -189,8 +208,12 @@ function Locations() {
             <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary-100 text-primary-700">
               <MapPin size={24} aria-hidden="true" />
             </span>
-            <h3 className="mt-5 font-fredoka text-xl font-semibold text-ink">{name}</h3>
-            <p className="mt-2 flex-grow text-sm leading-relaxed text-ink-soft">{area}</p>
+            <h3 className="mt-5 font-fredoka text-xl font-semibold text-ink">
+              {name}
+            </h3>
+            <p className="mt-2 flex-grow text-sm leading-relaxed text-ink-soft">
+              {area}
+            </p>
             <Button
               to={ROUTES.FRANCHISE_DETAILS}
               variant="soft"
@@ -223,7 +246,10 @@ function LearningJourney() {
         </p>
       </div>
 
-      <RevealOnScroll className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" staggerChildren={0.1}>
+      <RevealOnScroll
+        className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+        staggerChildren={0.1}
+      >
         {learningDomains.map(({ title, description, icon: Icon }) => (
           <div
             key={title}
@@ -232,8 +258,12 @@ function LearningJourney() {
             <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary-100 text-primary-700 transition-transform duration-300 ease-gentle group-hover:scale-110">
               <Icon size={24} aria-hidden="true" />
             </span>
-            <h3 className="mt-5 font-fredoka text-xl font-semibold text-ink">{title}</h3>
-            <p className="mt-2 flex-grow text-sm leading-relaxed text-ink-soft">{description}</p>
+            <h3 className="mt-5 font-fredoka text-xl font-semibold text-ink">
+              {title}
+            </h3>
+            <p className="mt-2 flex-grow text-sm leading-relaxed text-ink-soft">
+              {description}
+            </p>
           </div>
         ))}
       </RevealOnScroll>
@@ -262,12 +292,17 @@ function Curriculum() {
 
         <div className="grid gap-4">
           {CURRICULUM_POINTS.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="flex gap-5 rounded-card border border-line bg-white p-6 shadow-soft">
+            <div
+              key={title}
+              className="flex gap-5 rounded-card border border-line bg-white p-6 shadow-soft"
+            >
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-secondary-100 text-primary-900">
                 <Icon size={24} aria-hidden="true" />
               </span>
               <div>
-                <h3 className="font-fredoka text-lg font-semibold text-ink">{title}</h3>
+                <h3 className="font-fredoka text-lg font-semibold text-ink">
+                  {title}
+                </h3>
                 <p className="mt-1.5 leading-relaxed text-ink-soft">{body}</p>
               </div>
             </div>

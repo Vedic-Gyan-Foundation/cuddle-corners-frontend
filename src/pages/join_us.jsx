@@ -331,7 +331,12 @@ function Faqs() {
               friendly conversation.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <Button href="#contact" variant="soft" icon={ArrowRight} iconRight>
+              <Button
+                href="#contact"
+                variant="soft"
+                icon={ArrowRight}
+                iconRight
+              >
                 Request information
               </Button>
               <Button
@@ -348,45 +353,45 @@ function Faqs() {
 
         <div className="space-y-4">
           {FAQS.map((faq, i) => {
-          const isOpen = open === i;
-          return (
-            <div
-              key={faq.q}
-              className="overflow-hidden rounded-card border border-line bg-white shadow-soft"
-            >
-              <h3>
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? -1 : i)}
-                  aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors duration-200 ease-gentle hover:bg-paper-alt"
-                >
-                  <span className="font-fredoka text-lg font-semibold text-ink">
-                    {faq.q}
-                  </span>
-                  <span
-                    className={`grid h-8 w-8 shrink-0 place-items-center rounded-full transition-colors duration-200 ${
-                      isOpen
-                        ? "bg-primary-600 text-white"
-                        : "bg-primary-100 text-primary-700"
-                    }`}
+            const isOpen = open === i;
+            return (
+              <div
+                key={faq.q}
+                className="overflow-hidden rounded-card border border-line bg-white shadow-soft"
+              >
+                <h3>
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : i)}
+                    aria-expanded={isOpen}
+                    className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors duration-200 ease-gentle hover:bg-paper-alt"
                   >
-                    {isOpen ? (
-                      <Minus size={18} aria-hidden="true" />
-                    ) : (
-                      <Plus size={18} aria-hidden="true" />
-                    )}
-                  </span>
-                </button>
-              </h3>
-              {isOpen && (
-                <div className="px-5 pb-5">
-                  <p className="leading-relaxed text-ink-soft">{faq.a}</p>
-                </div>
-              )}
-            </div>
-          );
-        })}
+                    <span className="font-fredoka text-lg font-semibold text-ink">
+                      {faq.q}
+                    </span>
+                    <span
+                      className={`grid h-8 w-8 shrink-0 place-items-center rounded-full transition-colors duration-200 ${
+                        isOpen
+                          ? "bg-primary-600 text-white"
+                          : "bg-primary-100 text-primary-700"
+                      }`}
+                    >
+                      {isOpen ? (
+                        <Minus size={18} aria-hidden="true" />
+                      ) : (
+                        <Plus size={18} aria-hidden="true" />
+                      )}
+                    </span>
+                  </button>
+                </h3>
+                {isOpen && (
+                  <div className="px-5 pb-5">
+                    <p className="leading-relaxed text-ink-soft">{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </Section>
@@ -483,7 +488,13 @@ function RequestInfo() {
             name="_subject"
             value="New franchise enquiry — Cuddle Corners"
           />
-          <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
+          <input
+            type="text"
+            name="_honey"
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+          />
 
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
@@ -592,7 +603,13 @@ function ClosingCTA() {
             communities through early childhood education.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Button href="#contact" variant="secondary" size="lg" icon={ArrowRight} iconRight>
+            <Button
+              href="#contact"
+              variant="secondary"
+              size="lg"
+              icon={ArrowRight}
+              iconRight
+            >
               Request information
             </Button>
             <Button
