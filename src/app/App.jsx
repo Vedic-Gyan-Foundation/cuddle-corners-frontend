@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 
 import AppLayout from "./app_layout";
 import ROUTES from "../config/routes";
@@ -72,10 +73,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <RouterProvider router={router} />
       <Toaster />
-    </>
+    </MotionConfig>
   );
 }
 

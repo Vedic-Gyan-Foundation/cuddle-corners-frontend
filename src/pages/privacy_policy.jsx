@@ -1,9 +1,13 @@
 function PrivacyPolicy() {
   return (
-    <div className="mt-20 min-h-screen bg-primary-50">
-      <div className="mx-auto max-w-4xl px-6 py-16 text-primary-900 sm:px-12">
-        <h1 className="mb-2 text-4xl font-bold">Privacy Policy</h1>
-        <p className="mb-8 text-sm text-primary-500">
+    <div className="bg-paper">
+      <div className="mx-auto max-w-3xl px-5 py-16 text-ink sm:px-8 [&_a]:font-medium [&_a]:text-primary-700 [&_a]:underline [&_a]:underline-offset-2 [&_li]:leading-relaxed [&_li]:text-ink-soft [&_p]:leading-relaxed [&_p]:text-ink-soft">
+        <span className="mb-3 inline-flex items-center gap-2 font-fredoka text-xs font-semibold uppercase tracking-[0.16em] text-primary-700">
+          <span className="h-[3px] w-6 rounded-full bg-secondary-500" />
+          Legal
+        </span>
+        <h1 className="mb-2 text-4xl font-semibold text-ink">Privacy Policy</h1>
+        <p className="mb-10 text-sm text-ink-muted">
           Last updated: November 04, 2025
         </p>
         <p className="mb-6">
@@ -332,7 +336,7 @@ function PrivacyPolicy() {
           Your information, including Personal Data, is processed at the
           Company&apos;s operating offices and in any other places where the
           parties involved in the processing are located. It means that this
-          information may be transferred to — and maintained on — computers
+          information may be transferred to, and maintained on, computers
           located outside of Your state, province, country or other governmental
           jurisdiction where the data protection laws may differ from those from
           Your jurisdiction.

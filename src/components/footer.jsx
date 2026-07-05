@@ -1,196 +1,187 @@
 import { Link } from "react-router-dom";
-import { MapPin } from "lucide-react";
-import { Phone } from "lucide-react";
-import { Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Heart } from "lucide-react";
 
-import { navListItemsMobile } from "../utils/data/navlist_items";
-import { getRouteKey } from "../utils/navigation/getRouteKey";
 import ROUTES from "../config/routes";
-import { Cloud } from "../ui";
+import { SITE } from "../config/site";
+import { WhatsAppIcon, FacebookIcon, InstagramIcon } from "../ui";
+
+const EXPLORE = [
+  { label: "About Us", to: ROUTES.ABOUT_US.ROOT },
+  { label: "Programmes", to: ROUTES.PROGRAMMES.ROOT },
+  { label: "Admissions", to: ROUTES.ADMISSION },
+  { label: "Locations", to: ROUTES.FRANCHISE_DETAILS },
+  { label: "Our Team", to: ROUTES.OUR_TEAM },
+  { label: "Careers", to: ROUTES.CAREERS },
+];
 
 function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-linear-primary-mix-bt">
-      {/* Animationed Clouds */}
-      <Cloud
-        className="left-[-350px] top-36 animate-cloud-medium"
-        scale={0.3}
-      />
-      <Cloud className="left-[-200px] top-44 animate-cloud-fast" scale={0.5} />
-      <Cloud
-        className="left-[-250px] top-28 animate-cloud-xfast"
-        scale={0.35}
-      />
-
-      <div className="relative z-10">
-        <div className="py-12 shadow-xl *:font-robotoSlab *:text-stone-700">
-          <div className="container mx-auto px-6">
-            <div className="flex flex-wrap justify-between">
-              <div className="mb-8 w-full md:mb-0 md:w-1/3">
-                {/* <!---- Get in touch details ---> */}
-                <div className="mb-7 space-y-7">
-                  <h2 className="text-3xl font-bold text-stone-800">
-                    Get in Touch
-                  </h2>
-                  <div className="space-y-5 *:text-sm">
-                    <p className="group flex transform items-center gap-2 transition-transform duration-300 hover:scale-110">
-                      <span className="self-start transition-colors duration-300 group-hover:text-secondary-600">
-                        <MapPin size={20} />
-                      </span>
-                      <a
-                        href="https://maps.app.goo.gl/DpoUnPBk86P9UYDg6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition-colors duration-300 hover:text-secondary-600"
-                      >
-                        Mahapurush Madhabdev Path, Near ITI, Nalapara,
-                        Sarusajai, Guwahati, Assam, 781040
-                      </a>
-                    </p>
-                    <p className="group flex items-center gap-2 transition-transform duration-300 hover:scale-110">
-                      <span className="transition-colors duration-300 group-hover:text-secondary-600">
-                        <Phone size={20} />
-                      </span>
-                      <span>
-                        <a
-                          href="tel:+919856199105"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-colors duration-300 hover:text-secondary-600"
-                        >
-                          +91-9856199105
-                        </a>
-                        <span> / </span>
-                        <a
-                          href="tel:+918134992941"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition-colors duration-300 hover:text-secondary-600"
-                        >
-                          +91-8134992941
-                        </a>
-                      </span>
-                    </p>
-                    <p className="group flex items-center gap-2 transition-transform duration-300 hover:scale-110">
-                      <span className="transition-colors duration-300 group-hover:text-secondary-600">
-                        <Mail size={20} />
-                      </span>
-                      <a
-                        href="mailto:info@cuddlecorners.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition-colors duration-300 hover:text-secondary-600"
-                      >
-                        info@cuddlecorners.com
-                      </a>
-                    </p>
-                  </div>
-                </div>
-
-                {/* <!---- Social media link ---> */}
-                <div className="flex space-x-4">
-                  <a
-                    href="https://www.facebook.com/cuddle.corners.preschool"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex aspect-square w-7 transform items-center justify-center rounded-full bg-primary-600 transition-transform duration-300 hover:scale-110"
-                  >
-                    <span className="text-xl font-bold text-primary-25">
-                      <img
-                        src="./images/icons/facebook-icon.svg"
-                        alt="cuddles-corner-facebook-link-img"
-                      />
-                    </span>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/cuddle.corners"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex aspect-square h-7 transform items-center justify-center rounded-full bg-primary-600 transition-transform duration-300 hover:scale-110"
-                  >
-                    <span className="text-xl font-bold text-primary-25">
-                      <img
-                        src="./images/icons/instagram-icon.svg"
-                        alt="cuddles-corner-instagram-link-img"
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-
-              {/* <!---- Pages naviagtion links ----> */}
-              <div className="mb-8 w-full md:mb-0 md:w-1/4">
-                <h3 className="mb-6 text-3xl font-bold text-stone-800">
-                  Quick Links
-                </h3>
-                <ul className="space-y-3 pl-3">
-                  {navListItemsMobile.map((item, index) => {
-                    // Get the route path, checking for ROOT first, then falling back to the direct route or home ("/") if undefined.
-                    const path =
-                      ROUTES[getRouteKey(item)]?.ROOT ||
-                      ROUTES[getRouteKey(item)] ||
-                      "/";
-
-                    return (
-                      <li key={index} className="cursor-pointer list-disc">
-                        <Link
-                          to={path}
-                          className="flex transform items-center text-lg transition-transform duration-300 hover:translate-x-2 hover:text-secondary-600"
-                        >
-                          {item}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-
-              {/* <!--- Newsletter ----> */}
-              <div className="w-full md:w-1/3">
-                <h3 className="mb-6 text-2xl font-bold text-stone-800">
-                  Parent&apos;s Corner
-                </h3>
-                <p className="mb-4">Stay updated with our latest activities!</p>
-                <div className="mb-4 flex">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="w-full rounded-l-full px-4 py-3 text-black focus:outline-none"
-                  />
-                  <button className="rounded-r-full bg-secondary-500 px-6 font-bold text-white transition-colors duration-300 hover:bg-secondary-400">
-                    Join!
-                  </button>
-                </div>
-                <p className="text-sm">We promise fun emails only!</p>
-              </div>
+    <footer className="relative mt-auto">
+      {/* The pre-footer CTA (VisitCTA / page CTA) owns the single cream→blue
+          wave and is also blue, so it flows seamlessly straight into here:
+          one continuous dark zone, no second wave, no cream sliver. */}
+      <div className="bg-primary-900 pb-20 text-primary-50 lg:pb-0">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.4fr_1fr_1.3fr]">
+          {/* Brand */}
+          <div>
+            <span className="wordmark text-3xl text-white">Cuddle Corners</span>
+            <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-primary-100">
+              A happy, safe place for little ones aged {SITE.ageRange} to grow,
+              play and learn, across {SITE.centresCount} centres in {SITE.city}.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <a
+                href={SITE.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Cuddle Corners on Facebook"
+                className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-secondary-500 hover:text-primary-900"
+              >
+                <FacebookIcon size={18} />
+              </a>
+              <a
+                href={SITE.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Cuddle Corners on Instagram"
+                className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-secondary-500 hover:text-primary-900"
+              >
+                <InstagramIcon size={18} />
+              </a>
+              <a
+                href={SITE.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Message Cuddle Corners on WhatsApp"
+                className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-whatsapp"
+              >
+                <WhatsAppIcon size={18} />
+              </a>
             </div>
+          </div>
 
-            {/* <!---- Privacy , Terms and Condition , Contact Us ---->*/}
-            <div className="relative mt-12 border-t border-stone-500 border-opacity-30 pt-8">
-              <div className="text-center *:text-black">
-                <p>
-                  &copy; {new Date().getFullYear()} Cuddles Corner. All rights
-                  reserved.
-                </p>
-                <div className="mt-2 flex justify-center space-x-4 text-sm">
+          {/* Explore */}
+          <nav aria-label="Footer">
+            <h2 className="font-fredoka text-lg font-semibold text-white">
+              Explore
+            </h2>
+            <ul className="mt-4 space-y-2.5 text-[15px]">
+              {EXPLORE.map((item) => (
+                <li key={item.label}>
                   <Link
-                    to={ROUTES.PRIVACY_POLICY}
-                    className="hover:text-secondary-75"
+                    to={item.to}
+                    className="text-primary-100 transition-colors hover:text-secondary-400"
                   >
-                    Privacy Policy
+                    {item.label}
                   </Link>
-                  <Link
-                    to={ROUTES.TERMS_OF_USE}
-                    className="hover:text-secondary-75"
-                  >
-                    Terms & Conditions
-                  </Link>
-                  {/* <Link href="#" className="hover:text-secondary-75">
-                    Contact Us
-                  </Link> */}
-                </div>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Contact + newsletter */}
+          <div>
+            <h2 className="font-fredoka text-lg font-semibold text-white">
+              Get in touch
+            </h2>
+            <ul className="mt-4 space-y-3 text-[15px] text-primary-100">
+              <li className="flex gap-3">
+                <MapPin
+                  size={18}
+                  className="mt-0.5 shrink-0 text-secondary-400"
+                  aria-hidden="true"
+                />
+                <a
+                  href={SITE.mapHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
+                  {SITE.addressFull}
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <Phone
+                  size={18}
+                  className="shrink-0 text-secondary-400"
+                  aria-hidden="true"
+                />
+                <span>
+                  <a href={SITE.phoneHref} className="hover:text-white">
+                    {SITE.phone}
+                  </a>
+                  <span className="px-1 text-primary-300">/</span>
+                  <a href={`tel:${SITE.phoneAlt}`} className="hover:text-white">
+                    {SITE.phoneAlt}
+                  </a>
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <Mail
+                  size={18}
+                  className="shrink-0 text-secondary-400"
+                  aria-hidden="true"
+                />
+                <a href={SITE.emailHref} className="hover:text-white">
+                  {SITE.email}
+                </a>
+              </li>
+            </ul>
+
+            <form
+              className="mt-6"
+              action={`https://formsubmit.co/${SITE.email}`}
+              method="POST"
+              aria-label="Newsletter signup"
+            >
+              <label
+                htmlFor="footer-email"
+                className="text-sm text-primary-100"
+              >
+                Little updates, big smiles. Join our list
+              </label>
+              <div className="mt-2 flex overflow-hidden rounded-full bg-white shadow-soft">
+                <input
+                  id="footer-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@email.com"
+                  className="w-full bg-transparent px-4 py-2.5 text-ink placeholder:text-ink-muted focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="shrink-0 bg-secondary-500 px-5 font-fredoka font-semibold text-primary-900 transition-colors hover:bg-secondary-400"
+                >
+                  Join
+                </button>
               </div>
+            </form>
+          </div>
+        </div>
+
+        {/* bottom bar */}
+        <div className="border-t border-white/10">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-sm text-primary-200 sm:flex-row sm:px-8">
+            <p>
+              © {new Date().getFullYear()} Cuddle Corners. All rights reserved.
+            </p>
+            <div className="flex items-center gap-5">
+              <Link to={ROUTES.PRIVACY_POLICY} className="hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link to={ROUTES.TERMS_OF_USE} className="hover:text-white">
+                Terms &amp; Conditions
+              </Link>
             </div>
+            <p className="flex items-center gap-1.5">
+              Made with{" "}
+              <Heart
+                size={14}
+                className="fill-secondary-400 text-secondary-400"
+              />{" "}
+              in Guwahati
+            </p>
           </div>
         </div>
       </div>
