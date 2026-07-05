@@ -6,9 +6,8 @@ export const HQ_PHONE = "+919856199105"; // primary Nalapara / HQ line
 export const HQ_PHONE_ALT = "+918134992941";
 export const HQ_EMAIL = "info@cuddlecorners.com";
 
-const WA_MESSAGE = encodeURIComponent(
-  "Hi Cuddle Corners! I'd like to enquire about admission for my child.",
-);
+const WA_MESSAGE =
+  "Hi Cuddle Corners! I'd like to enquire about admission for my child.";
 
 export const SITE = {
   name: "Cuddle Corners",
@@ -21,7 +20,7 @@ export const SITE = {
   phoneHref: `tel:${HQ_PHONE}`,
   email: HQ_EMAIL,
   emailHref: `mailto:${HQ_EMAIL}`,
-  whatsappHref: `https://wa.me/${HQ_PHONE.replace("+", "")}?text=${WA_MESSAGE}`,
+  whatsappHref: `https://wa.me/${HQ_PHONE.replace("+", "")}?text=${encodeURIComponent(WA_MESSAGE)}`,
   addressShort: "Mahapurush Madhabdev Path, Nalapara, Guwahati",
   addressFull:
     "Mahapurush Madhabdev Path, Near ITI, Nalapara, Sarusajai, Guwahati, Assam, 781040",
@@ -37,7 +36,5 @@ export const SITE = {
 // Build a WhatsApp deep-link for any number with a friendly prefilled message.
 export function waLink(number, message = WA_MESSAGE) {
   const digits = (number || "").replace(/[^\d]/g, "");
-  const msg =
-    typeof message === "string" ? encodeURIComponent(message) : message;
-  return `https://wa.me/${digits}?text=${msg}`;
+  return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
 }

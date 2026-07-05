@@ -77,10 +77,10 @@ function toPostalAddress(address) {
   };
 }
 
-// Build an ItemList of the open centres for the Locations page. Telephone is
-// deliberately omitted: a couple of the stored branch numbers are malformed,
-// and shipping bad data in structured markup is worse than shipping none.
-// Addresses are reliable, so we surface those plus the parent-brand link.
+// Build an ItemList of the open centres for the Locations page. Each centre
+// carries its verified primary phone (the first number in contactNumber) and
+// its Facebook/Instagram profiles as sameAs, plus a link back to the parent
+// brand. Any centre without those fields simply omits them.
 export function buildBranchJsonLd(branches) {
   const open = branches.filter(
     (b) => b.franchiseAddress && b.franchiseAddress !== "Coming Soon",
@@ -90,21 +90,28 @@ export function buildBranchJsonLd(branches) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Cuddle Corners centres in Guwahati",
-    itemListElement: open.map((b, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      item: {
-        "@type": "Preschool",
-        name: b.franchiseName,
-        address: toPostalAddress(b.franchiseAddress),
-        areaServed: SITE.city,
-        url: `${SITE_URL}/franchise-details`,
-        parentOrganization: {
+    itemListElement: open.map((b, i) => {
+      const telephone = (b.contactNumber || "").split("/")[0].trim();
+      const sameAs = [b.facebookLink, b.instagramLink].filter(Boolean);
+
+      return {
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
           "@type": "Preschool",
-          name: SITE.name,
-          url: SITE_URL,
+          name: b.franchiseName,
+          address: toPostalAddress(b.franchiseAddress),
+          areaServed: SITE.city,
+          url: `${SITE_URL}/franchise-details`,
+          ...(telephone ? { telephone } : {}),
+          ...(sameAs.length ? { sameAs } : {}),
+          parentOrganization: {
+            "@type": "Preschool",
+            name: SITE.name,
+            url: SITE_URL,
+          },
         },
-      },
-    })),
+      };
+    }),
   };
 }
