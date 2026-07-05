@@ -28,7 +28,10 @@ export const SITE = {
   mapHref: "https://maps.app.goo.gl/DpoUnPBk86P9UYDg6",
   facebook: "https://www.facebook.com/cuddle.corners.preschool",
   instagram: "https://www.instagram.com/cuddle.corners",
-  curriculumPartner: "Toondemy",
+  curriculumPartner: "ToonDemy",
+  // Affiliated flagship school (opens in a new tab where referenced).
+  greenSchoolUrl: "https://www.greenschoolguwahati.com",
+  greenSchoolName: "The Green School International",
 };
 
 // Build a WhatsApp deep-link for any number with a friendly prefilled message.

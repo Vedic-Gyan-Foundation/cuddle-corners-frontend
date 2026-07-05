@@ -21,6 +21,7 @@ import {
   Sparkle,
 } from "../ui";
 import { PagesBanner, VisitCTA } from "../components";
+import { GreenSchoolLink } from "../components/green_school_link";
 
 /* ---------------------------------------------------------------- data ---- */
 const LOCATIONS = [
@@ -209,7 +210,7 @@ function Locations() {
               <MapPin size={24} aria-hidden="true" />
             </span>
             <h3 className="mt-5 font-fredoka text-xl font-semibold text-ink">
-              {name}
+              {name === SITE.greenSchoolName ? <GreenSchoolLink /> : name}
             </h3>
             <p className="mt-2 flex-grow text-sm leading-relaxed text-ink-soft">
               {area}

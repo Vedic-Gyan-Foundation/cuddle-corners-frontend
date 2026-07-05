@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
+import { linkifyGreenSchool } from "./green_school_link";
+
 /**
  * Reusable leadership / team profile card.
  * Props:
@@ -55,7 +57,7 @@ function TeamMemberCard({ name, role, image, bio, clampLines = 5 }) {
               : undefined
           }
         >
-          {bio}
+          {linkifyGreenSchool(bio)}
         </p>
 
         {isLong && (

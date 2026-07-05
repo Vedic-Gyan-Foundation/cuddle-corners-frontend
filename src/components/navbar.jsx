@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, CalendarHeart } from "lucide-react";
+import { Menu, X, Phone, CalendarHeart, Store } from "lucide-react";
 
 import ROUTES from "../config/routes";
 import { SITE } from "../config/site";
@@ -97,12 +97,20 @@ function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href={SITE.phoneHref}
-            className="hidden items-center gap-2 rounded-full px-3 py-2 font-fredoka text-sm font-medium text-primary-800 transition-colors hover:bg-primary-50 md:inline-flex"
+            className="hidden items-center gap-2 rounded-full px-3 py-2 font-fredoka text-sm font-medium text-primary-800 transition-colors hover:bg-primary-50 xl:inline-flex"
           >
             <Phone size={17} aria-hidden="true" />
-            <span className="hidden xl:inline">{SITE.phone}</span>
-            <span className="xl:hidden">Call</span>
+            <span>{SITE.phone}</span>
           </a>
+          <Button
+            to={ROUTES.JOIN_US}
+            variant="ghost"
+            size="sm"
+            icon={Store}
+            className="hidden lg:inline-flex"
+          >
+            Franchise
+          </Button>
           <Button
             to={ROUTES.ADMISSION}
             size="sm"
@@ -169,13 +177,16 @@ function Navbar() {
                   Book a Visit
                 </Button>
               </li>
-              <li className="mt-1">
-                <Link
+              <li className="mt-3">
+                <Button
                   to={ROUTES.JOIN_US}
-                  className="block px-4 py-2 text-center font-fredoka text-sm text-ink-soft underline underline-offset-4 hover:text-primary-700"
+                  variant="secondary"
+                  size="md"
+                  icon={Store}
+                  className="w-full"
                 >
-                  Own a Cuddle Corners franchise →
-                </Link>
+                  Own a Cuddle Corners franchise
+                </Button>
               </li>
             </ul>
           </motion.div>

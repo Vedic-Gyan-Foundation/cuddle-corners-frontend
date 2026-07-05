@@ -24,7 +24,9 @@ import {
   Send,
 } from "lucide-react";
 
-import { PagesBanner } from "../components";
+import { Link } from "react-router-dom";
+import ROUTES from "../config/routes";
+import { linkifyGreenSchool } from "../components/green_school_link";
 import { SITE, HQ_EMAIL, HQ_PHONE, HQ_PHONE_ALT } from "../config/site";
 import {
   Section,
@@ -139,6 +141,104 @@ const inputClasses =
 const labelClasses = "block font-fredoka text-sm font-semibold text-ink";
 
 /* -------------------------------------------------------------- sections -- */
+function FranchiseHero() {
+  const stats = [
+    { icon: MapPin, label: `${SITE.centresCount} centres & growing` },
+    { icon: Award, label: "Backed by The Green School International" },
+    { icon: Sparkles, label: "Powered by ToonDemy, Singapore" },
+  ];
+  return (
+    <section className="relative overflow-hidden bg-primary-700 text-white">
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(90% 80% at 85% 0%, rgba(255,255,255,.16), transparent 55%)",
+        }}
+        aria-hidden="true"
+      />
+      <CloudPuff className="pointer-events-none absolute left-[6%] top-16 hidden w-24 opacity-25 md:block" />
+      <CloudPuff className="pointer-events-none absolute bottom-20 right-[10%] hidden w-28 opacity-20 md:block" />
+
+      <Container className="relative grid items-center gap-10 py-14 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
+        <div className="max-w-xl">
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-5 text-sm text-primary-100"
+          >
+            <Link to={ROUTES.HOME} className="hover:text-white">
+              Home
+            </Link>
+            <span className="px-1.5 text-primary-300">/</span>
+            <span className="text-white">Franchise</span>
+          </nav>
+
+          <span className="inline-flex items-center gap-2 rounded-full bg-secondary-500 px-4 py-1.5 font-fredoka text-sm font-semibold text-primary-900">
+            <Sparkles size={16} aria-hidden="true" /> Now 33% off the franchise
+            fee
+          </span>
+
+          <h1 className="mt-5 font-fredoka text-4xl font-semibold leading-[1.05] sm:text-5xl">
+            Grow a preschool your community will love
+          </h1>
+          <p className="mt-5 text-lg leading-relaxed text-primary-100">
+            Bring warm, world-class early education to your neighbourhood —
+            backed by{" "}
+            <a
+              href={SITE.greenSchoolUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white underline decoration-white/50 underline-offset-2 transition-colors hover:decoration-white"
+            >
+              The Green School International
+            </a>{" "}
+            and powered by ToonDemy, Singapore.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button
+              href="#contact"
+              variant="secondary"
+              size="lg"
+              icon={ArrowRight}
+              iconRight
+            >
+              Request information
+            </Button>
+            <Button href={SITE.whatsappHref} variant="whatsapp" size="lg">
+              WhatsApp us
+            </Button>
+          </div>
+
+          <ul className="mt-9 flex flex-wrap gap-2.5">
+            {stats.map(({ icon: Icon, label }) => (
+              <li
+                key={label}
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-sm font-medium text-white"
+              >
+                <Icon
+                  size={16}
+                  className="text-secondary-300"
+                  aria-hidden="true"
+                />
+                {label}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="relative hidden justify-self-center lg:block">
+          <BearMascot className="w-56 drop-shadow-lg" />
+          <CloudPuff className="pointer-events-none absolute -left-8 top-4 w-24" />
+          <CloudPuff className="pointer-events-none absolute -right-6 bottom-6 w-20" />
+        </div>
+      </Container>
+
+      <CloudDivider className="text-paper" />
+    </section>
+  );
+}
+
 function Intro() {
   return (
     <Section tone="paper">
@@ -322,7 +422,7 @@ function Benefits() {
               <Icon size={24} aria-hidden="true" />
             </span>
             <h3 className="mt-5 font-fredoka text-xl font-semibold text-ink">
-              {title}
+              {linkifyGreenSchool(title)}
             </h3>
             <p className="mt-2 flex-grow text-sm leading-relaxed text-ink-soft">
               {body}
@@ -731,11 +831,7 @@ function ClosingCTA() {
 function JoinUs() {
   return (
     <>
-      <PagesBanner
-        headingText="Partner with Cuddle Corners"
-        kicker="Join our family"
-        subtitle="Bring the joy of quality early childhood education to your community with a Cuddle Corners franchise."
-      />
+      <FranchiseHero />
       <Intro />
       <Offer />
       <Benefits />
