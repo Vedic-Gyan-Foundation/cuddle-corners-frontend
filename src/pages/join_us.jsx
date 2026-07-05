@@ -3,9 +3,12 @@ import {
   Wallet,
   TrendingUp,
   GraduationCap,
-  Megaphone,
-  Map,
   Award,
+  Sparkles,
+  HeartHandshake,
+  Building2,
+  MapPin,
+  Coins,
   ClipboardList,
   Users,
   LineChart,
@@ -38,39 +41,39 @@ import {
 /* ---------------------------------------------------------------- data ---- */
 const BENEFITS = [
   {
-    icon: Wallet,
-    title: "Low investment, high returns",
-    body: "Start your own Cuddle Corners with minimal capital and enjoy an attractive return within a short timeframe.",
+    icon: Award,
+    title: "Backed by The Green School International",
+    body: "A trusted name in holistic education stands behind every Cuddle Corners centre.",
     tint: "bg-primary-100 text-primary-700",
   },
   {
-    icon: TrendingUp,
-    title: "A proven business model",
-    body: "Lean on an established curriculum and operational systems that have already succeeded across multiple locations.",
+    icon: Sparkles,
+    title: "Powered by ToonDemy, Singapore",
+    body: "World-class curriculum and digital learning solutions delivered into every classroom.",
     tint: "bg-secondary-100 text-secondary-800",
   },
   {
-    icon: GraduationCap,
-    title: "Comprehensive training",
-    body: "Receive thorough initial training and ongoing support from our experienced team of education professionals.",
+    icon: HeartHandshake,
+    title: "A child-centric approach",
+    body: "Whole-child development — academics, sports, teamwork, discipline and leadership.",
     tint: "bg-tertiary-50 text-tertiary-600",
   },
   {
-    icon: Megaphone,
-    title: "Marketing support",
-    body: "Get ready-made marketing materials and proven strategies to help you attract families in your community.",
+    icon: Building2,
+    title: "End-to-end school setup",
+    body: "We help you source and align the best infrastructure and materials available in India.",
     tint: "bg-primary-100 text-primary-700",
   },
   {
-    icon: Map,
-    title: "Exclusive territory",
-    body: "Secure the rights to operate in your designated area — no competition from other Cuddle Corners centres.",
+    icon: GraduationCap,
+    title: "Complete operational support",
+    body: "Professional training, operations guidance, branding and marketing assistance throughout.",
     tint: "bg-secondary-100 text-secondary-800",
   },
   {
-    icon: Award,
-    title: "A trusted brand",
-    body: "Join a name that parents already recognise and trust for quality early childhood education.",
+    icon: MapPin,
+    title: "A movement for Northeast India",
+    body: "Join a visionary early-learning movement shaping the future of education in the region.",
     tint: "bg-tertiary-50 text-tertiary-600",
   },
 ];
@@ -110,8 +113,8 @@ const STAGES = [
 
 const FAQS = [
   {
-    q: "What is the joining / sign-in fee?",
-    a: "The joining fee is ₹1,25,000. This covers your franchise application, onboarding and initial training. Additional setup costs may apply depending on your location and requirements.",
+    q: "What is the franchise fee?",
+    a: "The one-time franchise fee is ₹2,00,000 — a 33% waiver on the standard ₹3,00,000, as a limited introductory offer. It covers your franchise onboarding and initial training; additional setup costs depend on your location and requirements.",
   },
   {
     q: "What education background do I need?",
@@ -123,11 +126,11 @@ const FAQS = [
   },
   {
     q: "What ongoing support will I receive?",
-    a: "Continuous curriculum updates, marketing assistance, operational guidance and access to our franchise support team, plus regular training workshops and an annual conference.",
+    a: "Continuous curriculum updates (powered by ToonDemy), marketing and branding assistance, operational guidance, and access to our franchise support team — plus regular training and refresher sessions.",
   },
   {
     q: "What are the royalty fees?",
-    a: "We do not charge any royalty fee on your gross revenue.",
+    a: "Year 1 is a token ₹100 per child, per month — so you can focus on getting established. From the second year, a nominal ₹2,000 per student, per year applies at the start of each academic session. You also earn healthy margins on learning essentials (15% on books, 20% on uniforms & shoes) from day one.",
   },
 ];
 
@@ -192,13 +195,111 @@ function Intro() {
   );
 }
 
+function Offer() {
+  return (
+    <Section tone="paper">
+      <div className="mb-12 max-w-2xl">
+        <Kicker>Franchise benefits</Kicker>
+        <h2 className="mt-3 font-fredoka text-3xl font-semibold text-ink sm:text-4xl">
+          An opening offer built to get you started
+        </h2>
+        <p className="mt-3 text-lg text-ink-soft">
+          Launch on strong financial footing — a reduced franchise fee, a token
+          first-year royalty, and revenue from day one.
+        </p>
+      </div>
+
+      <RevealOnScroll
+        className="grid gap-5 md:grid-cols-3"
+        staggerChildren={0.1}
+      >
+        {/* Fee waiver — emphasised */}
+        <div className="relative flex h-full flex-col rounded-card border-2 border-secondary-300 bg-white p-6 shadow-soft">
+          <span className="absolute right-5 top-5 rounded-full bg-secondary-500 px-3 py-1 font-fredoka text-xs font-semibold text-primary-900">
+            Save 33%
+          </span>
+          <span className="grid h-12 w-12 place-items-center rounded-2xl bg-secondary-100 text-secondary-800">
+            <Wallet size={24} aria-hidden="true" />
+          </span>
+          <h3 className="mt-5 font-fredoka text-xl font-semibold text-ink">
+            33% off the franchise fee
+          </h3>
+          <p className="mt-3 text-sm text-ink-soft">
+            Start your journey for just
+          </p>
+          <p className="mt-1 font-fredoka text-3xl font-semibold text-ink">
+            ₹2,00,000{" "}
+            <span className="align-middle text-lg font-medium text-ink-muted line-through">
+              ₹3,00,000
+            </span>
+          </p>
+          <p className="mt-3 flex-grow text-sm leading-relaxed text-ink-soft">
+            A limited introductory waiver on your one-time franchise fee.
+          </p>
+        </div>
+
+        {/* Royalty */}
+        <div className="flex h-full flex-col rounded-card border border-line bg-white p-6 shadow-soft">
+          <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary-100 text-primary-700">
+            <Coins size={24} aria-hidden="true" />
+          </span>
+          <h3 className="mt-5 font-fredoka text-xl font-semibold text-ink">
+            A token royalty to begin
+          </h3>
+          <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink-soft">
+            <li>
+              <b className="font-semibold text-ink">Year 1:</b> a fixed ₹100 per
+              child, per month.
+            </li>
+            <li>
+              <b className="font-semibold text-ink">Year 2 onwards:</b> a
+              nominal ₹2,000 per student, per year, at the start of each
+              academic session.
+            </li>
+          </ul>
+          <p className="mt-3 flex-grow text-sm leading-relaxed text-ink-soft">
+            So you can focus entirely on establishing and growing your
+            preschool.
+          </p>
+        </div>
+
+        {/* Earn from day one */}
+        <div className="flex h-full flex-col rounded-card border border-line bg-white p-6 shadow-soft">
+          <span className="grid h-12 w-12 place-items-center rounded-2xl bg-tertiary-50 text-tertiary-600">
+            <TrendingUp size={24} aria-hidden="true" />
+          </span>
+          <h3 className="mt-5 font-fredoka text-xl font-semibold text-ink">
+            Earn from day one
+          </h3>
+          <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+            Turn essential supplies into a revenue stream with healthy margins:
+          </p>
+          <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink-soft">
+            <li>
+              <b className="font-semibold text-ink">15%</b> earnings on books
+            </li>
+            <li>
+              <b className="font-semibold text-ink">20%</b> earnings on uniforms
+              &amp; shoes
+            </li>
+          </ul>
+        </div>
+      </RevealOnScroll>
+
+      <p className="mt-6 text-sm text-ink-muted">
+        Introductory figures — final terms are confirmed during onboarding.
+      </p>
+    </Section>
+  );
+}
+
 function Benefits() {
   return (
     <Section tone="blue">
       <div className="mb-12 max-w-2xl">
         <Kicker>Why partner with us</Kicker>
         <h2 className="mt-3 font-fredoka text-3xl font-semibold text-ink sm:text-4xl">
-          Why choose a Cuddle Corners franchise
+          Why partner with Cuddle Corners?
         </h2>
         <p className="mt-3 text-lg text-ink-soft">
           You bring the heart for your community; we bring the systems, training
@@ -599,8 +700,8 @@ function ClosingCTA() {
             Begin your franchising journey today
           </h2>
           <p className="max-w-xl text-lg text-primary-100">
-            Join a growing family of educators making a real difference in their
-            communities through early childhood education.
+            Take the next step and become part of a visionary early-learning
+            movement shaping the future of education in Northeast India.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Button
@@ -636,6 +737,7 @@ function JoinUs() {
         subtitle="Bring the joy of quality early childhood education to your community with a Cuddle Corners franchise."
       />
       <Intro />
+      <Offer />
       <Benefits />
       <Process />
       <Faqs />
