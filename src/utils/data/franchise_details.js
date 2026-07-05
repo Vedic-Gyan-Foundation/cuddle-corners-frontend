@@ -26,11 +26,11 @@ export const franchiseDetails = [
   {
     id: 3,
     franchiseName: "Rehabari Branch",
-    contactNumber: "+9138638472744 / +919181319130",
+    contactNumber: "+918638472744 / +919181319130",
     franchiseAddress:
       "Kali Mandir Path, A.K. Azad Road, Behind Jagaran Artfed, Rehabari, Guwahati, Assam, India, 781008",
     googleMapLocation: "https://share.google/vtBVU7mD080ewBhFi",
-    whatsappLink: "http://wa.me/+91918131930",
+    whatsappLink: "https://wa.me/+919181319130",
     facebookLink: "https://www.facebook.com/cuddle.corners.rehabari",
     instagramLink: "https://www.instagram.com/cuddle_corners_rehabari",
     emailId: "cuddlecr@gmail.com",
@@ -38,7 +38,7 @@ export const franchiseDetails = [
   {
     id: 4,
     franchiseName: "Nalapara Branch",
-    contactNumber: "+9149387130617 / +919856199105",
+    contactNumber: "+919387130617 / +919856199105",
     franchiseAddress:
       "Mahapurush Madhabdev Path, Nalapara, Sarusajai, Guwahati, Assam, India, 781040",
     googleMapLocation: "https://share.google/LMM3NM7oo6AxUzfsu",
