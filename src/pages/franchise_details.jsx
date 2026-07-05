@@ -71,110 +71,120 @@ function BranchCard({ branch }) {
 
   return (
     <div className="flex h-full flex-col rounded-card border border-line bg-white p-6 shadow-soft transition-all duration-300 ease-gentle hover:-translate-y-1 hover:shadow-lift sm:p-7">
-      <div className="flex items-start gap-4">
-        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary-100 text-primary-700">
-          <Building2 size={24} aria-hidden="true" />
-        </span>
-        <h3 className="mt-1 font-fredoka text-xl font-semibold text-ink">
-          {branch.franchiseName}
-        </h3>
+      {/* header: name + social icons */}
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-primary-100 text-primary-700">
+            <Building2 size={22} aria-hidden="true" />
+          </span>
+          <h3 className="font-fredoka text-lg font-semibold leading-tight text-ink">
+            {branch.franchiseName}
+          </h3>
+        </div>
+        {(branch.facebookLink || branch.instagramLink) && (
+          <div className="flex shrink-0 gap-1.5">
+            {branch.facebookLink && (
+              <a
+                href={branch.facebookLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${branch.franchiseName} on Facebook`}
+                className="grid h-9 w-9 place-items-center rounded-full bg-primary-50 text-primary-700 transition-colors hover:bg-primary-100 hover:text-primary-800"
+              >
+                <FacebookIcon size={15} />
+              </a>
+            )}
+            {branch.instagramLink && (
+              <a
+                href={branch.instagramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${branch.franchiseName} on Instagram`}
+                className="grid h-9 w-9 place-items-center rounded-full bg-primary-50 text-primary-700 transition-colors hover:bg-primary-100 hover:text-primary-800"
+              >
+                <InstagramIcon size={15} />
+              </a>
+            )}
+          </div>
+        )}
       </div>
 
-      <p className="mt-5 flex gap-2.5 text-sm leading-relaxed text-ink-soft">
-        <MapPin
-          size={18}
-          className="mt-0.5 shrink-0 text-primary-600"
-          aria-hidden="true"
-        />
-        <span>{branch.franchiseAddress}</span>
-      </p>
-
-      {branch.emailId && (
-        <p className="mt-3 flex items-center gap-2.5 text-sm text-ink-soft">
-          <Mail
+      {/* contact list */}
+      <ul className="mt-5 space-y-3 text-sm text-ink-soft">
+        <li className="flex gap-2.5">
+          <MapPin
             size={18}
-            className="shrink-0 text-primary-600"
+            className="mt-0.5 shrink-0 text-primary-600"
             aria-hidden="true"
           />
-          <a
-            href={`mailto:${branch.emailId}`}
-            className="break-all font-medium text-primary-700 underline-offset-2 hover:underline"
-          >
-            {branch.emailId}
-          </a>
-        </p>
-      )}
+          <span className="leading-relaxed">{branch.franchiseAddress}</span>
+        </li>
+        {numbers.length > 0 && (
+          <li className="flex gap-2.5">
+            <Phone
+              size={18}
+              className="mt-0.5 shrink-0 text-primary-600"
+              aria-hidden="true"
+            />
+            <span className="flex flex-wrap gap-x-3 gap-y-1">
+              {numbers.map((n) => (
+                <a
+                  key={n}
+                  href={`tel:${n}`}
+                  className="whitespace-nowrap font-medium text-primary-700 underline-offset-2 hover:underline"
+                >
+                  {n}
+                </a>
+              ))}
+            </span>
+          </li>
+        )}
+        {branch.emailId && (
+          <li className="flex gap-2.5">
+            <Mail
+              size={18}
+              className="mt-0.5 shrink-0 text-primary-600"
+              aria-hidden="true"
+            />
+            <a
+              href={`mailto:${branch.emailId}`}
+              className="break-all font-medium text-primary-700 underline-offset-2 hover:underline"
+            >
+              {branch.emailId}
+            </a>
+          </li>
+        )}
+      </ul>
 
-      {/* primary actions */}
-      <div className="mt-auto flex flex-wrap gap-2 pt-6">
-        {primaryNumber && (
-          <Button
-            href={`tel:${primaryNumber}`}
-            variant="soft"
-            size="sm"
-            icon={Phone}
-          >
-            Call
-          </Button>
-        )}
-        {branch.whatsappLink && (
-          <Button
-            href={waLink(branch.whatsappLink)}
-            variant="whatsapp"
-            size="sm"
-            icon={MessageCircle}
-          >
-            WhatsApp
-          </Button>
-        )}
-        {branch.googleMapLocation && (
-          <Button
-            href={branch.googleMapLocation}
-            variant="ghost"
-            size="sm"
-            icon={Navigation}
-          >
-            Directions
-          </Button>
-        )}
+      {/* actions — full-width stacked on mobile, equal 3-across from sm up (never wraps) */}
+      <div className="mt-auto grid grid-cols-1 gap-2 pt-6 sm:grid-cols-3">
+        <Button
+          href={`tel:${primaryNumber}`}
+          variant="soft"
+          size="sm"
+          icon={Phone}
+          className="w-full"
+        >
+          Call
+        </Button>
+        <Button
+          href={waLink(branch.whatsappLink)}
+          variant="whatsapp"
+          size="sm"
+          className="w-full"
+        >
+          WhatsApp
+        </Button>
+        <Button
+          href={branch.googleMapLocation}
+          variant="ghost"
+          size="sm"
+          icon={Navigation}
+          className="w-full"
+        >
+          Directions
+        </Button>
       </div>
-
-      {/* secondary numbers + socials */}
-      {(numbers.length > 1 || branch.facebookLink || branch.instagramLink) && (
-        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-4 text-sm">
-          {numbers.length > 1 && (
-            <a
-              href={`tel:${numbers[1]}`}
-              className="inline-flex items-center gap-1.5 font-medium text-ink-soft hover:text-primary-700"
-            >
-              <Phone size={15} aria-hidden="true" />
-              {numbers[1]}
-            </a>
-          )}
-          {branch.facebookLink && (
-            <a
-              href={branch.facebookLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-medium text-ink-soft hover:text-primary-700"
-            >
-              <FacebookIcon size={15} aria-hidden="true" />
-              Facebook
-            </a>
-          )}
-          {branch.instagramLink && (
-            <a
-              href={branch.instagramLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-medium text-ink-soft hover:text-primary-700"
-            >
-              <InstagramIcon size={15} aria-hidden="true" />
-              Instagram
-            </a>
-          )}
-        </div>
-      )}
     </div>
   );
 }
@@ -279,7 +289,7 @@ function FranchiseDetails() {
         {/* cards */}
         {filteredBranches.length > 0 ? (
           <RevealOnScroll
-            className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+            className="grid gap-6 lg:grid-cols-2"
             staggerChildren={0.1}
           >
             {filteredBranches.map((branch) =>
