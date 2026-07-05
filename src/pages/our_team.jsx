@@ -115,7 +115,7 @@ function Intro() {
 
 function Leadership() {
   return (
-    <Section tone="alt">
+    <Section tone="paper">
       <div className="mx-auto mb-12 max-w-2xl text-center">
         <Kicker>Leadership</Kicker>
         <h2 className="mt-3 font-fredoka text-3xl font-semibold text-ink sm:text-4xl">

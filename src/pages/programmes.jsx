@@ -319,7 +319,7 @@ function ClassroomDetail() {
 
 function AdditionalResources() {
   return (
-    <Section tone="alt">
+    <Section tone="paper">
       <div className="mb-12 max-w-2xl">
         <Kicker>Additional resources</Kicker>
         <h2 className="mt-3 font-fredoka text-3xl font-semibold text-ink sm:text-4xl">

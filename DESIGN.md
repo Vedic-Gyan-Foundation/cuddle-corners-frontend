@@ -63,6 +63,10 @@ One `<h1>` per page. `<h2>` for sections, `<h3>` for cards.
   not a rainbow of decorations.
 - **Conversion is a first-class layout element:** a sticky mobile action bar
   (Call · WhatsApp · Book a Visit) for the Indian parent funnel.
+- **Wave/footer transition:** the pre-footer CTA owns the single cream→blue wave
+  and flows straight into the (blue) footer — the footer has no second wave. The
+  section directly above a CTA must be `tone="paper"` (the base cream the wave
+  sits on) so there's no third-colour sliver where `paper-alt` would meet it.
 
 ## 4. Motion — meaning, not ambience
 
