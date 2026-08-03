@@ -601,10 +601,54 @@ function Faqs() {
 
 function RequestInfo() {
   const [phone, setPhone] = useState("");
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [loading, setLoading] = useState(false);
 
   const handlePhoneChange = (e) => {
     const value = e.target.value;
     if (/^\d*$/.test(value) && value.length <= 10) setPhone(value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: "", message: "" });
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3001";
+      const response = await fetch(`${apiUrl}/api/submit-franchise-enquiry`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus({
+          type: "success",
+          message: result.message || "Enquiry submitted successfully!",
+        });
+        e.target.reset();
+        setPhone("");
+      } else {
+        setStatus({
+          type: "error",
+          message: result.error || "Failed to submit enquiry.",
+        });
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus({
+        type: "error",
+        message: "An error occurred. Please try again.",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -680,22 +724,16 @@ function RequestInfo() {
 
         {/* form */}
         <form
-          action={`https://formsubmit.co/${HQ_EMAIL}`}
-          method="POST"
+          onSubmit={handleSubmit}
           className="space-y-6 rounded-card border border-line bg-white p-6 shadow-soft sm:p-8"
         >
-          <input
-            type="hidden"
-            name="_subject"
-            value="New franchise enquiry, Cuddle Corners"
-          />
-          <input
-            type="text"
-            name="_honey"
-            className="hidden"
-            tabIndex={-1}
-            autoComplete="off"
-          />
+          {status.message && (
+            <div
+              className={`rounded-xl p-4 text-sm font-medium ${status.type === "success" ? "bg-primary-100 text-primary-800" : "bg-red-50 text-red-800"}`}
+            >
+              {status.message}
+            </div>
+          )}
 
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
@@ -778,8 +816,14 @@ function RequestInfo() {
             />
           </div>
 
-          <Button type="submit" size="lg" icon={Send} className="w-full">
-            Submit request
+          <Button
+            type="submit"
+            size="lg"
+            icon={Send}
+            className="w-full"
+            disabled={loading}
+          >
+            {loading ? "Submitting..." : "Submit request"}
           </Button>
         </form>
       </div>
