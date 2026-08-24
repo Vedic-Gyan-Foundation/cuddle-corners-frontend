@@ -77,9 +77,17 @@ function BranchCard({ branch }) {
           <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-primary-100 text-primary-700">
             <Building2 size={22} aria-hidden="true" />
           </span>
-          <h3 className="font-fredoka text-lg font-semibold leading-tight text-ink">
-            {branch.franchiseName}
-          </h3>
+          <div className="flex flex-col gap-1.5">
+            <h3 className="font-fredoka text-lg font-semibold leading-tight text-ink">
+              {branch.franchiseName}
+            </h3>
+            {branch.openingSoon && (
+              <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-secondary-100 px-2.5 py-0.5 text-xs font-semibold text-primary-900">
+                <Clock size={12} aria-hidden="true" />
+                Opening soon
+              </span>
+            )}
+          </div>
         </div>
         {(branch.facebookLink || branch.instagramLink) && (
           <div className="flex shrink-0 gap-1.5">
@@ -249,7 +257,7 @@ function FranchiseDetails() {
                   type="text"
                   value={searchQuery}
                   onChange={(event) => setSearchQuery(event.target.value)}
-                  placeholder="Try Beltola, Rehabari, Nalapara…"
+                  placeholder="Try Bharalumukh, Rehabari, Nalapara…"
                   className="w-full rounded-full border border-line bg-white py-3 pl-11 pr-4 text-sm text-ink shadow-soft outline-none transition-colors placeholder:text-ink-muted focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
                 />
               </div>
@@ -306,8 +314,8 @@ function FranchiseDetails() {
               No centre matched “{searchQuery.trim()}”.
             </p>
             <p className="mt-2 text-ink-soft">
-              Try a locality like Beltola, Rehabari or Nalapara, or reach out
-              and we&apos;ll point you to the closest one.
+              Try a locality like Bharalumukh, Rehabari or Nalapara, or reach
+              out and we&apos;ll point you to the closest one.
             </p>
             <div className="mt-6 flex justify-center">
               <Button

@@ -33,7 +33,7 @@ export const PAGE_SEO = {
   locations: {
     title: "Our Centres in Guwahati | Cuddle Corners Preschool",
     description:
-      "Find your nearest Cuddle Corners preschool in Guwahati. Call, WhatsApp or get directions to our centres in Bharalumukh, Kahilipara, Rehabari, Nalapara and Beltola.",
+      "Find your nearest Cuddle Corners preschool in Guwahati. Call, WhatsApp or get directions to our centres in Bharalumukh, Kahilipara, Rehabari, Nalapara and Kerakuchi.",
   },
   team: {
     title: "Our Team | Cuddle Corners Preschool, Guwahati",
