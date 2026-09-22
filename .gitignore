@@ -25,7 +25,7 @@ dist-ssr
 
 
 .env
-.env.example
+!.env.example
 
 # Local working notes — not for publication
 CLAUDE.md
